@@ -396,6 +396,11 @@
    Заключение
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id18">
+   Литература
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -491,14 +496,14 @@ K(x, y) = e^{-\frac{||x - y||^2}{\sigma}}
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Это интересно, что многие специалисты в области <strong>QML</strong> сегодня даже предлагают вместо термина “квантовая нейросеть” использовать термин “квантовое ядро”, так как математически <strong>VQC</strong> гораздо ближе именно к ядрам, чем к слоям современных глубоких сетей. Этой теме у нас даже посвящена одна из более ранних лекций продвинутого уровня, где разбираются доводы из статьи <span id="id6">[<span>vqcaskernels</span>]</span>.</p>
+<p>Это интересно, что многие специалисты в области <strong>QML</strong> сегодня даже предлагают вместо термина “квантовая нейросеть” использовать термин “квантовое ядро”, так как математически <strong>VQC</strong> гораздо ближе именно к ядрам, чем к слоям современных глубоких сетей. Этой теме у нас даже посвящена одна из более ранних лекций продвинутого уровня, где разбираются доводы из статьи <span id="id6">[<a class="reference internal" href="#id24"><span>Sch21</span></a>]</span>.</p>
 </div>
-<p>Очевидная идея – попробовать как-то воспользоваться квантовой схемой, чтобы реализовать скалярное произведение двух классических векторов. Именно это и сделали авторы работы <span id="id7">[<span>qsvmidea</span>]</span>.</p>
+<p>Очевидная идея – попробовать как-то воспользоваться квантовой схемой, чтобы реализовать скалярное произведение двух классических векторов. Именно это и сделали авторы работы <span id="id7">[<a class="reference internal" href="#id22"><span>HavlivcekCorcolesT+19</span></a>]</span>.</p>
 <div class="section" id="id8">
 <h3>Преобразование состояния<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p>На самом деле, если просто использовать какие-то простые квантовые операции, мы не получим какого-то преимущества над классическим ядерным SVM – ведь все то же самое можно будет сделать и на классическом компьютере.</p>
 <p>Чтобы получить реальное преимущество, нам необходимо использовать запутывание и прочие “фишки” квантовых вычислений.</p>
-<p>Дальше мы не станем изобретать велосипеды, а вместо этого воспользуемся примерами хороших преобразований из работы <span id="id9">[<span>qsvmmap</span>]</span>. Рассмотрим, что именно там описано.</p>
+<p>Дальше мы не станем изобретать велосипеды, а вместо этого воспользуемся примерами хороших преобразований из работы <span id="id9">[<a class="reference internal" href="#id23"><span>SYG+20</span></a>]</span>. Рассмотрим, что именно там описано.</p>
 <div class="section" id="id10">
 <h4>Общая схема<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p>Для простоты формул мы не будем выписывать обобщенные формулы, а все будем писать для нашего двумерного пространства. Тогда наша схема может быть разделена на несколько частей:</p>
@@ -523,7 +528,7 @@ K(x, y) = e^{-\frac{||x - y||^2}{\sigma}}
 \phi(x_1, x_2),\text{    }x_1 \neq x_2
 \end{cases}
 \end{split}\]</div>
-<p>Мы будем называть ее <em>feature function</em>. В некотором смысле можно сказать, что именно эта функция определяет тип ядра по аналогии с классическим SVM. В работе <span id="id12">[<span>qsvmmap</span>]</span> описано много разных вариантов таких <em>feature function</em>, мы будем использовать следующую:</p>
+<p>Мы будем называть ее <em>feature function</em>. В некотором смысле можно сказать, что именно эта функция определяет тип ядра по аналогии с классическим SVM. В работе <span id="id12">[<a class="reference internal" href="#id23"><span>SYG+20</span></a>]</span> описано много разных вариантов таких <em>feature function</em>, мы будем использовать следующую:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
@@ -728,6 +733,27 @@ K(x, y) = e^{-\frac{||x - y||^2}{\sigma}}
 <h2>Заключение<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
 <p>Расчет полной матрицы скалярных произведений дает нам сложность <span class="math notranslate nohighlight">\(O(N^2)\)</span> вызовов. Но основной потенциал гибридного SVM в том, что задачу квадратичной оптимизации на самом деле можно тоже решать на квантовом компьютере, используя алгоритм Гровера (про него рассказано в ранних факультативных лекциях), причем за сложность всего <span class="math notranslate nohighlight">\(O(N)\)</span> и без расчета полной матрицы Грама!</p>
 <p>Многие считают, что NISQ квантовые компьютеры могут стать для SVM чем-то типа видеокарт для нейронных сетей и вернуть этот алгоритм на пъедестал лучших алгоритмов машинного обучения!</p>
+</div>
+<div class="section" id="id18">
+<h2>Литература<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h2>
+<p id="id19"><dl class="citation">
+<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id7">HavlivcekCorcolesT+19</a></span></dt>
+<dd><p>Vojtěch Havlíček, Antonio D Córcoles, Kristan Temme, Aram W Harrow, Abhinav Kandala, Jerry M Chow, and Jay M Gambetta. Supervised learning with quantum-enhanced feature spaces. <em>Nature</em>, 567(7747):209–212, Mar 2019. URL: <a class="reference external" href="https://arxiv.org/abs/1804.11326">https://arxiv.org/abs/1804.11326</a>, <a class="reference external" href="https://doi.org/10.1038/s41586-019-0980-2">doi:10.1038/s41586-019-0980-2</a>.</p>
+</dd>
+<dt class="label" id="id20"><span class="brackets">MBK21</span></dt>
+<dd><p>Andrea Mari, Thomas R. Bromley, and Nathan Killoran. Estimating the gradient and higher-order derivatives on quantum hardware. <em>Physical Review A</em>, 103(1):012405, Jan 2021. URL: <a class="reference external" href="https://arxiv.org/abs/2008.06517">https://arxiv.org/abs/2008.06517</a>, <a class="reference external" href="https://doi.org/10.1103/physreva.103.012405">doi:10.1103/physreva.103.012405</a>.</p>
+</dd>
+<dt class="label" id="id21"><span class="brackets">MNKF18</span></dt>
+<dd><p>Kosuke Mitarai, Makoto Negoro, Masahiro Kitagawa, and Keisuke Fujii. Quantum circuit learning. <em>Physical Review A</em>, 98(3):032309, Sep 2018. URL: <a class="reference external" href="https://arxiv.org/abs/1803.00745">https://arxiv.org/abs/1803.00745</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevA.98.032309">doi:10.1103/PhysRevA.98.032309</a>.</p>
+</dd>
+<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id6">Sch21</a></span></dt>
+<dd><p>Maria Schuld. Quantum machine learning models are kernel methods. <em>arXiv e-prints</em>, pages 26 pages, 2021. URL: <a class="reference external" href="https://arxiv.org/abs/2101.11020">https://arxiv.org/abs/2101.11020</a>, <a class="reference external" href="https://arxiv.org/abs/2101.11020">arXiv:2101.11020</a>.</p>
+</dd>
+<dt class="label" id="id23"><span class="brackets">SYG+20</span><span class="fn-backref">(<a href="#id9">1</a>,<a href="#id12">2</a>)</span></dt>
+<dd><p>Yudai Suzuki, Hiroshi Yano, Qi Gao, Shumpei Uno, Tomoki Tanaka, Manato Akiyama, and Naoki Yamamoto. Analysis and synthesis of feature map for kernel-based quantum classifier. <em>Quantum Machine Intelligence</em>, 2(1):1–9, Jul 2020. URL: <a class="reference external" href="https://arxiv.org/abs/1906.10467">https://arxiv.org/abs/1906.10467</a>, <a class="reference external" href="https://doi.org/10.1007/s42484-020-00020-y">doi:10.1007/s42484-020-00020-y</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 
