@@ -305,14 +305,14 @@
                 
   <div class="section" id="pennylane">
 <h1>PennyLane<a class="headerlink" href="#pennylane" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://pennylane.ai/">PennyLane</a> – библиотека Python для квантового машинного обучения, которую можно использовать для обычных квантовых вычислений. Программы, написанные на PennyLane, можно запускать, используя в качестве бэкенда настоящие квантовые компьютеры от IBM Q, Xanadu, Rigetti и другие, либо квантовые симуляторы.</p>
-<p>Кубиты в PennyLane называются по-особому – <code class="docutils literal notranslate"><span class="pre">wires</span></code> (от англ. wires – провода). Такое название, скорее всего, связано с тем, что на квантовых схемах кубиты изображаются в виде продольных линий.</p>
+<p><a class="reference external" href="https://pennylane.ai/">PennyLane</a> – библиотека Python для квантового машинного обучения, которую также можно использовать и для обычных квантовых вычислений. Программы, написанные на PennyLane, можно запускать, используя в качестве бэкенда настоящие квантовые компьютеры от IBM Q, Xanadu, Rigetti и т.д. либо квантовые симуляторы.</p>
+<p>Кубиты в PennyLane называются по-особому - <code class="docutils literal notranslate"><span class="pre">wires</span></code> (от англ. провода). Такое название, скорее всего, связано с тем, что на квантовых схемах кубиты изображаются в виде продольных линий.</p>
 <p>Последовательность квантовых операций называется <em>квантовой функцией</em>. Такая функция может принимать в качестве аргументов только хэшируемые объекты. В качестве возвращаемого значения выступают величины, связанные с результатами измерения: ожидаемое значение, вероятности состояний или результаты сэмплирования.</p>
 <p>Квантовая функция существует не сама по себе, она запускается на определенном устройстве – симуляторе либо настоящем квантовом компьютере. Такое устройство в PennyLane называется <code class="docutils literal notranslate"><span class="pre">device</span></code>.</p>
 <div class="section" id="qnode">
 <h2>QNode<a class="headerlink" href="#qnode" title="Permalink to this headline">¶</a></h2>
 <p>Квантовые вычисления при использовании PennyLane раскладываются на отдельные узлы, которые называются <code class="docutils literal notranslate"><span class="pre">QNode</span></code>. Для их создания используются квантовые функции совместно с <code class="docutils literal notranslate"><span class="pre">device</span></code>.</p>
-<p>Создавать объекты квантовых узлов можно двумя способами: явно либо с помощью декоратора <code class="docutils literal notranslate"><span class="pre">QNode</span></code>.</p>
+<p>Создавать объекты квантовых узлов можно двумя способами – явно либо с помощью декоратора <code class="docutils literal notranslate"><span class="pre">qnode</span></code>.</p>
 <p>Рассмотрим первый способ – явное создание узла.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -358,10 +358,10 @@
 </div>
 </div>
 </div>
-<p>Работая с библиотекой PennyLane для математических операций, можно использовать интерфейс <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, но при этом также пользоваться преимуществами автоматического дифференцирования, которое обеспечивает <a href="https://github.com/HIPS/autograd">autograd</a>.
-Именно поэтому мы не импортировали <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> обычным способом: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>, а сделали это так:</p>
+<p>Помимо прочего, обратите внимание на то, что работая с библиотекой PennyLane, для математических операций можно использовать интерфейс <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, но при этом также пользоваться преимуществами автоматического дифференциирования, которое обеспечивает <a href="https://github.com/HIPS/autograd">autograd</a>.
+Именно поэтому мы не импортировали <code class="docutils literal notranslate"><span class="pre">Numpy</span></code> обычным способом: <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>, а сделали это таким образом:</p>
 <p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">pennylane</span> <span class="pre">import</span> <span class="pre">numpy</span> <span class="pre">as</span> <span class="pre">np</span></code>.</p>
-<p>Второй способ создания квантовых узлов – с помощью декоратора <code class="docutils literal notranslate"><span class="pre">QNode</span></code>. Пропускаем импорт библиотек и создание устройства, так как в начале код тот же самый:</p>
+<p>Второй способ создавания квантовых узлов – с помощью декоратора <code class="docutils literal notranslate"><span class="pre">qnode</span></code> (пропускаем импорт библиотек и создание устройства, так как в начале код тот же самый):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
@@ -386,12 +386,12 @@
 </div>
 </div>
 </div>
-<p>В данном примере мы взяли двухкубитную систему и создали запутанное состояние, а затем с помощью метода <code class="docutils literal notranslate"><span class="pre">probs</span></code> вычислили вероятности получения состояний <span class="math notranslate nohighlight">\(|00\rangle\)</span>, <span class="math notranslate nohighlight">\(|01\rangle\)</span>, <span class="math notranslate nohighlight">\(|10\rangle\)</span>, <span class="math notranslate nohighlight">\(|11\rangle\)</span>.</p>
+<p>В данном примере мы взяли двухкубитную систему и создали запутанное состояние, а затем с помощью метода <code class="docutils literal notranslate"><span class="pre">probs</span></code> получили вероятности получения состояний <span class="math notranslate nohighlight">\(|00\rangle\)</span>, <span class="math notranslate nohighlight">\(|01\rangle\)</span>, <span class="math notranslate nohighlight">\(|10\rangle\)</span>, <span class="math notranslate nohighlight">\(|11\rangle\)</span>.</p>
 </div>
 <div class="section" id="id1">
 <h2>Операторы<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>В квантовой функции можно применять операторы X, Y, Z, S, T (<code class="docutils literal notranslate"><span class="pre">qml.PauliX</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.PauliY</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.S</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.T</span></code> соответственно), а также операторы, в которых можно задавать угол вращения вокруг одной из осей в радианах: <code class="docutils literal notranslate"><span class="pre">qml.RX</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.RY</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.Z</span></code>. Здесь и далее будем использовать <code class="docutils literal notranslate"><span class="pre">qml</span></code> как псевдоним библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>.</p>
-<p>В этой функции мы вращаем кубит под индексом 0 вокруг оси X на 90 градусов из начального состояния <span class="math notranslate nohighlight">\(|0\rangle\)</span> и возвращаем <strong>ожидаемое значение</strong> <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code> для этого кубита с помощью <code class="docutils literal notranslate"><span class="pre">qml.expval</span></code>. Вероятности получения состояний <span class="math notranslate nohighlight">\(|0\rangle\)</span> и <span class="math notranslate nohighlight">\(|1\rangle\)</span> равны, так что мы получаем ожидаемое значение, близкое к нулю, что легко проверить:</p>
+<p>В квантовой функции можно применять операторы X, Y, Z, S, T (<code class="docutils literal notranslate"><span class="pre">qml.PauliX</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.PauliY</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.S</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.T</span></code> соответственно), а также операторы, в которых можно задавать угол вращения вокруг одной из осей в радианах: <code class="docutils literal notranslate"><span class="pre">qml.RX</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.RY</span></code>, <code class="docutils literal notranslate"><span class="pre">qml.Z</span></code>. (Здесь и далее будем использовать <code class="docutils literal notranslate"><span class="pre">qml</span></code> как псевдоним библиотеки <code class="docutils literal notranslate"><span class="pre">pennylane</span></code>).</p>
+<p>В этой функции мы вращаем кубит под индексом 0 вокруг оси X на 90 градусов (из начального состояния <span class="math notranslate nohighlight">\(|0\rangle\)</span>) и возвращаем <strong>ожидаемое значение</strong> <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code> для этого кубита с помощью <code class="docutils literal notranslate"><span class="pre">qml.expval</span></code>. Вероятности получения состояний <span class="math notranslate nohighlight">\(|0\rangle\)</span> и <span class="math notranslate nohighlight">\(|1\rangle\)</span> равны, так что мы получаем ожидаемое значение близкое к 0, что можно проверить с помощью несложных вычислений:</p>
 <div class="math notranslate nohighlight">
 \[0.5 \cdot 1 + 0.5 \cdot (-1) = 0\]</div>
 <div class="cell docutils container">
@@ -411,7 +411,7 @@
 </div>
 </div>
 </div>
-<p>В следующем примере мы вращаем кубит на тот же угол 90 градусов, но уже вокруг оси Y. Ожидаемое значение в этот раз ищем для <code class="docutils literal notranslate"><span class="pre">qml.PauliX</span></code> и получаем 1, что соответствует вычислениям:</p>
+<p>В следующем примере мы вращаем кубит уже вокруг оси Y, но на тот же угол 90 градусов. Ожидаемое значение в этот раз ищем для <code class="docutils literal notranslate"><span class="pre">qml.PauliX</span></code>, и в итоге получаем 1, что соответствует вычислениям:</p>
 <div class="math notranslate nohighlight">
 \[1 \cdot 1 + 0 \cdot (-1) = 1\]</div>
 <div class="cell docutils container">
@@ -431,7 +431,7 @@
 </div>
 </div>
 </div>
-<p>В начале этого урока мы создали устройство, которое создает и запускает одну и ту же схему 1000 раз, каждый раз производя измерения. Поменяем этот параметр:</p>
+<p>При создании устройства в начале этого урока мы получили устройство, которое создает и запускает одну и ту же схему 1000 раз, каждый раз производя измерения. Поменяем этот параметр:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span><span class="o">.</span><span class="n">shots</span> <span class="o">=</span> <span class="mi">5</span>
@@ -439,7 +439,7 @@
 </div>
 </div>
 </div>
-<p>Посмотрим на результат каждого из этих пяти запусков и измерений для <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code>. Квантовая схема будет простой: применим к кубиту с индексом 1 оператор Адамара:</p>
+<p>А теперь посмотрим на результат каждого из этих пяти запусков и измерений для <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code>. Квантовая схема будет простой – применим к кубиту с индексом 1 оператор Адамара:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
@@ -457,8 +457,8 @@
 </div>
 </div>
 </div>
-<p>Мы получаем разные результаты: то 1, что соответствует состоянию <span class="math notranslate nohighlight">\(|0\rangle\)</span>, то -1, что соответствует состоянию <span class="math notranslate nohighlight">\(|1\rangle\)</span>.</p>
-<p>Если вместо <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code> брать сэмплы для <code class="docutils literal notranslate"><span class="pre">qml.PauliX</span></code>, то результат все время будет один и тот же: 1, что соответствует состоянию <span class="math notranslate nohighlight">\(|+\rangle\)</span> (вектор базиса Адамара).</p>
+<p>Видно, что в результате мы получаем разные результаты: то 1 (что соответствует состоянию <span class="math notranslate nohighlight">\(|0\rangle\)</span>), то -1 (состояние <span class="math notranslate nohighlight">\(|1\rangle\)</span>).</p>
+<p>Если вместо <code class="docutils literal notranslate"><span class="pre">qml.PauliZ</span></code> брать сэмплы для <code class="docutils literal notranslate"><span class="pre">qml.PauliX</span></code>, то ситуация поменяется, и результат все время будет один и тот же: 1, что соответствует состоянию <span class="math notranslate nohighlight">\(|+\rangle\)</span> (вектор базиса Адамара).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
@@ -479,9 +479,9 @@
 </div>
 <div class="section" id="qubitunitary">
 <h2>QubitUnitary<a class="headerlink" href="#qubitunitary" title="Permalink to this headline">¶</a></h2>
-<p>В PennyLane можно использовать готовые операторы, либо задавать операторы явно с помощью матриц.</p>
-<p>Для этого можно использовать класс <code class="docutils literal notranslate"><span class="pre">qml.QubitUnitary</span></code>, который принимает два параметра: U – квадратную унитарную матрицу и <code class="docutils literal notranslate"><span class="pre">wires</span></code> – кубиты, на которые действует оператор U.</p>
-<p>В качестве примера создадим оператор, осуществляющий обмен состояний между кубитами (SWAP). Такой оператор уже есть в библиотеке PennyLane (<code class="docutils literal notranslate"><span class="pre">qml.SWAP</span></code>), но мы создадим его с помощью <code class="docutils literal notranslate"><span class="pre">qml.QubitUnitary</span></code>. Сначала мы зададим саму матрицу в виде двумерного массива, используя интерфейс <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>:</p>
+<p>Помимо того, что в PennyLane есть готовые операторы, можно также задавать операторы явно с помощью матриц.</p>
+<p>Для этого можно использовать класс <code class="docutils literal notranslate"><span class="pre">qml.QubitUnitary</span></code>, который принимает два параметра: U – квадратную унитарную матрицу и <code class="docutils literal notranslate"><span class="pre">wires</span></code> - кубиты, на которые действует оператор U.</p>
+<p>В качестве примера, создадим оператор, осуществляющий обмен состояний между кубитами (SWAP). Такой оператор уже есть в библиотеке PennyLane (<code class="docutils literal notranslate"><span class="pre">qml.SWAP</span></code>), но мы создадим его с помощью <code class="docutils literal notranslate"><span class="pre">qml.QubitUnitary</span></code>. Сначала мы зададим саму матрицу в виде двумерного массива, используя интерфейс <code class="docutils literal notranslate"><span class="pre">numpy</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
@@ -492,7 +492,7 @@
 </div>
 </div>
 </div>
-<p>Создадим заново устройство, при этом зададим число запусков схемы как shots=1: чтобы убедиться, что все работает правильно, нам будет достаточно одного запуска.</p>
+<p>Создадим заново устройство, при этом зададим число запусков схемы как shots=1, так как для того, чтобы убедиться, что все работает правильно, нам достаточно будет одного запуска.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;default.qubit&#39;</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">analytic</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -500,7 +500,7 @@
 </div>
 </div>
 </div>
-<p>Создадим и запустим схему, в которой перед применением операции SWAP, реализованной с помощью <code class="docutils literal notranslate"><span class="pre">qml.QubitUnitary</span></code>, один кубит будет находиться в состоянии 1, а другой – в состоянии 0.</p>
+<p>Создадим и запустим схему, в которой перед применением операции SWAP, реализованной с помощью <code class="docutils literal notranslate"><span class="pre">qml.QubitUnitary</span></code>, один кубит будет находиться в состоянии 1, а другой - в состоянии 0.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
@@ -541,7 +541,7 @@
 </div>
 </div>
 </div>
-<p>Видим, что во втором случае операция SWAP сработала: состояния кубитов поменялись местами. Можно посмотреть, как выглядит такая схема:</p>
+<p>Видим, что во втором случае операция SWAP сработала – состояния кубитов поменялись местами. Также мы можем посмотреть, как выглядит такая схема:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">circuit</span><span class="o">.</span><span class="n">draw</span><span class="p">())</span>
