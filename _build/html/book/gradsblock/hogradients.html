@@ -390,37 +390,38 @@ G_i = \frac{\partial \bra{U_{j...k}\Psi}\hat{M}\ket{U_{j...k}\Psi}}{\partial \th
 </div>
 <div class="section" id="parameter-shift">
 <h2>Parameter-shift для гейтов Паули<a class="headerlink" href="#parameter-shift" title="Permalink to this headline">¶</a></h2>
-<p>Так как матрица <span class="math notranslate nohighlight">\(H\)</span> может быть декомпозирована на гейты Паули, то сам оператор <span class="math notranslate nohighlight">\(U_i\)</span> может быть также записан так:</p>
-<div class="math notranslate nohighlight">
-\[
-U_i = e^{-\frac{i}{2}P_i\theta_i}
-\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Тут мы для простоты предложим, что <span class="math notranslate nohighlight">\(U_1\)</span> это просто оператор вращения, иначе выкладки станут совсем сложными.</p>
 </div>
+<p>Тогда сам оператор <span class="math notranslate nohighlight">\(U_i\)</span> может быть также записан так:</p>
+<div class="math notranslate nohighlight">
+\[
+U_i = e^{-\frac{i}{2}P_i\theta_i}
+\]</div>
 <p>Запишем результат математического ожидания через состояние <span class="math notranslate nohighlight">\(\Psi_i\)</span>, которое пришло на вход <span class="math notranslate nohighlight">\(i\)</span>-го гейта в нашей последовательности:</p>
 <div class="math notranslate nohighlight">
 \[
-\langle M(\theta) \rangle = Tr(M U_{k, ..., 1} \Psi_i U_{k, ..., 1}^\dagger)
+\langle M(\theta) \rangle = Tr(M U_{k, ..., 1} \rho_i U_{k, ..., 1}^\dagger)
 \]</div>
-<p>Тогда частная производная от математического ожидания по <span class="math notranslate nohighlight">\(i\)</span>-му параметру <span class="math notranslate nohighlight">\(\theta_i\)</span> записывается (подробнее в <span id="id6">[<a class="reference internal" href="../bibliography.html#id5"><span>MNKF18</span></a>]</span>) через коммутатор исходного состояния <span class="math notranslate nohighlight">\(\ket{\Psi_i}\)</span>, которое “пришло” на вход гейта <span class="math notranslate nohighlight">\(U_i\)</span> и того оператора Паули <span class="math notranslate nohighlight">\(P_i\)</span>, который мы используем в <span class="math notranslate nohighlight">\(U_i\)</span>:</p>
+<p>где <span class="math notranslate nohighlight">\(\rho\)</span> это матрица плотности (<span class="math notranslate nohighlight">\(\ket{\Psi}\bra{\Psi}\)</span>). Подробнее о матрицах плотности можно почитать в ранней продвинутой лекции про смешанные состояния.</p>
+<p>Тогда частная производная от математического ожидания по <span class="math notranslate nohighlight">\(i\)</span>-му параметру <span class="math notranslate nohighlight">\(\theta_i\)</span> записывается (подробнее в <span id="id6">[<a class="reference internal" href="../bibliography.html#id5"><span>MNKF18</span></a>]</span>) через коммутатор исходного состояния <span class="math notranslate nohighlight">\(\rho\)</span>, которое “пришло” на вход гейта <span class="math notranslate nohighlight">\(U_i\)</span> и того оператора Паули <span class="math notranslate nohighlight">\(P_i\)</span>, который мы используем в <span class="math notranslate nohighlight">\(U_i\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial \langle M \rangle}{\partial \theta_i} = -\frac{i}{2}Tr(M U_{k, ..., i}[P_i, U_{i-1, ..., 1}\Psi_i U_{i-1, ..., 1}^\dagger]U_{k, ..., i}^\dagger)
+\frac{\partial \langle M \rangle}{\partial \theta_i} = -\frac{i}{2}Tr(M U_{k, ..., i}[P_i, U_{i-1, ..., 1}\rho_i U_{i-1, ..., 1}^\dagger]U_{k, ..., i}^\dagger)
 \]</div>
 <p>Этот коммутатор может быть переписан следующим образом:</p>
 <div class="math notranslate nohighlight">
 \[
-[P_i, \Psi] = i[U_i \Bigl( \frac{\pi}{2} \Bigr ) \Psi_i U_i^\dagger \Bigl ( \frac{\pi}{2} \Bigr ) - U_i \Bigl( -\frac{\pi}{2} \Bigr ) \Psi_i U_i^\dagger \Bigl ( -\frac{\pi}{2} \Bigr )]
+[P_i, \rho] = i[U_i \Bigl( \frac{\pi}{2} \Bigr ) \rho_i U_i^\dagger \Bigl ( \frac{\pi}{2} \Bigr ) - U_i \Bigl( -\frac{\pi}{2} \Bigr ) \rho_i U_i^\dagger \Bigl ( -\frac{\pi}{2} \Bigr )]
 \]</div>
 <p>Тогда соответствующий градиент <span class="math notranslate nohighlight">\(\frac{\partial}{\partial \theta_i}\)</span> можно записать через смещения на <span class="math notranslate nohighlight">\(\pm\frac{\pi}{2}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{gathered}
 \frac{\partial \langle M \rangle}{\partial \theta_i} = \frac{\langle M_i^+ \rangle - \langle M_i^- \rangle}{2} \\
-\langle M_i^{\pm} \rangle = \frac{1}{2} Tr [M U_{k, ..., i+1} U_i(\pm \frac{\pi}{2})\Psi_i^` U_i^\dagger (\pm \frac{\pi}{2}) U_{k, ..., i+1}^\dagger] \\
-\Psi_i^` = U_{j, ..., 1} \Psi_i U_{j, ..., 1}^\dagger
+\langle M_i^{\pm} \rangle = \frac{1}{2} Tr [M U_{k, ..., i+1} U_i(\pm \frac{\pi}{2})\rho_i^` U_i^\dagger (\pm \frac{\pi}{2}) U_{k, ..., i+1}^\dagger] \\
+\rho_i^` = U_{j, ..., 1} \rho_i U_{j, ..., 1}^\dagger
 \end{gathered}
 \end{split}\]</div>
 <p>По аналогии с классическими нейронными сетями и <em>backpropagation</em> (для тех, кто забыл это понятие, рекомендуем вернуться к вводным лекциями про классическое машинное обучение) тут явно можно выделить <em>forward</em> проход со смещением <span class="math notranslate nohighlight">\(\theta_i\)</span> на значения <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> и <em>backward</em> со смещением на <span class="math notranslate nohighlight">\(-\frac{\pi}{2}\)</span>.</p>
