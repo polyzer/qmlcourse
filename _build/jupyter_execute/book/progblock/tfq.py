@@ -10,7 +10,7 @@
 # [Cirq](https://quantumai.google/cirq) это библиотека для работы с квантовыми компьютерами и симуляторами компании _Google_. В рамках темы квантового машинного обучения нам также интересен фреймворк [Tensorflow Quantum](https://www.tensorflow.org/quantum/overview). Это высокоуровневая библиотека, которая содержит готовые рутины для квантового и гибридного машинного обучения. В качестве системы автоматического дифференцирования, а также для построения гибридных квантово-классических нейронных сетей там используется библиотека [Tensorflow](https://www.tensorflow.org/overview/).
 # 
 # ```{warning}
-# Во всех дальнейших лекциях мы будем использовать в основном библиотеку `PennyLane`, так что данная лекция исключительно обзорная и факультативная. В ней мы посмотрим несколько примеров _end2end_ обучения квантовых схем на `TFQ` без детального объяснения теории и вообще того, что происходит. Основная цель данной лекции это исключительно обзор еще одного инструмента, а не изучение QML! Заинтересованный читатель может вернуться к этому обзору после изучения глав про **VQC**, **Градиенты** и **Квантовые нейросети**.
+# Во всех дальнейших лекциях мы будем использовать в основном библиотеку `PennyLane`, так что данная лекция исключительно обзорная и факультативная. В ней мы посмотрим несколько примеров _end2end_ обучения квантовых схем на `TFQ` без детального объяснения теории и вообще того, что происходит. Основная цель данной лекции это исключительно обзор еще одного инструмента, а не изучение QML! Заинтересованный читатель может вернуться к этому обзору после изучения глав про [VQC](vqc), [Градиенты](gradients) и **Квантовые нейросети**.
 # ```
 # 
 # ## Работа с кубитами
@@ -63,8 +63,8 @@ print("5 сэмплов:")
 print(sim.sample(circuit, repetitions=5).mean())
 print("\n100 сэмплов:")
 print(sim.sample(circuit, repetitions=100).mean())
-print("\n500 сэмплов:")
-print(sim.sample(circuit, repetitions=500).mean())
+print("\n1000 сэмплов:")
+print(sim.sample(circuit, repetitions=1000).mean())
 
 
 # ```{note}
@@ -94,20 +94,215 @@ import tensorflow as tf
 import tensorflow_quantum as tfq
 
 
-# `Tensorflow Quantum` позволяет "превращать" параметризированные схемы `Cirq` в слои нейронных сетей `Tensorflow`. Но для начала нам все равно потребуется схема. Давайте объявим парку кубит, для этого воспользуемся другим типом кубитов -- цепочкой:
+# ### Задача
+# 
+# Давайте попробуем решить игрушечную задачку классификации простой гибридной квантово-классической нейронной сетью. У нас будет один квантовый слой и один классический слой. В качестве задачи сгенерируем простенький набор данных используя рутины `scikit-learn`. Сразу переведем входящие признаки в диапазон от нуля до $\pi$.
 
 # In[8]:
 
 
-qubits = cirq.LineQubit.range(2)
-print(qubits)
+from sklearn.datasets import make_classification
+import numpy as np
+
+x, y = make_classification(n_samples=50, n_features=2, n_informative=2, random_state=42, n_redundant=0)
+
+def normalize(x):
+    x_min = x.min()
+    x_max = x.max()
+
+    return np.pi * (x - x_min) / (x_max - x_min)
+
+x[:, 0] = normalize(x[:, 0])
+x[:, 1] = normalize(x[:, 1])
 
 
-# Давайте попробуем решить игрушечную задачку классификации простой гибридной квантово-классической нейронной сетью. У нас будет один квантовый слой и один классический слой. В качестве задачи возьмем набор данных `Two Moons`, к которому мы также будем часто образаться в других лнециях.
+# Посмотрим на эти данные:
 
 # In[9]:
 
 
-from sklearn.datasets import make_moons
-x, y = make_moons(25)
+import matplotlib.pyplot as plt
 
+plt.figure(figsize=(6, 4))
+cb = plt.scatter(x[:, 0], x[:, 1], c=y)
+plt.colorbar(cb)
+plt.show()
+
+
+# ### Кубиты
+# 
+# `Tensorflow Quantum` позволяет "превращать" параметризированные схемы `Cirq` в слои нейронных сетей `Tensorflow`. Но для начала нам все равно потребуется схема. Давайте объявим пару кубит.
+
+# In[10]:
+
+
+qubits = [cirq.GridQubit(0, 0), cirq.GridQubit(0, 1)]
+print(qubits)
+
+
+# ### Входной слой нейронной сети
+# 
+# Определим входной слой, который будет кодировать наши классические данные в квантовые. Сразу закодируем данные. Так как `Tensorflow` работает с тензорами, то нам необходимо будет преобразовать схемы в тензор. Для этого есть специальная функция `convert_to_tensor`.
+
+# In[11]:
+
+
+def data2circuit(x):
+    input_circuit = cirq.Circuit()
+
+    input_circuit.append(cirq.Ry(rads=x[0]).on(qubits[0]))
+    input_circuit.append(cirq.Ry(rads=x[1]).on(qubits[1]))
+
+    return input_circuit
+
+x_input = tfq.convert_to_tensor([data2circuit(xi) for xi in x])
+
+
+# ### Слой из параметризованной схемы
+# 
+# Для создания параметризованных схем в `Tensorflow Quantum` используются символы из библиотеки символьных вычислений [`sympy`](https://www.sympy.org/en/index.html). Давайте объявим несколько параметров и создадим схему:
+
+# In[12]:
+
+
+from sympy import symbols
+
+params = symbols("w1, w2, w3, w4")
+
+trainable_circuit = cirq.Circuit()
+
+trainable_circuit.append(cirq.H.on(qubits[0]))
+trainable_circuit.append(cirq.H.on(qubits[1]))
+trainable_circuit.append(cirq.Ry(rads=params[0]).on(qubits[0]))
+trainable_circuit.append(cirq.Ry(rads=params[1]).on(qubits[1]))
+
+trainable_circuit.append(cirq.CNOT.on(qubits[0], qubits[1]))
+
+trainable_circuit.append(cirq.H.on(qubits[0]))
+trainable_circuit.append(cirq.H.on(qubits[1]))
+trainable_circuit.append(cirq.Rx(rads=params[2]).on(qubits[0]))
+trainable_circuit.append(cirq.Rx(rads=params[3]).on(qubits[1]))
+
+trainable_circuit.append(cirq.CNOT.on(qubits[0], qubits[1]))
+
+print(trainable_circuit)
+
+
+# ### Наблюдаемые
+# 
+# В качестве операторов, которые мы будем измерять, воспользуемся парой $\hat{XY}$ и $\hat{YX}$ для наших кубитов:
+
+# In[13]:
+
+
+ops = [cirq.X.on(qubits[0]) * cirq.Y.on(qubits[1]), cirq.Y.on(qubits[0]) * cirq.X.on(qubits[1])]
+
+
+# ### Гибридная нейронная сеть
+# 
+# Теперь воспользуемся классическим `Tensorflow`, чтобы объявить и скомпилировать нашу нейронную сеть, предварительно добавив в нее один классиеческий слой.
+# 
+# - зафиксируем случайный генератор
+
+# In[14]:
+
+
+tf.random.set_seed(42)
+
+
+# - входной тензор -- это в нашем случае тензор типа `string`, так как это квантовые схемы
+
+# In[15]:
+
+
+cirq_inputs = tf.keras.Input(shape=(), dtype=tf.dtypes.string)
+
+
+# - квантовый слой
+
+# In[16]:
+
+
+quantum_layer = tfq.layers.PQC(
+    trainable_circuit,
+    ops
+)(cirq_inputs)
+
+
+# - классический слой и выходной слой
+
+# In[17]:
+
+
+dense_layer = tf.keras.layers.Dense(2, activation="relu")(quantum_layer)
+output_layer = tf.keras.layers.Dense(1, activation="sigmoid")(dense_layer)
+
+
+# - компилируем модель и смотрим, что получилось. И сразу указываем метрики, которые хотим отслеживать
+
+# In[18]:
+
+
+model = tf.keras.Model(inputs=cirq_inputs, outputs=output_layer)
+model.compile(
+    optimizer=tf.keras.optimizers.SGD(learning_rate=0.1),
+    loss=tf.keras.losses.BinaryCrossentropy(),
+    metrics=[
+        tf.keras.metrics.BinaryAccuracy(),
+        tf.keras.metrics.BinaryCrossentropy(),
+    ]
+)
+model.summary()
+
+
+# ### Предсказания со случайной инициализацией
+# 
+# Наша нейросеть имеет случайные начальные параметры. Давайте посмотрим, что она предсказывает до обучения:
+
+# In[19]:
+
+
+preds = model(x_input).numpy()
+
+plt.figure(figsize=(6, 4))
+cb = plt.scatter(x[:, 0], x[:, 1], c=preds)
+plt.colorbar(cb)
+plt.show()
+
+
+# ### Обучение сети
+# 
+# - запустим обучение
+
+# In[20]:
+
+
+model.fit(x=x_input, y=y, epochs=200, verbose=0)
+
+
+# - визуализируем логи обучения
+
+# In[21]:
+
+
+f, ax = plt.subplots(2, figsize=(6, 6))
+ax[0].plot(model.history.history["binary_accuracy"])
+ax[1].plot(model.history.history["binary_crossentropy"])
+plt.show()
+
+
+# - визуализируем предсказания
+
+# In[22]:
+
+
+preds_after_training = model(x_input).numpy()
+plt.figure(figsize=(6, 4))
+cb = plt.scatter(x[:, 0], x[:, 1], c=preds_after_training)
+plt.colorbar(cb)
+plt.show()
+
+
+# ## Заключение
+# 
+# В данной лекции мы познакомились с еще фреймворком `Tensorflow Quantum`. Это достаточно мощный инструмент, особенно в свзяке с `Tensorflow`, так как позволяет использовать большое число готовых инструментов `Tensorflow` и различных расширений. Тем не менее, для целей обучения `Tensorflow Qunatum` кажется не лучшим выбором, так как имеет много не очевидного синтаксиса и предполагает, как минимум, среднего знания `Tensorflow`.
