@@ -449,7 +449,7 @@
 <p>Давайте кратко вспомним, как устроен этот алгоритм.</p>
 <div class="figure align-default" id="classicalsvm">
 <a class="reference internal image-reference" href="../../_images/Support_vector_machine.jpg"><img alt="../../_images/Support_vector_machine.jpg" src="../../_images/Support_vector_machine.jpg" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Классический SVM</span><a class="headerlink" href="#classicalsvm" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Классический SVM</span><a class="headerlink" href="#classicalsvm" title="Permalink to this image">¶</a></p>
 </div>
 <p>В данном случае алгоритм пытается найти такую разделяющую прямую (в многомерном случае это будет гиперплоскость), чтобы расстояния от этой прямой до точек разных классов были максимальными.</p>
 <p>Поскольку обычно нам интересны многомерные пространства, то точки там превращаются в вектора. Также оказыается, что построение такой разделяющей плоскости зависит не от всех точек (векторов), а только от какого-то их подмножества – опорных векторов. Именно поэтому метод и носит название <em>Support Vector Machine</em>.</p>
@@ -478,7 +478,7 @@
 </ul>
 <div class="figure align-default" id="kerneltrick">
 <a class="reference internal image-reference" href="../../_images/Kernel_trick_idea.svg.png"><img alt="../../_images/Kernel_trick_idea.svg.png" src="../../_images/Kernel_trick_idea.svg.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте посмотрим на то, как выглядят популярные ядра.</p>
 <div class="section" id="id4">
@@ -514,7 +514,7 @@ K(x, y) = e^{-\frac{||x - y||^2}{\sigma}}
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Это интересно, что многие специалисты в области <strong>QML</strong> сегодня даже предлагают вместо термина “квантовая нейросеть” использовать термин “квантовое ядро”, так как математически <strong>VQC</strong> гораздо ближе именно к ядрам, чем к слоям современных глубоких сетей. Этой теме у нас даже посвящена одна из более ранних лекций продвинутого уровня, где разбираются доводы из статьи <span id="id6">[<a class="reference internal" href="../bibliography.html#id8"><span>Sch21</span></a>]</span>.</p>
+<p>Это интересно, что многие специалисты в области <strong>QML</strong> сегодня даже предлагают вместо термина “квантовая нейросеть” использовать термин “квантовое ядро”, так как математически <strong>VQC</strong> гораздо ближе именно к ядрам, чем к слоям современных глубоких сетей. Этой теме у нас даже посвящена одна из более ранних лекций продвинутого уровня, где разбираются доводы из статьи <span id="id6">[<a class="reference internal" href="../bibliography.html#id9"><span>Sch21</span></a>]</span>.</p>
 </div>
 <p>Очевидная идея – попробовать как-то воспользоваться квантовой схемой, чтобы реализовать скалярное произведение двух классических векторов. Именно это и сделали авторы работы <span id="id7">[<a class="reference internal" href="../bibliography.html#id6"><span>HavlivcekCorcolesT+19</span></a>]</span>.</p>
 <div class="section" id="id8">
