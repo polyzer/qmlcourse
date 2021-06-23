@@ -391,7 +391,7 @@
 <br/>
 <span class="math notranslate nohighlight">\(f_3(1) = 1\)</span>
 <br/></p>
-<p><b>4). <span class="math notranslate nohighlight">\(f_4(x) = NOT \; x\)</span></b>
+<p><b>4). <span class="math notranslate nohighlight">\(f_4(x) = \overline{x}\)</span></b>
 <br/>
 А вот эта функция инвертирует входное значение, то есть возвращает не то число,
 <br/>
@@ -410,8 +410,8 @@
 <a class="reference internal image-reference" href="../../_images/scheme_1.png"><img alt="../../_images/scheme_1.png" src="../../_images/scheme_1.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Схема 1.</span><a class="headerlink" href="#scheme-1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Неизвестная функция обозначена как <span class="math notranslate nohighlight">\(U_f\)</span>. Обратите внимание, что в этой схеме используются два кубита. Это нужно для того, чтобы информация, с которой работает квантовый компьютер, не стиралась. В квантовом компьютере важно, чтобы все действия с кубитами (кроме операции измерения) были обратимыми, а для этого информация должна сохраняться. В верхнем кубите будет записано входное значение, а в нижнем - выходное значение функции. Таким образом, входное значение не будет перезаписано значением, которое вернет функция.</p>
-<p>Но нам важно будет не только сохранить значение <span class="math notranslate nohighlight">\(|x\rangle\)</span>, но также и не разрушить <span class="math notranslate nohighlight">\(|y\rangle\)</span>. Так как кубит y очевидно имеет некоторое изначальное значение, мы не можем его просто перезаписать тем числом, которое выдаст функция <span class="math notranslate nohighlight">\(f(x)\)</span>. Здесь на помощь приходит операция исключающее ИЛИ - <span class="math notranslate nohighlight">\(XOR\)</span> (также ее можно называть сложением по модулю 2), обозначенная на схеме как <span class="math notranslate nohighlight">\(\oplus\)</span>. В процессе работы черный ящик <span class="math notranslate nohighlight">\(U_f\)</span> не только находит значение <span class="math notranslate nohighlight">\(f(x)\)</span>, но и применяет исключающее ИЛИ к значениям <span class="math notranslate nohighlight">\(y\)</span> и <span class="math notranslate nohighlight">\(f(x)\)</span>.
+<p><span class="math notranslate nohighlight">\(U_f\)</span> на данной схеме - это неизвестная функция (ее также часто называют “оракул”), являющаяся унитарным оператором. Обратите внимание, что в квантовой схеме используются два кубита. Это нужно для того, чтобы информация, с которой работает квантовый компьютер, не стиралась. В квантовом компьютере важно, чтобы все действия с кубитами (кроме операции измерения) были обратимыми, а для этого информация должна сохраняться. В верхнем кубите будет записано входное значение, а в нижнем - выходное значение функции. Таким образом, входное значение не будет перезаписано значением, которое вернет функция.</p>
+<p>Но нам важно будет не только сохранить значение <span class="math notranslate nohighlight">\(|x\rangle\)</span>, но также и не разрушить <span class="math notranslate nohighlight">\(|y\rangle\)</span>. Так как кубит <span class="math notranslate nohighlight">\(y\)</span> очевидно имеет некоторое изначальное значение, мы не можем его просто перезаписать тем числом, которое выдаст функция <span class="math notranslate nohighlight">\(f(x)\)</span>. Здесь на помощь приходит операция исключающее ИЛИ - <span class="math notranslate nohighlight">\(XOR\)</span> (также ее можно называть сложением по модулю 2), обозначенная на схеме как <span class="math notranslate nohighlight">\(\oplus\)</span>. В процессе работы черный ящик <span class="math notranslate nohighlight">\(U_f\)</span> не только находит значение <span class="math notranslate nohighlight">\(f(x)\)</span>, но и применяет исключающее ИЛИ к значениям <span class="math notranslate nohighlight">\(y\)</span> и <span class="math notranslate nohighlight">\(f(x)\)</span>.
 <br/>
 Операции <span class="math notranslate nohighlight">\(XOR\)</span> соответствует такая таблица истинности:</p>
 <table class="colwidths-auto table">
@@ -456,7 +456,7 @@
 а нижний - в такой:
 <br/>
 <span class="math notranslate nohighlight">\(|y\rangle = \frac{1}{\sqrt{2}}|0\rangle - \frac{1}{\sqrt{2}}|1\rangle.\)</span></p>
-<p>После того, как <span class="math notranslate nohighlight">\(U_f\)</span> отрабатывает, нижний кубит, как это ни странно, уже нас не интересует, так что к нему операции больше не применяется, и его измерение также не производится.</p>
+<p>После того, как <span class="math notranslate nohighlight">\(U_f\)</span> отрабатывает, нижний кубит, как это ни странно, уже нас не интересует, так что к нему операции больше не применяются, и его измерение также не производится.</p>
 <p>Дело в том, что ответ на вопрос о том, сбалансирована функция <span class="math notranslate nohighlight">\(f(x)\)</span> или нет, будет нами получен из верхнего кубита после того, как на него подействует оператор Адамара и будет произведено измерение.</p>
 <p>В том случае, если функция сбалансирована, результат измерения верхнего кубита будет равен <span class="math notranslate nohighlight">\(1\)</span>, а если несбалансирована - <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <p>Разберемся подробнее, почему это происходит.</p>
