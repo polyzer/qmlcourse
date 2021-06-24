@@ -456,10 +456,42 @@
 а нижний - в такой:
 <br/>
 <span class="math notranslate nohighlight">\(|y\rangle = \frac{1}{\sqrt{2}}|0\rangle - \frac{1}{\sqrt{2}}|1\rangle.\)</span></p>
+<p>Если рассмотреть это как систему <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, состоящую из двух кубитов, то она будет выглядеть так:</p>
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0\rangle - |1\rangle)\)</span></p>
+<p>Сразу после <span class="math notranslate nohighlight">\(U_f\)</span> система будет находиться в состоянии:</p>
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle)\)</span></p>
 <p>После того, как <span class="math notranslate nohighlight">\(U_f\)</span> отрабатывает, нижний кубит, как это ни странно, уже нас не интересует, так что к нему операции больше не применяются, и его измерение также не производится.</p>
 <p>Дело в том, что ответ на вопрос о том, сбалансирована функция <span class="math notranslate nohighlight">\(f(x)\)</span> или нет, будет нами получен из верхнего кубита после того, как на него подействует оператор Адамара и будет произведено измерение.</p>
 <p>В том случае, если функция сбалансирована, результат измерения верхнего кубита будет равен <span class="math notranslate nohighlight">\(1\)</span>, а если несбалансирована - <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <p>Разберемся подробнее, почему это происходит.</p>
+<p>Рассмотрим все возможные <span class="math notranslate nohighlight">\(f(x)\)</span>, которые могут находиться в черном ящике:</p>
+<p>1). <span class="math notranslate nohighlight">\(f(x) = f_1\)</span></p>
+<p>В этом случае <span class="math notranslate nohighlight">\(f(x)\)</span> всегда принимает значение <span class="math notranslate nohighlight">\(0\)</span>, и система кубитов будет выглядеть так:</p>
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0\rangle - |1\rangle) = \frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\)</span></p>
+<p>2). <span class="math notranslate nohighlight">\(f(x) = f_2\)</span></p>
+<p><span class="math notranslate nohighlight">\(f(x)\)</span> будет равно <span class="math notranslate nohighlight">\(1\)</span> независимо от аргумента. Используя таблицу истинности XOR, легко убедиться, что во второй скобке <span class="math notranslate nohighlight">\(|0\rangle\)</span> и <span class="math notranslate nohighlight">\(|1\rangle\)</span> поменяются местами, но если вынести минус за скобку, то мы можем его не учитывать, так общий фазовый множитель (-1 в данном случае) для системы не имеет значения:</p>
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|1\rangle - |0\rangle) = -\frac{1}{2}(|0\rangle + |1\rangle)(|0\rangle - |1\rangle) = -\frac{1}{2}(|00\rangle - |01\rangle + |10\rangle - |11\rangle)\)</span></p>
+<p>Видно, что при применении функций <span class="math notranslate nohighlight">\(f_1\)</span> и <span class="math notranslate nohighlight">\(f_2\)</span>, являющихся несбалансированными, мы получаем фактически одно и тоже состояние. Если после этого применить к первому кубиту оператор Адамара, то после измерения мы получим значение <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<p>Рассмотрим теперь сбалансированные функции <span class="math notranslate nohighlight">\(f_3\)</span> и <span class="math notranslate nohighlight">\(f_4\)</span>.</p>
+<p>3). <span class="math notranslate nohighlight">\(f(x) = f_3\)</span></p>
+<p>Здесь ситуация сложнее, так как <span class="math notranslate nohighlight">\(f(x)\)</span> будет зависеть от состояния первого кубита. Поэтому мы раскроем скобки, а ее значения подставим позже:</p>
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle) = 
+\frac{1}{2}(|0\rangle |0 \oplus f(x)\rangle - |0\rangle |1 \oplus f(x)\rangle + |1\rangle |0 \oplus f(x)\rangle - |1\rangle |1 \oplus f(x)\rangle)=\)</span></p>
+<p><span class="math notranslate nohighlight">\(=\frac{1}{2}(|0\rangle |0 \oplus 0\rangle - |0\rangle |1 \oplus 0\rangle + |1\rangle |0 \oplus 1\rangle - |1\rangle |1 \oplus 1\rangle) = 
+\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle) = \)</span></p>
+<p><span class="math notranslate nohighlight">\(=\frac{1}{2}(|00\rangle - |01\rangle - |10\rangle + |11\rangle) = \frac{1}{2}(|0\rangle - |1\rangle)(|0\rangle - |1\rangle)\)</span></p>
+<p>Видно, что первый кубит поменял свое состояние - теперь он в суперпозиции \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle), так что далее к нему можно применить оператор Адамара, после которого он перейдет в состояние <span class="math notranslate nohighlight">\(|1\rangle\)</span>.</p>
+<p>4). <span class="math notranslate nohighlight">\(f(x) = f_4\)</span></p>
+<p>Здесь будет похожая ситуация:</p>
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle) = 
+\frac{1}{2}(|0\rangle |0 \oplus f(x)\rangle - |0\rangle |1 \oplus f(x)\rangle + |1\rangle |0 \oplus f(x)\rangle - |1\rangle |1 \oplus f(x)\rangle)=\)</span></p>
+<p><span class="math notranslate nohighlight">\(=\frac{1}{2}(|0\rangle |0 \oplus 1\rangle - |0\rangle |1 \oplus 1\rangle + |1\rangle |0 \oplus 0\rangle - |1\rangle |1 \oplus 0\rangle) = 
+\frac{1}{2}(|01\rangle - |00\rangle + |10\rangle - |11\rangle) = \)</span></p>
+<p><span class="math notranslate nohighlight">\(=-\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle) -\frac{1}{2}(|0\rangle - |1\rangle)(|0\rangle - |1\rangle)\)</span></p>
+<p>Получили то же состояние <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, что и для <span class="math notranslate nohighlight">\(f_3\)</span> с точностью до фазового множителя. Соответственно, здесь первый кубит в итоге также будет измерен с результатом <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>Теперь можно получить более компактную формулу, которая подходит для всех четырех функций:</p>
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}((-1)^{f(0)}|0\rangle + (-1)^{f(1)}|1\rangle)(|0\rangle - |1\rangle)\)</span></p>
+<p><strong>Задание</strong>: с помощью квантовых операторов попробуйте создать <span class="math notranslate nohighlight">\(U_f\)</span> для всех четырех <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 </div>
 
     <script type="text/x-thebe-config">
