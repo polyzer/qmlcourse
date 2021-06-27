@@ -15,8 +15,6 @@
       title: 🟩 Квантовый бит
     - file: book/qcblock/gates
       title: 🟩 Квантовые гейты
-    - file: book/qcblock/deutschs_algorithm
-      title: 🟩 Задача Дойча
 
 - part: Фреймворки
   chapters:
@@ -49,6 +47,11 @@
       title: ⬜ О блоке
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
+
+- part: Проблемы квантового машинного обучения
+  chapters:
+    - file: book/problemsblock/quantchembasic
+      title: 🟧 Квантовая химия (SCF)
 
 - part: О курсе
   chapters:
