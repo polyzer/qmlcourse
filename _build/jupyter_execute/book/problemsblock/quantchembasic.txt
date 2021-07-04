@@ -1,4 +1,5 @@
 from scipy import constants as consts
+
 k = ( 1 / (4 * consts.pi * consts.epsilon_0)) # постоянная кулона
 
 E1 = - k**2 * consts.m_e * consts.e**4 / (2 * consts.hbar ** 2) # энергия в Джоулях
