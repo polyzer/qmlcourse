@@ -29,7 +29,7 @@
 # :name: blackhole
 # :width: 600px
 # 
-# [Рассчитанная в Python симуляциея преломлений света черной дырой](https://github.com/Python-simulation/Black-hole-simulation-using-python)
+# [Рассчитанная в Python симуляция преломлений света черной дырой](https://github.com/Python-simulation/Black-hole-simulation-using-python)
 # ```
 # 
 # 
