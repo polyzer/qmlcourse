@@ -380,6 +380,16 @@
    Что это за In [*]?
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id6">
+   Самая полезная клавиша
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id7">
+   Что мы узнали из лекции
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -500,9 +510,10 @@
 Но случается беда - и код не останавливается, ибо ядро <code class="docutils literal notranslate"><span class="pre">Python</span></code> зависает. В таких случаях нужно <strong>перезапустить ядро</strong> - и кнопка с закругленной стрелочкой, <code class="docutils literal notranslate"><span class="pre">Restart</span></code>, поможет осуществить задуманное. Будьте аккуратны - <strong>вы потеряете ВСЕ несохраненные данные</strong> (значения переменных, результаты расчётов, данные для построения графиков). Сама тетрадка останется без изменений, то есть <strong>написанное сохранится</strong>. Концепция “ядра” и запуска кода станет более понятна, когда мы перейдем к практике.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Пока стоит запомнить правило: “Накосячил? попробуй остановить (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>) ядро. Не получается? Тогда перезапускай (<code class="docutils literal notranslate"><span class="pre">Restart</span></code>) его!”</p>
+<p>Пока стоит держаться правила: “Накосячил? попробуй остановить (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>) ядро. Не получается? Тогда перезапускай (<code class="docutils literal notranslate"><span class="pre">Restart</span></code>) его!”</p>
 </div>
-<p>Стоит понимать, что ядро “помнит” все предыдущие выполненные ячейки (пока не будет перезагружено или выключено), а значит вы можете позже в коде переиспользовать те части, которые были описаны ранее (например, переменные или физические константы). Иными словами, состояние ядра сохраняется во времени и между ячейками — <strong>оно относится к документу в целом</strong>, а не к отдельным  ячейкам.</p>
+<p>Нужно понимать, что ядро “помнит” все предыдущие выполненные ячейки (пока не будет перезагружено или выключено), а значит вы можете позже в коде переиспользовать те части, которые были описаны ранее (например, переменные или физические константы). Иными словами, состояние ядра сохраняется во времени и между ячейками — <strong>оно относится к документу в целом</strong>, а не к отдельным  ячейкам.</p>
+<p>Последняя кнопка из выделенного блока имеет говорящее название: <code class="docutils literal notranslate"><span class="pre">Re-start</span> <span class="pre">and</span> <span class="pre">run</span> <span class="pre">all</span></code>. Ядро будет <strong>перезапущено</strong> (все переменные и данные удалятся), а затем <strong>каждая ячейка будет выполнена в порядке сверху вниз</strong>. Поэтому рекомендуется соблюдать структуру, чтобы запускать код с нуля (после возвращения к ноутбуку на следующий день, но с новым ядром, так как компьютер был выключен) - и он отрабатывал.</p>
 </div>
 <div class="section" id="in">
 <h2>Что это за In [*]?<a class="headerlink" href="#in" title="Permalink to this headline">¶</a></h2>
@@ -511,9 +522,59 @@
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_9.png"><img alt="../../_images/jupyter_ui_9.png" src="../../_images/jupyter_ui_9.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Пример трёх видов информации о статусе ячейки</span><a class="headerlink" href="#jupyter-ui-9" title="Permalink to this image">¶</a></p>
 </div>
-<p>В первом случае в квадратных скобках <strong>ничего нет</strong> - это значит, что <strong>ячейка еще не была запущен</strong>а. Возможно, вы забыли, а быть может она просто ждет своего часа.
-Во втором случае <strong>ячейка была запущена</strong> шестой по счёту (да-да, <strong>ячейки выполняются по порядку, который задаёте вы сами</strong>!), и она <strong>успешно отработала и завершилась</strong>.
-В последней строчке умешленно был сделан бесконечный цикл. Это означает, что <em>код никогда не сможет выполниться</em>, и будет висеть до тех пор, пока вы не остановите (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>ните) ядро. Поэтому там выведен <strong>индикатор выполнения ячейки</strong> - в скобках указана звёздочка <code class="docutils literal notranslate"><span class="pre">*</span></code>. Обратите внимание - <strong>это не всегда плохой сигнал</strong>. Быть может ваш код должен выполняться 2-3 минуты, и тогда всё это время будет выводиться <code class="docutils literal notranslate"><span class="pre">[*]</span></code>. Затем, как код отработает, и результат будет получен, отрисуется цифра (например, <code class="docutils literal notranslate"><span class="pre">[7]</span></code> ).</p>
+<p>В первом случае в квадратных скобках <strong>ничего нет</strong> - это значит, что <strong>ячейка еще не была запущен</strong>а. Возможно, вы забыли, а быть может она просто ждет своего часа.</p>
+<p>Во втором случае <strong>ячейка была запущена</strong> шестой по счёту (да-да, <strong>ячейки выполняются по порядку, который задаёте вы сами</strong>!), и она <strong>успешно отработала и завершилась</strong>.</p>
+<p>В последней строчке умешленно был сделан бесконечный цикл. Это означает, что <em>код никогда не сможет выполниться</em>, и будет висеть до тех пор, пока вы не остановите (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>ните) ядро. Поэтому там выведен <strong>индикатор выполнения ячейки</strong> - в скобках указана звёздочка <code class="docutils literal notranslate"><span class="pre">*</span></code>. Обратите внимание - <strong>это не всегда плохой сигнал</strong>. Быть может ваш код должен выполняться 2-3 минуты, и тогда всё это время будет выводиться <code class="docutils literal notranslate"><span class="pre">[*]</span></code>. Затем, как код отработает, и результат будет получен, отрисуется цифра (например, <code class="docutils literal notranslate"><span class="pre">[7]</span></code> ).</p>
+</div>
+<div class="section" id="id6">
+<h2>Самая полезная клавиша<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Пришло время писать код! Скопируйте себе в ноутбук кусок кода ниже и попробуйте его запустить. Не переживайте, он может показаться сложным и непонятным, но сейчас не требуется понимания всех деталей.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">mat.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="c1"># Fixing random state for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
+
+<span class="c1"># Compute pie slices</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">θ</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">radii</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">width</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">viridis</span><span class="p">(</span><span class="n">radii</span> <span class="o">/</span> <span class="mf">10.</span><span class="p">)</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;polar&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">θ</span><span class="p">,</span> <span class="n">radii</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Вы увидите ошибку. По сообщению видно, что во второй строчке используется слово <code class="docutils literal notranslate"><span class="pre">mat</span></code>, при этом <code class="docutils literal notranslate"><span class="pre">Python</span></code> жалуется на отсутствие такого модуля. Всё дело в том, что в коде выше производится попытка рисования графика, и для этого используется библиотека <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Но используется только <code class="docutils literal notranslate"><span class="pre">mat</span></code>. Это не дело, давайте исправлять. Однако всех библиотек не запомнишь - и это не нужно. Попробуйте поставить курсор после буквы <code class="docutils literal notranslate"><span class="pre">t</span></code> (и перед точкой) и нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>. Вы должны увидеть <strong>список подсказок</strong>, и из него выбрать нужный вариант. Этот список не только сокращает время написания кода (за счет автоматического дополнения), но и позволяет избежать ошибок в написании. Обязательно пользуйтесь этим инструментом.
+Если вы всё сделалиправильно, воспользовавшись подсказкой, то после очередного запуска кода появится рисунок. Вот :</p>
+<div class="figure align-default" id="jupyter-ui-10">
+<a class="reference internal image-reference" href="../../_images/jupyter_ui_10.png"><img alt="../../_images/jupyter_ui_10.png" src="../../_images/jupyter_ui_10.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Другой ример удачного использования - есть несколько переменных, со сложным, но очень похожим названием. Не стоит его перепечатывать - достаточно нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>!</span><a class="headerlink" href="#jupyter-ui-10" title="Permalink to this image">¶</a></p>
+</div>
+<p>Что ж, большое количество новой информации позади, давайте подведём итоги!</p>
+</div>
+<div class="section" id="id7">
+<h2>Что мы узнали из лекции<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Существует два основных типа ячеек, один предназначен для программирования (написания кода), другой - для описания (формул, определений..)</p></li>
+<li><p>Существует два режима работы: <code class="docutils literal notranslate"><span class="pre">edit</span></code> - редактирование конкретной ячейки и <code class="docutils literal notranslate"><span class="pre">control</span></code> - работа со всей структурой тетрадки/ноутбука</p></li>
+<li><p>Режимы работы можно различить по цвету рамки вокруг активной ячейки, а тип ячейки - по прозрачности фона и наличию надпиcи In[ ] слева</p></li>
+<li><p>Между режимами можно переключаться с помощью <code class="docutils literal notranslate"><span class="pre">Esc</span></code> и <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
+<li><p>Чтобы запустить ячейку (с кодом или текстом), нужно нажать на кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code> сверху, либо воспользоваться сочетаниями клавиш: <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code></p></li>
+<li><p>Нужно не забывать сохранять ноутбук (<code class="docutils literal notranslate"><span class="pre">CTRL+S</span></code>), а быстро добавить ячейку кода можно с помощью плюсика слева сверху (или клавиши <code class="docutils literal notranslate"><span class="pre">B</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C</span></code>/<code class="docutils literal notranslate"><span class="pre">V</span></code> позволяют копировать и вставлять ячейки</p></li>
+<li><p>In[3] указывает на порядок выполнения ячеек с кодом, In[*] - на процесс выполнения</p></li>
+<li><p>Если вы долго ждёте выполнения Code-блока  - можно <code class="docutils literal notranslate"><span class="pre">Stop</span></code>нуть ядро, если не помогает - <code class="docutils literal notranslate"><span class="pre">Restart</span></code>нуть</p></li>
+<li><p>Ядро - это процесс, выполняющий код, и после перезагрузки оно не сохраняет переменные</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TAB</span></code> - ваш друг, позволяющий избегать опечаток, а также реже пользоваться документацией</p></li>
+</ul>
 </div>
 </div>
 
