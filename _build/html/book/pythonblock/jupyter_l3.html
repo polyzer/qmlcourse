@@ -432,11 +432,10 @@
 </div>
 <p>Здесь верхней красной чертой выделено поле с <strong>названием</strong> ноутбука. Можете кликнуть по нему, переименовать во что-то осмысленное и нажать <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, чтобы применить изменения. Нижней же чертой обозначен выпадающий список переключений <strong>типов ячеек</strong>. По умолчанию создана одна <strong>code</strong> ячейка - в ней в будущем мы будем писать <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код. Попробуйте кликнуть по списку и выбрать <strong>Markdown</strong> - визуально ячейка немного изменится.</p>
 <div class="highlight-Что notranslate"><div class="highlight"><pre><span></span>**Markdown** (произносится маркда́ун) — облегчённый язык разметки, созданный с целью обозначения **форматирования** в простом тексте, с максимальным сохранением его читаемости человеком. 
-
-Пример:  Text attributes _italic_,**bold**, `monospace`.
 </pre></div>
 </div>
-<p>С помощью Markdown можно разнообразить код, вставить формулы (как в <a class="reference external" href="https://ru.wikipedia.org/wiki/LaTeX">LaTeX</a> формате), ссылки на статьи и много всего другого. Попробуйте скопировать код из примера выше в Markdown-ячейку и нажать кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code>:</p>
+<p>Пример:  <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">attributes</span> <span class="pre">_italic_,**bold**,</span> <span class="pre">`monospace`.</span></code></p>
+<p>С помощью Markdown можно разнообразить код, вставить формулы (как в <a class="reference external" href="https://ru.wikipedia.org/wiki/LaTeX">LaTeX</a> формате), ссылки на статьи и многое другое. Попробуйте скопировать код из примера выше в Markdown-ячейку и нажать кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code>:</p>
 <div class="figure align-default" id="jupyter-ui-2">
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_2.png"><img alt="../../_images/jupyter_ui_2.png" src="../../_images/jupyter_ui_2.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Пример выполненой ячейки. Красным квадратом выделена кнопка  <code class="docutils literal notranslate"><span class="pre">Run</span></code></span><a class="headerlink" href="#jupyter-ui-2" title="Permalink to this image">¶</a></p>
@@ -461,7 +460,7 @@
 Обратите внимание, как визуально отличаются эти две ячейки. Одна из них имеет прозрачный фон, другая - серый. У <strong>Code</strong> ячейки также есть странная надпись слева (про неё еще поговорим).</p>
 </div>
 <p>Каждый раз вручную запускать код (или Markdown) через кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code> не очень то и удобно, поэтому можно запомнить две комбинации клавиш. <code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code> <strong>выполнит</strong> текущую ячейку и оставит “курсор” (указатель на ячейку) <strong>на том же месте</strong>, не создавая лишнюю строчку в ноутбуке. <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> же повторит функциональность кнопки <code class="docutils literal notranslate"><span class="pre">Run</span></code> - выполнит ячейку, и затем <strong>перейдет на следующую</strong> (или <strong>создаст новую</strong>, если текущая ячейка является <strong>последней</strong>).</p>
-<p>Первая комбинация ( <code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code>) будет полезна в том случае, если вы что-то написали и знаете, что будете вносить изменения (например, менять цвет линии на графике в попытках добиться визуальной красоты), а значит придется менять код в этой же ячейке.</p>
+<p>Первая комбинация (<code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code>) будет полезна в том случае, если вы что-то написали и знаете, что будете вносить изменения (например, менять цвет линии на графике в попытках добиться визуальной красоты), а значит придется менять код в этой же ячейке.</p>
 <p>Вторая (<code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>) пригодится тогда, когда вы хотите запустить много-много идущих подряд ячеек (можете представить, что коллега скинул вам свою тетрадку с 30 клетками, и вы хотите её запустить, чтобы получить данные).
 Не беспокойтесь, буквально к концу первого блока лекций у вас выработается мышечная память, и вы будете жать сочетания клавиш на автомате.</p>
 </div>
@@ -532,7 +531,7 @@
 </div>
 <div class="section" id="id6">
 <h2>Самая полезная клавиша<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>Пришло время писать код! Скопируйте себе в ноутбук кусок кода ниже и попробуйте его запустить. Не переживайте, он может показаться сложным и непонятным, но сейчас не требуется понимания всех деталей.</p>
+<p>Пришло время программировать! Скопируйте себе в ноутбук кусок кода ниже и попробуйте его запустить. Не переживайте, он может показаться сложным и непонятным, но сейчас не требуется понимания всех деталей.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
