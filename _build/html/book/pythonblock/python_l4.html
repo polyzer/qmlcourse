@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>О блоке &#8212; QMLCourse</title>
+    <title>Переменные и вывод информации в Python &#8212; QMLCourse</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,11 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/progblock/progintro.html" />
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/pythonblock/python_l4.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="PennyLane" href="pennylane.html" />
-    <link rel="prev" title="Алгоритм Дойча" href="../qcblock/deutschs_algorithm.html" />
+    <link rel="next" title="О блоке" href="../qcblock/qcintro.html" />
+    <link rel="prev" title="Вводная лекция про Python" href="python_l1.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,19 +95,19 @@
   Основы Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/pythonintro.html">
+  <a class="reference internal" href="pythonintro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l1.html">
+  <a class="reference internal" href="python_l1.html">
    ⬜ Вводная лекция про Python
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l4.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    ⬜ Переменные и вывод
   </a>
  </li>
@@ -144,19 +144,19 @@
   Фреймворки
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../progblock/progintro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="pennylane.html">
+  <a class="reference internal" href="../progblock/pennylane.html">
    🟩 PennyLane
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="tfq.html">
+  <a class="reference internal" href="../progblock/tfq.html">
    🟧 Cirq &amp; TFQ
   </a>
  </li>
@@ -282,9 +282,12 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/book/pythonblock/python_l4.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/book/progblock/progintro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/book/pythonblock/python_l4.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -304,7 +307,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/progblock/progintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/pythonblock/python_l4.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -320,11 +323,51 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/pythonblock/python_l4.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Описание лекции
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Типы данных в
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Python
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -333,13 +376,21 @@
         
               <div>
                 
-  <div class="section" id="progintro">
-<span id="id1"></span><h1>О блоке<a class="headerlink" href="#progintro" title="Permalink to this headline">¶</a></h1>
-<p>Этот блок включает в себя обзор фреймворков и библиотек для квантовых вычислений. Основная часть курса будет строиться вокруг библиотеки <code class="docutils literal notranslate"><span class="pre">PennyLane</span></code>. Этот фреймворк кажется наиболее простым в освоении, а также является платформо-независимым, так как представляет собой высокоуровневый API. Дополнительные лекции этого блока расскажут также про:</p>
+  <div class="section" id="python">
+<span id="python-l4"></span><h1>Переменные и вывод информации в Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Из этой лекции вы узнаете о:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Qiskit</span></code> от компании IBM;</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cirq</span></code> и <code class="docutils literal notranslate"><span class="pre">Tensorflow</span> <span class="pre">Quantum</span></code> от компании Google.</p></li>
+<li><p>базовых типах данных и переменных</p></li>
+<li><p>простейших операциях с числами и строками</p></li>
+<li><p>функции print</p></li>
+<li><p>выводе информации с подстановкой значений</p></li>
 </ul>
+</div>
+<div class="section" id="id2">
+<h2>Типы данных в <code class="docutils literal notranslate"><span class="pre">Python</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -355,7 +406,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./book/progblock"
+            path: "./book/pythonblock"
         },
         predefinedOutput: true
     }
@@ -367,8 +418,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../qcblock/deutschs_algorithm.html" title="previous page">Алгоритм Дойча</a>
-    <a class='right-next' id="next-link" href="pennylane.html" title="next page">PennyLane</a>
+    <a class='left-prev' id="prev-link" href="python_l1.html" title="previous page">Вводная лекция про Python</a>
+    <a class='right-next' id="next-link" href="../qcblock/qcintro.html" title="next page">О блоке</a>
 
         </div>
         
