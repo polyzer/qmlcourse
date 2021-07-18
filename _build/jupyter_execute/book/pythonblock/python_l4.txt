@@ -1,0 +1,119 @@
+c = 299_792_458 # запишем константу, м/с
+m = 0.5 # масса некоторого абстрактного объекта, кг
+E = m * (c ** 2) # вычисляем энергию, Дж
+
+some_variable_1 = 10.2 # какая-то другая переменная
+m = 12
+
+first_variable = 10
+second_variable = 10.0
+
+# запишем в переменные значения типов данных
+type_of_first_variable = type(first_variable)
+type_of_second_variable = type(second_variable)
+
+# и распечатаем сами типы, чтобы посмотреть глазами и сравнить
+print(type_of_first_variable)
+print(type_of_second_variable)
+
+# перезапишем переменные
+first_variable = 12.9
+second_variable = int(first_variable)
+third_variable = float(second_variable)
+
+# в print() можно передавать несколько переменных 
+print(first_variable, second_variable, third_variable)
+
+a = 3
+b = 12.1
+
+c = a + b
+
+# можно объединять вызовы функций print и type 
+# без создания лишней переменной
+print(type(c))
+
+# и даже трёх функций, включая приведение типа
+print(type(int(c)))
+
+# деление числа на само себя даёт единицу, но..
+print(a / a)
+print(b / b)
+print(c / c)
+print(12 / 4)
+
+a = 3
+b = 2
+
+print(a + b, type(a + b))
+print(a * b, type(a * b))
+print(a ** b, type(a ** b))
+
+a=            3
+b    =2
+
+print(a +b, type(a+ b))
+print(a     * b, type(a *b))
+print(a**b, type(a        ** b))
+
+text_variable = 'тут что-то написано'
+another_text_variable = "Вася, впиши сюда что-нибудь перед публикацией курса!"
+
+long_text = '''
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+'''
+
+print(another_text_variable)
+
+error_string = 'Chillin' kid'
+another_error_string = "И тут он мне говорит: "у тебя нет ног!""
+
+print(error_string)
+print(another_error_string)
+
+error_string = "Chillin' kid"
+another_error_string = 'И тут он мне говорит: "у тебя нет ног!"'
+
+print(error_string)
+print(another_error_string)
+
+first_string = 'Результат вычислений: ' # пробел на конце для отступа
+second_string = ". Это не так много!"
+
+a = 12
+b = 2
+result = a * b
+
+# два способа вывода:
+print(first_string, result, second_string)
+
+# либо через склейку строк вручную
+# обратите внимание на приведение типа int к str
+result_string = first_string + str(result) + second_string
+print(second_string)
+
+a = 12
+b = 2
+result = a * b
+
+result_string = f'Результат вычислений: {result}. Это не так много!'
+
+# и без f
+wrong_result_string = 'Результат вычислений: {result}. Это не так много!'
+
+print(result_string)
+print(wrong_result_string)
+
+# так тоже можно!
+x, y, z = 12.1, 0, 13
+# скобки, как и в математике, задают порядок выполнения вычислений
+func_val = (x * y) ** z
+
+current_time = 30.113412
+
+# а вот так можно писать длинные f-строки (но работает и для обычных)
+out_string = (f'В точке с координатами X={x}, Y={y}, Z={z} значение функции ' 
+              f'равно {func_val}. Состояние системы указано на момент '
+              ' времени t=' + str(current_time))
+
+print(out_string)
