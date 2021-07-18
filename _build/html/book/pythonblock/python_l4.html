@@ -423,7 +423,7 @@
 <p>Этот пример полностью описывает концепцию <strong>переменных</strong> в языках программирования, и <code class="docutils literal notranslate"><span class="pre">Python</span></code> - не исключение. Запись <span class="math notranslate nohighlight">\(x = 3\)</span> означает, что везде по тексту далее под иксом подразумевается именно тройка, и ничего другого (пока не будет введено новое определение). Этой же логике подчиняется питон. Сначала указывается <strong>имя переменной</strong>, а затем - ассоциируемое с ней значение.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">299_792_458</span> <span class="c1"># запишем константу, м/с</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">299_792_458</span> <span class="c1"># запишем константу, м/с</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="c1"># масса некоторого абстрактного объекта, кг</span>
 <span class="n">E</span> <span class="o">=</span> <span class="n">m</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># вычисляем энергию, Дж</span>
 
@@ -459,7 +459,7 @@
 <p><strong>Тип переменной</strong> - и это относится не только к числам, но и к <strong>любому</strong> объекту - можно узнать с помощью функции <code class="docutils literal notranslate"><span class="pre">type</span></code>. Для вывода информации в <code class="docutils literal notranslate"><span class="pre">Python</span></code> используется функция <code class="docutils literal notranslate"><span class="pre">print</span></code>. Что именно представляет собой функция мы рассмотрим в более поздних лекциях, пока стоит думать об этом как о некотором объекте, который зависит (рассчитывается) от других объектов и выдаёт некоторый результат. Для передачи аргументов используются круглые скобки (аналогично математике: <span class="math notranslate nohighlight">\(y = F(x)\)</span>). Давайте скомбинируем эти знания и рассмотрим пример:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first_variable</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_variable</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">second_variable</span> <span class="o">=</span> <span class="mf">10.0</span>
 
 <span class="c1"># запишем в переменные значения типов данных</span>
@@ -480,6 +480,13 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+12.9 12 12.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>Внимательно проанализируйте код выше - в нём продемонстрирован базовый синтаксис <strong>преобразования типов</strong> и <strong>вывода информации</strong>. Легко увидеть подтверждение высказанных ранее тезисов - <code class="docutils literal notranslate"><span class="pre">second_variable</span></code> действительно потеряла часть информации (дробную часть числа), которую нельзя вернуть, если преобразовать переменную обратно во <code class="docutils literal notranslate"><span class="pre">float</span></code>. Преобразование типов в языках программирования называется <strong>приведением</strong> (типов, то есть привести одно к другому, а не из-за страшилок про духов).</p>
 </div>
@@ -488,7 +495,7 @@
 <p>Математика питона максимально близка к естественной: <code class="docutils literal notranslate"><span class="pre">+-*</span></code> и <code class="docutils literal notranslate"><span class="pre">**</span></code> (рассмотренное ранее возведение в степень) работают в точности, как ожидается. С делением <code class="docutils literal notranslate"><span class="pre">/</span></code> есть нюанс: <strong>возвращаемое значение всегда вещественное</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mf">12.1</span>
 
 <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
@@ -508,17 +515,34 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;float&#39;&gt;
+&lt;class &#39;int&#39;&gt;
+1.0
+1.0
+1.0
+3.0
+</pre></div>
+</div>
+</div>
 </div>
 <p>Даже несмотря на то, что кейс с делением числа на само себя очевиден (всегда получается единица, кроме деления на нуль) - будет выведено вещественное значение.
 Сами же вещественные значения можно складывать, вычитать, умножать и возводить в степень как с целыми, так и с вещественными числами (и наоборот). Если в таком выражении используется хотя бы одна <code class="docutils literal notranslate"><span class="pre">float</span></code>-переменная, то и результат будет не целочисленным. Однако:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span> <span class="o">**</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 &lt;class &#39;int&#39;&gt;
+6 &lt;class &#39;int&#39;&gt;
+9 &lt;class &#39;int&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -529,12 +553,19 @@
 <p>Возможно, у вас родился вопрос относительно расстановки пробелов в коде выше. Обязательно ли соблюдать такой синтаксис? Нужно ли ставить пробелы до и после знаков операций? На самом деле нет - это делается исключительно для удобства чтения кода, и <strong>настоятельно рекомендуется не удаляться от стандартов языка</strong>. Код ниже выполнится без ошибок, однако ухудшается читаемость:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span>            <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span>            <span class="mi">3</span>
 <span class="n">b</span>    <span class="o">=</span><span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="o">+</span> <span class="n">b</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span>     <span class="o">*</span> <span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span> <span class="o">*</span><span class="n">b</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">**</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span>        <span class="o">**</span> <span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5 &lt;class &#39;int&#39;&gt;
+6 &lt;class &#39;int&#39;&gt;
+9 &lt;class &#39;int&#39;&gt;
 </pre></div>
 </div>
 </div>
@@ -546,7 +577,7 @@
 <p>Мы разобрались в том, как описывать и хранить числа, как производить арифметические расчёты. Базовый математический язык освоен, но мы же люди, и хочется общаться словами! Конечно, <code class="docutils literal notranslate"><span class="pre">Python</span></code> позволяет это делать. Благодаря <strong>строковым переменным</strong> можно хранить и соединять текстовую информацию:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">text_variable</span> <span class="o">=</span> <span class="s1">&#39;тут что-то написано&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_variable</span> <span class="o">=</span> <span class="s1">&#39;тут что-то написано&#39;</span>
 <span class="n">another_text_variable</span> <span class="o">=</span> <span class="s2">&quot;Вася, впиши сюда что-нибудь перед публикацией курса!&quot;</span>
 
 <span class="n">long_text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
@@ -557,27 +588,34 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Вася, впиши сюда что-нибудь перед публикацией курса!
+</pre></div>
+</div>
+</div>
 </div>
 <p>В примере выше рассмотренно три способа создания текстовых переменных. Первые два не отличаются между собой с точки зрения <code class="docutils literal notranslate"><span class="pre">Python</span></code>, то есть не важно, используете ли вы одинарные кавычки <code class="docutils literal notranslate"><span class="pre">'</span></code> или двойные <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>. Однако стоит понимать, что если ваша строка содержит в себе такой символ, то кавычка должна быть изменена:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>error_string = &#39;Chillin&#39; kid&#39;
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>error_string = &#39;Chillin&#39; kid&#39;
 another_error_string = &quot;И тут он мне говорит: &quot;у тебя нет ног!&quot;&quot;
 
 print(error_string)
 print(another_error_string)
 </pre></div>
 </div>
-</div>
-</div>
 <p>Механизм ошибки таков, что <code class="docutils literal notranslate"><span class="pre">Python</span></code> не ясно - это вы закончили строчку, и дальше идёт какая-то команда, или же строчка продолжается? В обоих случаях <strong>нужно сменить способ создания строки</strong> - и тогда всё будет хорошо:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error_string</span> <span class="o">=</span> <span class="s2">&quot;Chillin&#39; kid&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error_string</span> <span class="o">=</span> <span class="s2">&quot;Chillin&#39; kid&quot;</span>
 <span class="n">another_error_string</span> <span class="o">=</span> <span class="s1">&#39;И тут он мне говорит: &quot;у тебя нет ног!&quot;&#39;</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">error_string</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">another_error_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chillin&#39; kid
+И тут он мне говорит: &quot;у тебя нет ног!&quot;
 </pre></div>
 </div>
 </div>
@@ -586,7 +624,7 @@ print(another_error_string)
 <p>Строки можно объединять для удобства вывода информации:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">first_string</span> <span class="o">=</span> <span class="s1">&#39;Результат вычислений: &#39;</span> <span class="c1"># пробел на конце для отступа</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_string</span> <span class="o">=</span> <span class="s1">&#39;Результат вычислений: &#39;</span> <span class="c1"># пробел на конце для отступа</span>
 <span class="n">second_string</span> <span class="o">=</span> <span class="s2">&quot;. Это не так много!&quot;</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
@@ -603,12 +641,18 @@ print(another_error_string)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Результат вычислений:  24 . Это не так много!
+. Это не так много!
+</pre></div>
+</div>
+</div>
 </div>
 <p>Склеивание строк называется <strong>конкатенацией</strong>. Попробуйте в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-ноутбуке объелинить строковые, целочисленные и вещественные переменные в разных комбинациях. Разберитесь, что означает ошибка, которая будет выведена в случае, если не делать приведение типов (то есть без <code class="docutils literal notranslate"><span class="pre">str</span></code> в <code class="docutils literal notranslate"><span class="pre">str(result)</span></code>).</p>
 <p>Но на практике это не совсем удобно - поэтому в <code class="docutils literal notranslate"><span class="pre">Python</span></code> придумали <code class="docutils literal notranslate"><span class="pre">F</span></code>-строки. Их суть в том, что переменная из кода напрямую подставляется (с автоматическим приведеним типа к строке) в саму строку! Вот:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
 
@@ -622,12 +666,18 @@ print(another_error_string)
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Результат вычислений: 24. Это не так много!
+Результат вычислений: {result}. Это не так много!
+</pre></div>
+</div>
+</div>
 </div>
 <p>Для объявления <code class="docutils literal notranslate"><span class="pre">F</span></code>-строки нужно, во-первых, использовать одинаковые кавычки на концах текста, во-вторых, указать литеру <code class="docutils literal notranslate"><span class="pre">f</span></code> перед самой строкой. И последнее - обрамить название конкретной переменной (<code class="docutils literal notranslate"><span class="pre">result</span></code> в данном случае) в фигурные скобки.
 Когда переменная одна, а также нет текста после её использования, то выгода <code class="docutils literal notranslate"><span class="pre">F</span></code>-строк не так очевидна (относительно простого <code class="docutils literal notranslate"><span class="pre">print(some_string,</span> <span class="pre">some_variable)</span></code>), однако представьте, что вам нужно вывести координаты точки в трёхмерном пространстве, значение времени, параметры системы и значение некоторой функции от всех переменных выше!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># так тоже можно!</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># так тоже можно!</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mf">12.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">13</span>
 <span class="c1"># скобки, как и в математике, задают порядок выполнения вычислений</span>
 <span class="n">func_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">)</span> <span class="o">**</span> <span class="n">z</span>
@@ -640,6 +690,11 @@ print(another_error_string)
               <span class="s1">&#39; времени t=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">current_time</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">out_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>В точке с координатами X=12.1, Y=0, Z=13 значение функции равно 0.0. Состояние системы указано на момент  времени t=30.113412
 </pre></div>
 </div>
 </div>
