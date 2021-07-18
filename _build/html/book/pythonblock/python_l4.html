@@ -628,7 +628,7 @@ print(another_error_string)
 <p>Строки можно объединять для удобства вывода информации:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_string</span> <span class="o">=</span> <span class="s1">&#39;Результат вычислений: &#39;</span> <span class="c1"># пробел на конце для отступа</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_string</span> <span class="o">=</span> <span class="s1">&#39;Результат вычислений: &#39;</span>
 <span class="n">second_string</span> <span class="o">=</span> <span class="s2">&quot;. Это не так много!&quot;</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
@@ -653,6 +653,11 @@ print(another_error_string)
 </div>
 </div>
 <p>Склеивание строк называется <strong>конкатенацией</strong>. Попробуйте в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-ноутбуке объелинить строковые, целочисленные и вещественные переменные в разных комбинациях. Разберитесь, что означает ошибка, которая будет выведена в случае, если не делать приведение типов (то есть без <code class="docutils literal notranslate"><span class="pre">str</span></code> в <code class="docutils literal notranslate"><span class="pre">str(result)</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Обратите внимание на пробел между числом и точкой в первом случае. Они добавлены автоматически фунцией <code class="docutils literal notranslate"><span class="pre">print</span></code> - это сделано для того, чтобы разные объекты при последовательном выводе не “склеивались” друг с другом.
+Во втором случае так не происходит, так как мы напрямую склеиваем строки и только затем передаём результат конкатенации на печать в <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
+</div>
 <p>Но на практике это не совсем удобно - поэтому в <code class="docutils literal notranslate"><span class="pre">Python</span></code> придумали <code class="docutils literal notranslate"><span class="pre">F</span></code>-строки. Их суть в том, что переменная из кода напрямую подставляется (с автоматическим приведеним типа к строке) в саму строку! Вот:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
