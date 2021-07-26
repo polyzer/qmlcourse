@@ -492,17 +492,17 @@
 <p>Рассмотрим теперь сбалансированные функции <span class="math notranslate nohighlight">\(f_3\)</span> и <span class="math notranslate nohighlight">\(f_4\)</span>.</p>
 <p>3). <span class="math notranslate nohighlight">\(f(x) = f_3\)</span></p>
 <p>Здесь ситуация сложнее, так как <span class="math notranslate nohighlight">\(f(x)\)</span> будет зависеть от состояния первого кубита. Поэтому мы раскроем скобки, а значения функции подставим позже:</p>
-<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle) = 
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle) =
 \frac{1}{2}(|0\rangle |0 \oplus f(x)\rangle - |0\rangle |1 \oplus f(x)\rangle + |1\rangle |0 \oplus f(x)\rangle - |1\rangle |1 \oplus f(x)\rangle)=\)</span></p>
-<p><span class="math notranslate nohighlight">\(=\frac{1}{2}(|0\rangle |0 \oplus 0\rangle - |0\rangle |1 \oplus 0\rangle + |1\rangle |0 \oplus 1\rangle - |1\rangle |1 \oplus 1\rangle) = 
+<p><span class="math notranslate nohighlight">\(=\frac{1}{2}(|0\rangle |0 \oplus 0\rangle - |0\rangle |1 \oplus 0\rangle + |1\rangle |0 \oplus 1\rangle - |1\rangle |1 \oplus 1\rangle) =
 \frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle) = \)</span></p>
 <p><span class="math notranslate nohighlight">\(=\frac{1}{2}(|00\rangle - |01\rangle - |10\rangle + |11\rangle) = \frac{1}{2}(|0\rangle - |1\rangle)(|0\rangle - |1\rangle)\)</span></p>
 <p>Видно, что первый кубит поменял свое состояние - теперь он в суперпозиции <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)\)</span>, так что далее к нему можно применить оператор Адамара, после которого он перейдет в состояние <span class="math notranslate nohighlight">\(|1\rangle\)</span>.</p>
 <p>4). <span class="math notranslate nohighlight">\(f(x) = f_4\)</span></p>
 <p>Здесь будет похожая ситуация:</p>
-<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle) = 
+<p><span class="math notranslate nohighlight">\(|\psi\rangle = \frac{1}{2}(|0\rangle + |1\rangle)(|0 \oplus f(x)\rangle - |1 \oplus f(x)\rangle) =
 \frac{1}{2}(|0\rangle |0 \oplus f(x)\rangle - |0\rangle |1 \oplus f(x)\rangle + |1\rangle |0 \oplus f(x)\rangle - |1\rangle |1 \oplus f(x)\rangle)=\)</span></p>
-<p><span class="math notranslate nohighlight">\(=\frac{1}{2}(|0\rangle |0 \oplus 1\rangle - |0\rangle |1 \oplus 1\rangle + |1\rangle |0 \oplus 0\rangle - |1\rangle |1 \oplus 0\rangle) = 
+<p><span class="math notranslate nohighlight">\(=\frac{1}{2}(|0\rangle |0 \oplus 1\rangle - |0\rangle |1 \oplus 1\rangle + |1\rangle |0 \oplus 0\rangle - |1\rangle |1 \oplus 0\rangle) =
 \frac{1}{2}(|01\rangle - |00\rangle + |10\rangle - |11\rangle) = \)</span></p>
 <p><span class="math notranslate nohighlight">\(=-\frac{1}{2}(|00\rangle - |01\rangle + |11\rangle - |10\rangle) =-\frac{1}{2}(|0\rangle - |1\rangle)(|0\rangle - |1\rangle)\)</span></p>
 <p>Получили то же состояние <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>, что и для <span class="math notranslate nohighlight">\(f_3\)</span>, с точностью до фазового множителя. Соответственно, здесь первый кубит после применения оператора Адамара также будет измерен с результатом <span class="math notranslate nohighlight">\(1\)</span>.</p>
@@ -532,7 +532,7 @@
 
 <span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">PauliX</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-	
+
 <span class="k">def</span> <span class="nf">f3</span><span class="p">():</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">CNOT</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
 
@@ -595,7 +595,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -608,7 +608,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f1
 </pre></div>
 </div>
 </div>
@@ -621,8 +621,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──X──╭C──X──H──┤ Sample[Z] 
- 1: ──X──H──╰X────────┤           
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──H──┤ Sample[Z] 
+ 1: ──X──H──┤           
 </pre></div>
 </div>
 </div>
