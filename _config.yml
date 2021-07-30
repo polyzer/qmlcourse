@@ -1,6 +1,5 @@
 title: QMLCourse
-author: ODS Quantum Community
-copyright: "2021"
+author: Sinchenko SA et al.
 logo: "logo.svg"
 
 description: >-
@@ -16,6 +15,7 @@ html:
   use_repository_button: true
   use_issues_button: true
   baseurl: https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html
+  google_analytics_id: UA-51362752-1
 
 notebook_interface: "notebook"
 
