@@ -11,13 +11,6 @@
     - file: book/pythonblock/jupyter_l3.md
       title: ⬜ Ориентация в Jupyter
 
-- part: Основы машинного обучения
-  chapters:
-   - file: book/mlblock/ml_intro
-     title: ⬜ О блоке
-   - file: book/mlblock/ml_l1
-     title: ⬜ Машинное обучение как пазл
-
 - part: Квантовые вычисления
   chapters:
     - file: book/qcblock/qcintro
