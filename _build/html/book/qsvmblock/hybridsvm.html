@@ -52,6 +52,7 @@
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/qsvmblock/hybridsvm.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Квантовая химия. Введение." href="../problemsblock/quantchembasic.html" />
@@ -121,18 +122,30 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/jupyter_l3.html">
-   ⬜ Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../pythonblock/python_l4.html">
    ⬜ Переменные, типы и вывод
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l5.html">
-   ⬜ Условия и сравнения
+  <a class="reference internal" href="../pythonblock/jupyter_l3.html">
+   ⬜ Ориентация в Jupyter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   ⬜ Машинное обучение как пазл
   </a>
  </li>
 </ul>
@@ -515,7 +528,7 @@
 <p>Давайте кратко вспомним, как устроен этот алгоритм.</p>
 <div class="figure align-default" id="classicalsvm">
 <a class="reference internal image-reference" href="../../_images/Support_vector_machine.jpg"><img alt="../../_images/Support_vector_machine.jpg" src="../../_images/Support_vector_machine.jpg" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Классический SVM</span><a class="headerlink" href="#classicalsvm" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Классический SVM</span><a class="headerlink" href="#classicalsvm" title="Permalink to this image">¶</a></p>
 </div>
 <p>В данном случае алгоритм пытается найти такую разделяющую прямую (в многомерном случае это будет гиперплоскость), чтобы расстояния от этой прямой до точек разных классов были максимальными.</p>
 <p>Поскольку обычно нам интересны многомерные пространства, то точки там превращаются в вектора. Также оказыается, что построение такой разделяющей плоскости зависит не от всех точек (векторов), а только от какого-то их подмножества – опорных векторов. Именно поэтому метод и носит название <em>Support Vector Machine</em>.</p>
@@ -544,7 +557,7 @@
 </ul>
 <div class="figure align-default" id="kerneltrick">
 <a class="reference internal image-reference" href="../../_images/Kernel_trick_idea.svg.png"><img alt="../../_images/Kernel_trick_idea.svg.png" src="../../_images/Kernel_trick_idea.svg.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте посмотрим на то, как выглядят популярные ядра.</p>
 <div class="section" id="id4">

@@ -52,6 +52,7 @@
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/gradsblock/hogradients.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="О блоке" href="../qsvmblock/qsvmintro.html" />
@@ -121,18 +122,30 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/jupyter_l3.html">
-   ⬜ Ориентация в Jupyter
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../pythonblock/python_l4.html">
    ⬜ Переменные, типы и вывод
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l5.html">
-   ⬜ Условия и сравнения
+  <a class="reference internal" href="../pythonblock/jupyter_l3.html">
+   ⬜ Ориентация в Jupyter
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   ⬜ Машинное обучение как пазл
   </a>
  </li>
 </ul>
@@ -463,7 +476,7 @@ U_{j...k} = U_j, ..., U_k \ket{\Psi}
 <p>Давайте вспомним, как выглядит квантово-классическая схема обучения с <strong>VQC</strong>.</p>
 <div class="figure align-default" id="quantclassical">
 <a class="reference internal image-reference" href="../../_images/diagram.png"><img alt="../../_images/diagram.png" src="../../_images/diagram.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Квантово-классическая схема</span><a class="headerlink" href="#quantclassical" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Квантово-классическая схема</span><a class="headerlink" href="#quantclassical" title="Permalink to this image">¶</a></p>
 </div>
 <p>Видно, что мы хотим считать производную не от самой параметризованной схемы <span class="math notranslate nohighlight">\(U_{j...k}\)</span>, а от наблюдаемой. Для тех, кто забыл, что такое <em>наблюдаемая</em>, рекомендуем вернуться к <a class="reference internal" href="../qcblock/qubit.html#qubit"><span class="std std-ref">лекции про кубит</span></a>. Если кратко, то это тот оператор, который мы “измеряем” на нашем квантовом компьютере. Математически производная, которая нам интересна, может быть записана для выбранного параметра <span class="math notranslate nohighlight">\(i\)</span> таким образом:</p>
 <div class="math notranslate nohighlight">
