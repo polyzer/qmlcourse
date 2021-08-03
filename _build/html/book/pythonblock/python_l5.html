@@ -587,7 +587,40 @@ True
 <p>Логическое <strong>ИЛИ</strong> является бинарным оператором и возвращает <code class="docutils literal notranslate"><span class="pre">True</span></code> тогда и только тогда, когда <strong>хотя бы один операнд равен</strong> <code class="docutils literal notranslate"><span class="pre">True</span></code>. Оператор “логическое ИЛИ” имеет вид <code class="docutils literal notranslate"><span class="pre">or</span></code>.</p>
 <p>Логическое <strong>НЕ</strong> (отрицание) является унарным (то есть <strong>с одним операндом</strong>) оператором и имеет вид <code class="docutils literal notranslate"><span class="pre">not</span></code>, за которым следует единственный операнд. Логическое НЕ возвращает <code class="docutils literal notranslate"><span class="pre">True</span></code>, <strong>если операнд равен</strong> <code class="docutils literal notranslate"><span class="pre">False</span></code> и <strong>наоборот</strong>.</p>
 <p>Эти правила необходимо запомнить для успешного создания сложных условий с целью разделения логики, заложенной в <code class="docutils literal notranslate"><span class="pre">Python</span></code>-коде.</p>
-<p>Теперь попробуем их применить на практике:</p>
+<p>Проиллюстрируем правила в коде на простых примерах. Обратите внимание на то, как можно объявлять <code class="docutils literal notranslate"><span class="pre">bool</span></code>-переменные – это не сложнее, чем создание целочисленного значения:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">true_value</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">false_value</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="c1"># False потому, что один из операндов является False</span>
+<span class="n">some_value</span> <span class="o">=</span> <span class="n">true_value</span> <span class="ow">and</span> <span class="n">false_value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_value</span><span class="p">)</span>
+
+<span class="c1"># True потому, что хотя бы один из операндов равен True</span>
+<span class="n">some_value</span> <span class="o">=</span> <span class="n">true_value</span> <span class="ow">or</span> <span class="n">false_value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_value</span><span class="p">)</span>
+
+<span class="c1"># отрицание True (истины) есть False (ложь)</span>
+<span class="n">some_value</span> <span class="o">=</span> <span class="ow">not</span> <span class="n">true_value</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">some_value</span> <span class="o">==</span> <span class="n">false_value</span><span class="p">)</span>
+
+<span class="c1"># пример сложного условия - порядок лучше в явном виде задавать скобками</span>
+<span class="n">hard_condition</span> <span class="o">=</span> <span class="p">(</span><span class="ow">not</span> <span class="n">true_value</span> <span class="ow">or</span> <span class="n">false_value</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">true_value</span> <span class="o">!=</span> <span class="n">false_value</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hard_condition</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Теперь попробуем их применить на приближенных к практике примерам:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.6</span>
@@ -611,9 +644,9 @@ True
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Is x large? &#39;</span><span class="p">,</span> <span class="n">x_is_large</span><span class="p">)</span>
 
 <span class="c1"># так тоже можно писать - на манер неравенств в математике</span>
-<span class="n">anoither_x_is_small</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">anoither_x_is_small</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">anoither_x_is_small</span> <span class="o">==</span> <span class="n">x_is_small</span><span class="p">)</span>
+<span class="n">another_x_is_small</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">another_x_is_small</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">another_x_is_small</span> <span class="o">==</span> <span class="n">x_is_small</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
