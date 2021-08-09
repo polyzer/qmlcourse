@@ -50,6 +50,7 @@
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/pythonblock/jupyter_l3.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Переменные и вывод информации в Python" href="python_l4.html" />
@@ -131,6 +132,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="python_l5.html">
    ⬜ Условия и сравнения
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   ⬜ Машинное обучение как пазл
   </a>
  </li>
 </ul>
@@ -451,66 +469,66 @@
 <h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Эта лекция расскажет:</p>
 <ul class="simple">
-<li><p>что такое <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> и чем он хорош;</p></li>
-<li><p>о видах ячеек и режимах работы в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>;</p></li>
-<li><p>о самых необходимых горячих клавишах;</p></li>
-<li><p>что такое ядро и почему вас это должно волновать.</p></li>
+<li><p>что такое <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> и чем он хорош</p></li>
+<li><p>о видах ячеек и режимах работы в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code></p></li>
+<li><p>о самых необходимых горячих клавишах</p></li>
+<li><p>что такое ядро и почему вас это должно волновать</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
 <h2>Введение<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Как любой мастер должен знать свой инструмент, так и любой человек, решивший пройти курс QML, должен понимать тонкости рабочей среды. Как вы уже могли понять по прошлому занятию, всю (или большую часть) работы мы будем делать в <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>. Но бояться нечего: по сути, <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> – это <em>продвинутый текстовый редактор</em> с функцией запуска кода и получения результатов вычислений. Настолько продвинутый, что позволяет вам не только рисовать картинки и писать формулы, но даже строить целые интерактивные карты:</p>
+<p>Как любой мастер должен знать свой инструмент, так и любой человек, решивший пройти курс QML, должен понимать тонкости рабочей среды. Как вы уже могли понять по прошлому занятию - всю (или большую часть) работы мы будем делать в <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Notebook</span></code>. Но бояться нечего - по сути <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> это <em>продвинутый текстовый редактор</em> с функцией запуска кода и получения результатов вычислений. Настолько продвинутый, что позволяет вам не только рисовать картинки и писать формулы, но даже строить целые интерактивные карты:</p>
 <div class="figure align-default" id="interactive-map">
 <a class="reference internal image-reference" href="../../_images/interactive_map.gif"><img alt="../../_images/interactive_map.gif" src="../../_images/interactive_map.gif" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text"><a class="reference external" href="https://medium.com/&#64;bartomolina/geospatial-data-visualization-in-jupyter-notebooks-ffa79e4ba7f8">Пример интерактивной визуализации прямо внутри рабочего файла с кодом</a></span><a class="headerlink" href="#interactive-map" title="Permalink to this image">¶</a></p>
 </div>
-<p>На курсе, конечно, работы с гео-данными не будет, однако очень пригодятся вывод информации в виде <em>таблиц</em>, <em>создание и отрисовка простых графиков</em>, а главное, все это происходит в <strong>браузере</strong>. Редактирование кода в браузере не вызывает лишних проблем со средами разработки и в то же время оно доступно максимально широкому кругу людей. В этом редакторе можно запускать <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код, что очень похоже на интерактивный редактор MATLAB, если вы с ним знакомы.</p>
+<p>На курсе, конечно, работы с гео-данными не будет, однако очень пригодятся вывод информации в виде <em>таблиц</em>, <em>создание и отрисовка простых графиков</em> - а главное всё это происходит в <strong>браузере</strong>. Редактирование кода в браузере не вызывает лишних проблем со средами разработки, и в то же время доступно максимально широкому кругу людей. В этом редакторе можно запускать <code class="docutils literal notranslate"><span class="pre">Python</span></code> код, что очень похоже на интерактивный редактор MATLAB, если вы с ним знакомы.</p>
 <p>Благодаря удобству использования и доступности <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> в настоящее время стал крупным игроком в нише научных вычислений и быстрого прототипирования. Вдобавок он безумно удобен для обучения и передачи знаний. Почему? Давайте разбираться.</p>
 </div>
 <div class="section" id="id3">
 <h2>Типы ячеек<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>В <code class="docutils literal notranslate"><span class="pre">Jupyter</span> </code> существует несколько типов <strong>ячеек</strong>, мы поговорим о двух основных: <strong>Code</strong> и <strong>Markdown</strong>. В прошлом уроке мы создали пустой <strong>ноутбук</strong>, чтобы проверить установку <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>. <strong>Ноутбуком</strong> это называется потому, что в переводе с английского <strong>notebook</strong> – это тетрадка (альтернативное название на русском языке). В тетрадке можно писать что-то осмысленное, черкаться, оставлять пометки. Сейчас вы должны видеть вот такой экран:</p>
+<p>В <code class="docutils literal notranslate"><span class="pre">Jupyter</span> </code> существует несколько типов <strong>ячеек</strong>, мы поговорим о двух основных из них - это <strong>Code</strong> и <strong>Markdown</strong>. В прошлом уроке мы создали пустой <strong>ноутбук</strong> в рамках проверки установки <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>. <strong>Ноутбуком</strong> это называется потому, что в переводе с английского <strong>notebook</strong> - это тетрадка (альтернативное название на русском языке). В тетрадке можно писать что-то осмысленное, черкаться, оставлять пометки. Сейчас вы должны видеть вот такой экран:</p>
 <div class="figure align-default" id="jupyter-ui-1">
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_1.png"><img alt="../../_images/jupyter_ui_1.png" src="../../_images/jupyter_ui_1.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Пример пустой только что созданной тетрадки.</span><a class="headerlink" href="#jupyter-ui-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Пример пустой только что созданной тетрадки</span><a class="headerlink" href="#jupyter-ui-1" title="Permalink to this image">¶</a></p>
 </div>
-<p>Здесь верхней красной чертой выделено поле с <strong>названием</strong> ноутбука. Можете кликнуть по нему, переименовать во что-то осмысленное и нажать <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, чтобы применить изменения. Нижней же чертой обозначен выпадающий список переключений <strong>типов ячеек</strong>. По умолчанию создана одна <strong>code</strong> ячейка – в ней в будущем мы будем писать <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код. Попробуйте кликнуть по списку и выбрать <strong>Markdown</strong> – визуально ячейка немного изменится.</p>
+<p>Здесь верхней красной чертой выделено поле с <strong>названием</strong> ноутбука. Можете кликнуть по нему, переименовать во что-то осмысленное и нажать <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, чтобы применить изменения. Нижней же чертой обозначен выпадающий список переключений <strong>типов ячеек</strong>. По умолчанию создана одна <strong>code</strong> ячейка - в ней в будущем мы будем писать <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код. Попробуйте кликнуть по списку и выбрать <strong>Markdown</strong> - визуально ячейка немного изменится.</p>
 <div class="admonition-markdown-https-ru-wikipedia-org-wiki-markdown admonition">
 <p class="admonition-title">Что такое <a class="reference external" href="https://ru.wikipedia.org/wiki/Markdown">Markdown</a>?</p>
-<p><strong>Markdown</strong> (произносится маркда́ун) – облегченный язык разметки, созданный с целью обозначения <strong>форматирования</strong> в простом тексте с максимальным сохранением его читаемости человеком.</p>
+<p><strong>Markdown</strong> (произносится маркда́ун) — облегчённый язык разметки, созданный с целью обозначения <strong>форматирования</strong> в простом тексте, с максимальным сохранением его читаемости человеком.</p>
 </div>
 <p>Пример: <code class="docutils literal notranslate"><span class="pre">Text</span> <span class="pre">attributes</span> <span class="pre">_italic_,**bold**,</span> <span class="pre">`monospace`.</span></code></p>
 <p>С помощью Markdown можно разнообразить код, вставить формулы (в том числе в <a class="reference external" href="https://ru.wikipedia.org/wiki/LaTeX">LaTeX</a> формате, если он вам знаком), ссылки на статьи и многое другое. Попробуйте скопировать код из примера выше в Markdown-ячейку и нажать кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code>:</p>
 <div class="figure align-default" id="jupyter-ui-2">
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_2.png"><img alt="../../_images/jupyter_ui_2.png" src="../../_images/jupyter_ui_2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Пример выполненной ячейки. Красным квадратом выделена кнопка  <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</span><a class="headerlink" href="#jupyter-ui-2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Пример выполненой ячейки. Красным квадратом выделена кнопка  <code class="docutils literal notranslate"><span class="pre">Run</span></code></span><a class="headerlink" href="#jupyter-ui-2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Произошло следующее: ваша ячейка выполнилась и <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> отобразил ее содержимое. С помощью такого форматирования можно писать целые статьи с выкладками, формулами, графиками, то есть сопроводительной информацией. Поэтому, как уже было сказано, тетрадки очень удобны, особенно если соблюдать структуру, то есть писать сверху вниз с разделением на логические блоки. Также стоит отметить, что создалась новая Code-ячейка прямо под первой.</p>
+<p>Произошло следующее: ваша ячейка выполнилась, и <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code> отобразил содержимое ячейки. С помощью такого форматирования можно писать целые статьи с выкладками, формулами, графиками, то есть сопроводительной информацией - поэтому, как уже было сказано, тетрадки очень удобны, особенно если соблюдать структуру (писать сверху вниз, с разделением на логические блоки). Также стоит отметить, что создалась новая Code-ячейка прямо под первой.</p>
 <div class="figure align-default" id="jupyter-ui-3">
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_3.png"><img alt="../../_images/jupyter_ui_3.png" src="../../_images/jupyter_ui_3.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Пример грамотно <a class="reference external" href="https://nbviewer.jupyter.org/github/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/05-Multivariate-Gaussians.ipynb">оформленной Jupter-тетрадки</a>. Такую можно скинуть коллегам – и всем все будет понятно!</span><a class="headerlink" href="#jupyter-ui-3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Пример грамотно <a class="reference external" href="https://nbviewer.jupyter.org/github/rlabbe/Kalman-and-Bayesian-Filters-in-Python/blob/master/05-Multivariate-Gaussians.ipynb">оформленной Jupter-тетрадки</a>. Такую можно скинуть коллегам - и всем всё будет понятно!</span><a class="headerlink" href="#jupyter-ui-3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Самая прекрасная часть тетрадок: <strong>ячейки разных типов можно смешивать по порядку</strong>, таким образом сначала описывая какую-то логику, а затем непосредственно реализовывая ее в коде и выполняя.</p>
+<p>Самая прекрасная часть тетрадок - <strong>ячейки разных типов можно смешивать по порядку</strong>, таким образом сначала описывая какую-то логику, а затем непосредственно реализовывать её в коде и выполнять!</p>
 </div>
-<p>Вам не так часто придется писать Markdown-заметки самостоятельно, основная причина их создания – ваше желание и дальнейшее удобство использования ноутбука. Есть также другая причина, по которой мы акцентируем на них внимание. Может так произойти, что вы <em>случайно</em> изменили тип ячейки и не заметили этого. Теперь, если в Markdown-ячейку вставить <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код, то ничего не произойдет или возникнет ошибка. Если вы заметили что-то странное при выполнении кода в тетрадке – <strong>проверьте, корректен ли тип ячейки</strong>. Для выполнения кода нужно выставить тип <strong>Code</strong>.</p>
+<p>Вам не так часто придётся писать Markdown-заметки самостоятельно, основная причина их создания - ваше желание и дальнейшее удобство использования. Есть также другая причина, почему мы акцентируем на них внимание. Может так произойти, что вы <em>случайно</em> изменили тип ячейки и не заметили этого. Теперь, если в Markdown-ячейку вставить <code class="docutils literal notranslate"><span class="pre">Python</span></code>-код, то ничего не произойдет (или возникнет ошибка). Если вы заметили что-то странное при выполнении кода в тетрадке - <strong>проверьте, корректен ли тип ячейки</strong>. Для выполнения кода нужно выставить тип <strong>Code</strong></p>
 <div class="figure align-default" id="jupyter-ui-4">
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_4.png"><img alt="../../_images/jupyter_ui_4.png" src="../../_images/jupyter_ui_4.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Верхняя ячейка с <code class="docutils literal notranslate"><span class="pre">print</span></code> написана в Code-режиме и корректно выполняется, печатая строчку с приветствием. Нижняя ячейка же содержит <strong>текст, а не код</strong>, поэтому ничего работать не будет (точнее, код отобразится как текст, но не будет выполнен).</span><a class="headerlink" href="#jupyter-ui-4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Верхняя ячейка с <code class="docutils literal notranslate"><span class="pre">print</span></code> написана в Code-режиме и корректно выполянется, печатая строчку с приветствием. Нижняя ячейка же содержит <strong>текст, а не код</strong>, и потому ничего работать не будет (точнее код отобразится как текст, но не будет выполнен)</span><a class="headerlink" href="#jupyter-ui-4" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Обратите внимание, как визуально отличаются эти две ячейки. Одна из них имеет прозрачный фон, другая – серый. У <strong>Code</strong> ячейки также есть странная надпись слева (про нее еще поговорим).</p>
+<p>Обратите внимание, как визуально отличаются эти две ячейки. Одна из них имеет прозрачный фон, другая - серый. У <strong>Code</strong> ячейки также есть странная надпись слева (про неё еще поговорим).</p>
 </div>
-<p>Каждый раз вручную запускать код (или Markdown) через кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code> не очень-то удобно, поэтому можно запомнить две комбинации клавиш. <code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code> <strong>выполнит</strong> текущую ячейку и оставит “курсор” (указатель на ячейку) <strong>на том же месте</strong>, не создавая лишнюю строчку в ноутбуке. <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> повторит функциональность кнопки <code class="docutils literal notranslate"><span class="pre">Run</span></code>: выполнит ячейку, а затем <strong>перейдет на следующую</strong> (или <strong>создаст новую</strong>, если текущая ячейка является <strong>последней</strong>).</p>
-<p>Первая комбинация (<code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code>) будет полезна в том случае, если вы что-то написали и знаете, что будете вносить изменения (например, менять цвет линии на графике в попытках добиться визуальной красоты), а значит, придется менять код в этой же ячейке.</p>
-<p>Вторая (<code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>) пригодится тогда, когда вы хотите запустить много-много идущих подряд ячеек (можете представить, что коллега скинул вам свою тетрадку с 30 клетками и вы хотите ее запустить, чтобы получить данные).</p>
-<p>Не беспокойтесь, буквально к концу первого блока лекций у вас выработается мышечная память и вы будете использовать сочетания клавиш на автомате.</p>
+<p>Каждый раз вручную запускать код (или Markdown) через кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code> не очень то и удобно, поэтому можно запомнить две комбинации клавиш. <code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code> <strong>выполнит</strong> текущую ячейку и оставит “курсор” (указатель на ячейку) <strong>на том же месте</strong>, не создавая лишнюю строчку в ноутбуке. <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code> же повторит функциональность кнопки <code class="docutils literal notranslate"><span class="pre">Run</span></code> - выполнит ячейку, и затем <strong>перейдет на следующую</strong> (или <strong>создаст новую</strong>, если текущая ячейка является <strong>последней</strong>).</p>
+<p>Первая комбинация (<code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code>) будет полезна в том случае, если вы что-то написали и знаете, что будете вносить изменения (например, менять цвет линии на графике в попытках добиться визуальной красоты), а значит придется менять код в этой же ячейке.</p>
+<p>Вторая (<code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>) пригодится тогда, когда вы хотите запустить много-много идущих подряд ячеек (можете представить, что коллега скинул вам свою тетрадку с 30 клетками, и вы хотите её запустить, чтобы получить данные).
+Не беспокойтесь, буквально к концу первого блока лекций у вас выработается мышечная память, и вы будете использовать сочетания клавиш на автомате.</p>
 </div>
 <div class="section" id="id4">
 <h2>Режимы работы<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>Пришло время разобраться с цветом курсора, выделяющего ячейки. Он может быть <strong>синим</strong> или <strong>зеленым</strong>.</p>
+<p>Пришло время разобраться с цветом курсора, выделяющего ячейки. Он может быть <strong>синим</strong> или <strong>зеленым</strong></p>
 <div class="figure align-default" id="jupyter-ui-5">
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_5.png"><img alt="../../_images/jupyter_ui_5.png" src="../../_images/jupyter_ui_5.png" style="width: 600px;" /></a>
 </div>
@@ -518,7 +536,7 @@
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_6.png"><img alt="../../_images/jupyter_ui_6.png" src="../../_images/jupyter_ui_6.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Пример разного цвета указателя клетки.</span><a class="headerlink" href="#jupyter-ui-6" title="Permalink to this image">¶</a></p>
 </div>
-<p>Никакой тайны за этим нет, это два режима: <strong>режим редактирования и командный режим</strong>. Зеленый цвет сигнализирует о том, что вы работаете <strong>с текстовым содержимым ячейки</strong>, то есть редактируете его! Можете писать код, вставлять формулы, что угодно. Но как только вы нажмете <code class="docutils literal notranslate"><span class="pre">ESC</span></code> на клавиатуре, цвет сменится на синий, что означает <strong>возможность редактирования всего ноутбука, а не отдельных ячеек в нем</strong>. Можно передвигать ячейки, удалять их (полностью, а не только текст в них), добавлять новые. Стрелочками на клавиатуре можно выбирать ячейки (скакать вверх и вниз). Как только доберетесь до нужной (а вместо этого можно просто кликнуть по ней мышкой, что полезно в ситуации, когда клетка <em>очень</em> далеко, в самом низу страницы) – жмите <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, чтобы вернуться к редактированию.</p>
+<p>Никакой тайны за этим нет - это два режима, <strong>режим редактирования и командный режим</strong>. Зеленый цвет сигнализирует о том, что вы работаете <strong>с текстовым содержимым ячейки</strong>, то есть редактируете его! Можете писать код, вставлять формулы, что угодно. Но как только вы нажмете <code class="docutils literal notranslate"><span class="pre">ESC</span></code> на клавиатуре - цвет сменится на синий, что означает <strong>возможность редактирования всего ноутбука, а не отдельных ячеек в нём</strong>. Можно передвигать ячейки, удалять их (всецело, а не только текст в них), добавлять новые. Стрелочками на клавиатуре возможно осуществлять выбор ячейки (скакать вверх и вниз). Как только доберетесь до нужной (а вместо этого можно просто кликнуть по ней мышкой, что полезно в ситуации, когда клетка <em>очень</em> далеко, в самом низу страницы) - жмите <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, чтобы вернуться к редактированию.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Можно осуществлять переходы между режимами кликом мышки (внутри блока кода либо где-нибудь в стороне, слева или справа от ячейки, где ничего нет).</p>
@@ -527,22 +545,22 @@
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_7.png"><img alt="../../_images/jupyter_ui_7.png" src="../../_images/jupyter_ui_7.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">Кнопки управления ноутбуком.</span><a class="headerlink" href="#jupyter-ui-7" title="Permalink to this image">¶</a></p>
 </div>
-<p>Выполнять описанные выше операции можно с помощью горячих клавиш (или хоткеев), либо через интерфейс. Описание выделенного блока кнопок для картинки выше (в порядке слева направо, с указанием сочетаний клавиш):</p>
+<p>Осуществлять вышеописанные операции можно с помощью горячих клавиш (или хоткеев) либо через интерфейс. Описание выделенного блока кнопок для картинки выше (в порядке слева направо, с указанием сочетаний клавиш):</p>
 <ol class="simple">
-<li><p><em>Сохранение ноутбука</em> (<code class="docutils literal notranslate"><span class="pre">CTRL+S</span></code>) – делайте его <strong>почаще</strong>, чтобы не потерять результаты работы!</p></li>
-<li><p><em>Создание ячейки ниже текущей</em> (<code class="docutils literal notranslate"><span class="pre">B</span></code>) – <code class="docutils literal notranslate"><span class="pre">B</span></code> потому, что создается клетка снизу, то есть <code class="docutils literal notranslate"><span class="pre">Below</span></code>. Логика для <code class="docutils literal notranslate"><span class="pre">A</span></code> и <code class="docutils literal notranslate"><span class="pre">Above</span></code> аналогична.</p></li>
-<li><p><em>Вырезать ячейку</em> (<code class="docutils literal notranslate"><span class="pre">X</span></code>) – применимо и к целому блоку ячеек (можно выделить с зажатой клавишей <code class="docutils literal notranslate"><span class="pre">Shift</span></code>). Функциональность как и в Excel/Word: убрать в одном месте, чтобы вставить в другом.</p></li>
-<li><p><em>Копировать ячейку</em> (<code class="docutils literal notranslate"><span class="pre">C</span></code>).</p></li>
-<li><p><em>Вставить ячейку из буфера</em> (<code class="docutils literal notranslate"><span class="pre">V</span></code>) – после вырезания или копирования ячейки.</p></li>
-<li><p><em>Переместить текущую выделенную ячейку <strong>вверх</strong></em>.</p></li>
-<li><p><em>Переместить текущую выделенную ячейку <strong>вниз</strong></em>.</p></li>
+<li><p><em>Сохранение ноутбука</em> (<code class="docutils literal notranslate"><span class="pre">CTRL+S</span></code>) - делайте его <strong>почаще</strong>, чтобы не потерять результаты работы!</p></li>
+<li><p><em>Создание ячейки ниже текущей</em> (<code class="docutils literal notranslate"><span class="pre">B</span></code>) - <code class="docutils literal notranslate"><span class="pre">B</span></code> потому, что создается клетка снизу, то есть <code class="docutils literal notranslate"><span class="pre">Below</span></code>. Логика для <code class="docutils literal notranslate"><span class="pre">A</span></code> и <code class="docutils literal notranslate"><span class="pre">Above</span></code> аналогична :)</p></li>
+<li><p><em>Вырезать ячейку</em> (<code class="docutils literal notranslate"><span class="pre">X</span></code>) - применимо и к целому блоку ячеек (можно выделить с зажатой клавишей <code class="docutils literal notranslate"><span class="pre">Shift</span></code>). Функциональность как и в Excel/Word: убрать в одном месте, чтобы вставить в другом</p></li>
+<li><p><em>Копировать ячейку</em> (<code class="docutils literal notranslate"><span class="pre">C</span></code>)</p></li>
+<li><p><em>Вставить ячейку из буффера</em> (<code class="docutils literal notranslate"><span class="pre">V</span></code>) - после вырезания или копирования ячейки</p></li>
+<li><p><em>Переместить текущую выделенную ячейку <strong>вверх</strong></em></p></li>
+<li><p><em>Переместить текущую выделенную ячейку <strong>вниз</strong></em></p></li>
 </ol>
 <p>Описание всех доступных команд (и соответствующих им хоткеев) доступно при нажатии на кнопку с клавиатурой в правой части выделенного блока меню (вне красного прямоугольника).</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Попробуйте потратить 5-7 минут на практику использования этих кнопок и сочетаний клавиш.</p>
 </div>
-<p>Первое время можете пользоваться только элементами UI-интерфейса – это нормально, главное, сопоставить кнопки и стоящую за ними функциональность.</p>
+<p>Первое время можете пользоваться только элементами UI-интерфейса - это абсолютно нормально, главное сопоставить кнопки и стоящую за ними функциональность.</p>
 </div>
 <div class="section" id="id5">
 <h2>Оставшиеся кнопки на панели<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
@@ -551,30 +569,30 @@
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_8.png"><img alt="../../_images/jupyter_ui_8.png" src="../../_images/jupyter_ui_8.png" style="width: 600px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">Кнопки управления <strong>ЯДРОМ</strong> ноутбуком.</span><a class="headerlink" href="#jupyter-ui-8" title="Permalink to this image">¶</a></p>
 </div>
-<p>Для того, чтобы вы могли запускать код <code class="docutils literal notranslate"><span class="pre">Python</span></code>, запускается так называемое <strong>“ядро” (или kernel)</strong>, то есть приложение, которое непосредственно выполняет (запускает) ваш код и передает результаты обратно в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-ноутбук. За это отвечает как раз <code class="docutils literal notranslate"><span class="pre">Run</span></code>.</p>
-<p>Справа от нее расположен <code class="docutils literal notranslate"><span class="pre">Stop</span></code>, который <strong>прерывает выполнение программы</strong>. Он может быть полезен в случаях, когда вы запустили расчеты на час, но заметили ошибку – и поэтому нужно и код переписать, и ячейку с кодом снова запустить. И в этой ситуации вы сначала <strong>останавливаете</strong> выполнение, редактируете код, затем жмете <code class="docutils literal notranslate"><span class="pre">Run</span></code> – и все готово!</p>
-<p>Но случается беда и код не останавливается, потому что ядро <code class="docutils literal notranslate"><span class="pre">Python</span></code> зависает. В таких случаях нужно <strong>перезапустить ядро</strong> – и кнопка с закругленной стрелочкой <code class="docutils literal notranslate"><span class="pre">Restart</span></code> поможет осуществить задуманное. Будьте аккуратны – <strong>вы потеряете ВСЕ несохраненные данные</strong> (значения переменных, результаты расчетов, данные для построения графиков). Сама тетрадка останется без изменений, то есть <strong>написанное сохранится</strong>. Концепция “ядра” и запуска кода станет более понятна, когда мы перейдем к практике.</p>
+<p>Для того, чтобы вы могли запускать код <code class="docutils literal notranslate"><span class="pre">Python</span></code>, запускается так называемое <strong>“ядро” (или kernel)</strong>, то есть приложение, которое непосредственно выполняет (запускает) ваш код, и результаты передаёт обратно в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-ноутбук. За это отвечает как раз <code class="docutils literal notranslate"><span class="pre">Run</span></code>.
+Справа от неё расположен <code class="docutils literal notranslate"><span class="pre">Stop</span></code>, который <strong>прерывает выполнение программы</strong>. Он может быть полезен в случаях, когда вы запустили расчёты на час, но заметили ошибку - и поэтому нужно и код переписать, и ячейку с кодом снова запустить. И в этой ситуации вы сначала <strong>останавливаете</strong> выполнение, затем жмете <code class="docutils literal notranslate"><span class="pre">Run</span></code> - и всё готово!
+Но случается беда - и код не останавливается, ибо ядро <code class="docutils literal notranslate"><span class="pre">Python</span></code> зависает. В таких случаях нужно <strong>перезапустить ядро</strong> - и кнопка с закругленной стрелочкой, <code class="docutils literal notranslate"><span class="pre">Restart</span></code>, поможет осуществить задуманное. Будьте аккуратны - <strong>вы потеряете ВСЕ несохраненные данные</strong> (значения переменных, результаты расчётов, данные для построения графиков). Сама тетрадка останется без изменений, то есть <strong>написанное сохранится</strong>. Концепция “ядра” и запуска кода станет более понятна, когда мы перейдем к практике.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Пока стоит держаться правила: “Накосячил? Попробуй остановить (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>) ядро. Не получается? Тогда перезапускай (<code class="docutils literal notranslate"><span class="pre">Restart</span></code>) его!”</p>
+<p>Пока стоит держаться правила: “Накосячил? попробуй остановить (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>) ядро. Не получается? Тогда перезапускай (<code class="docutils literal notranslate"><span class="pre">Restart</span></code>) его!”</p>
 </div>
-<p>Нужно понимать, что ядро “помнит” все предыдущие выполненные ячейки (пока не будет перезагружено или выключено), а значит, вы можете позже в коде переиспользовать те части, которые были описаны ранее (например, переменные или физические константы). Иными словами, состояние ядра сохраняется во времени и между ячейками – <strong>оно относится к документу в целом</strong>, а не к отдельным ячейкам.</p>
-<p>Последняя кнопка из выделенного блока имеет говорящее название: <code class="docutils literal notranslate"><span class="pre">Re-start</span> <span class="pre">and</span> <span class="pre">run</span> <span class="pre">all</span></code>. Ядро будет <strong>перезапущено</strong> (все переменные и данные удалятся), а затем <strong>каждая ячейка будет выполнена в порядке сверху вниз</strong>. Поэтому рекомендуется соблюдать структуру, чтобы запускать код с нуля (после возвращения к ноутбуку на следующий день, но с новым ядром, так как компьютер был выключен) – и он отрабатывал.</p>
+<p>Нужно понимать, что ядро “помнит” все предыдущие выполненные ячейки (пока не будет перезагружено или выключено), а значит вы можете позже в коде переиспользовать те части, которые были описаны ранее (например, переменные или физические константы). Иными словами, состояние ядра сохраняется во времени и между ячейками — <strong>оно относится к документу в целом</strong>, а не к отдельным ячейкам.</p>
+<p>Последняя кнопка из выделенного блока имеет говорящее название: <code class="docutils literal notranslate"><span class="pre">Re-start</span> <span class="pre">and</span> <span class="pre">run</span> <span class="pre">all</span></code>. Ядро будет <strong>перезапущено</strong> (все переменные и данные удалятся), а затем <strong>каждая ячейка будет выполнена в порядке сверху вниз</strong>. Поэтому рекомендуется соблюдать структуру, чтобы запускать код с нуля (после возвращения к ноутбуку на следующий день, но с новым ядром, так как компьютер был выключен) - и он отрабатывал.</p>
 </div>
 <div class="section" id="in">
 <h2>Что это за In [*]?<a class="headerlink" href="#in" title="Permalink to this headline">¶</a></h2>
-<p>Та самая надпись слева от запущенной Code-ячейки. Это вспомогательная информация о том, что происходит с <strong>кодовой</strong> ячейкой (<code class="docutils literal notranslate"><span class="pre">In</span></code> означает <strong>Input</strong>, то есть ввод кода). Возможно несколько вариантов заполнения.</p>
+<p>Та самая надпись слева от запущенной Code-ячейки. Это вспомогательная информация о том, что происходит с <strong>кодовой</strong> ячейкой (<code class="docutils literal notranslate"><span class="pre">In</span></code> означает <strong>Input</strong>, то есть ввод кода). Возможно несколько вариантов заполнения</p>
 <div class="figure align-default" id="jupyter-ui-9">
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_9.png"><img alt="../../_images/jupyter_ui_9.png" src="../../_images/jupyter_ui_9.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Пример трех видов информации о статусе ячейки.</span><a class="headerlink" href="#jupyter-ui-9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">Пример трёх видов информации о статусе ячейки</span><a class="headerlink" href="#jupyter-ui-9" title="Permalink to this image">¶</a></p>
 </div>
-<p>В первом случае в квадратных скобках <strong>ничего нет</strong> – это значит, что <strong>ячейка еще не была запущена</strong>. Возможно, вы забыли, а быть может, она просто ждет своего часа.</p>
-<p>Во втором случае <strong>ячейка была запущена</strong> шестой по счету (да-да, <strong>ячейки выполняются по порядку, который задаете вы сами</strong>!) и она <strong>успешно отработала и завершилась</strong>.</p>
-<p>В последней строчке умышленно был сделан бесконечный цикл. Это означает, что <em>код никогда не сможет выполниться</em> и будет висеть до тех пор, пока вы не остановите (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>ните) ядро. Поэтому там выведен <strong>индикатор выполнения ячейки</strong> – в скобках указана звездочка <code class="docutils literal notranslate"><span class="pre">*</span></code>. Обратите внимание: <strong>это не всегда плохой сигнал</strong>. Если ваш код должен выполняться 2-3 минуты, то все это время будет выводиться <code class="docutils literal notranslate"><span class="pre">[*]</span></code>. Когда код отработает и результат будет получен, отрисуется цифра (например, <code class="docutils literal notranslate"><span class="pre">[7]</span></code> ).</p>
+<p>В первом случае в квадратных скобках <strong>ничего нет</strong> - это значит, что <strong>ячейка еще не была запущен</strong>а. Возможно, вы забыли, а быть может она просто ждет своего часа.</p>
+<p>Во втором случае <strong>ячейка была запущена</strong> шестой по счёту (да-да, <strong>ячейки выполняются по порядку, который задаёте вы сами</strong>!), и она <strong>успешно отработала и завершилась</strong>.</p>
+<p>В последней строчке умешленно был сделан бесконечный цикл. Это означает, что <em>код никогда не сможет выполниться</em>, и будет висеть до тех пор, пока вы не остановите (<code class="docutils literal notranslate"><span class="pre">Stop</span></code>ните) ядро. Поэтому там выведен <strong>индикатор выполнения ячейки</strong> - в скобках указана звёздочка <code class="docutils literal notranslate"><span class="pre">*</span></code>. Обратите внимание - <strong>это не всегда плохой сигнал</strong>. Быть может ваш код должен выполняться 2-3 минуты, и тогда всё это время будет выводиться <code class="docutils literal notranslate"><span class="pre">[*]</span></code>. Затем, как код отработает, и результат будет получен, отрисуется цифра (например, <code class="docutils literal notranslate"><span class="pre">[7]</span></code> ).</p>
 </div>
 <div class="section" id="id6">
 <h2>Самая полезная клавиша<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>Пришло время программировать! Скопируйте себе в ноутбук кусок кода ниже и попробуйте его запустить. Не переживайте, он может показаться сложным и непонятным, но сейчас не требуется понимание всех деталей.</p>
+<p>Пришло время программировать! Скопируйте себе в ноутбук кусок кода ниже и попробуйте его запустить. Не переживайте, он может показаться сложным и непонятным, но сейчас не требуется понимания всех деталей.</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">mat.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
@@ -594,34 +612,34 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>Вы увидите ошибку. По сообщению видно (стрелочка в левой части указывает на проблемное место), что во второй строчке используется слово <code class="docutils literal notranslate"><span class="pre">mat</span></code>, при этом <code class="docutils literal notranslate"><span class="pre">Python</span></code> жалуется на отсутствие такого модуля. Все дело в том, что в коде выше производится попытка рисования графика и для этого используется библиотека <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Но в одной из строк написано только <code class="docutils literal notranslate"><span class="pre">mat</span></code>. Это не дело, давайте исправлять. Однако всех библиотек не запомнишь – и это не нужно. Попробуйте поставить курсор после буквы <code class="docutils literal notranslate"><span class="pre">t</span></code> (и перед точкой) и нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>. Вы должны увидеть <strong>список подсказок</strong> и из него выбрать нужный вариант. Этот список не только сокращает время написания кода (за счет автоматического дополнения), но и позволяет избежать ошибок в написании. Обязательно пользуйтесь этим инструментом.</p>
-<p>Если вы все сделали правильно, воспользовавшись подсказкой, то после очередного запуска (<code class="docutils literal notranslate"><span class="pre">Run</span></code>) кода появится рисунок.</p>
+<p>Вы увидите ошибку. По сообщению видно (стрелочка в левой части указывает на проблемное место), что во второй строчке используется слово <code class="docutils literal notranslate"><span class="pre">mat</span></code>, при этом <code class="docutils literal notranslate"><span class="pre">Python</span></code> жалуется на отсутствие такого модуля. Всё дело в том, что в коде выше производится попытка рисования графика, и для этого используется библиотека <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>. Но в одной из строк написано только <code class="docutils literal notranslate"><span class="pre">mat</span></code>. Это не дело, давайте исправлять. Однако всех библиотек не запомнишь - и это не нужно. Попробуйте поставить курсор после буквы <code class="docutils literal notranslate"><span class="pre">t</span></code> (и перед точкой) и нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>. Вы должны увидеть <strong>список подсказок</strong>, и из него выбрать нужный вариант. Этот список не только сокращает время написания кода (за счет автоматического дополнения), но и позволяет избежать ошибок в написании. Обязательно пользуйтесь этим инструментом.
+Если вы всё сделали правильно, воспользовавшись подсказкой, то после очередного запуска (<code class="docutils literal notranslate"><span class="pre">Run</span></code>) кода появится рисунок.</p>
 <div class="figure align-default" id="jupyter-ui-10">
 <a class="reference internal image-reference" href="../../_images/jupyter_ui_10.png"><img alt="../../_images/jupyter_ui_10.png" src="../../_images/jupyter_ui_10.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Другой пример удачного использования: есть несколько переменных со сложным, но очень похожим названием. Не стоит их перепечатывать – достаточно нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>!</span><a class="headerlink" href="#jupyter-ui-10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Другой пример удачного использования - есть несколько переменных со сложным, но очень похожим названием. Не стоит их перепечатывать - достаточно нажать <code class="docutils literal notranslate"><span class="pre">TAB</span></code>!</span><a class="headerlink" href="#jupyter-ui-10" title="Permalink to this image">¶</a></p>
 </div>
-<p>Что ж, большое количество новой информации позади, давайте подведем итоги!</p>
+<p>Что ж, большое количество новой информации позади, давайте подведём итоги!</p>
 </div>
 <div class="section" id="id7">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Существует два основных типа ячеек, один предназначен для программирования (написания кода), другой – для описания (формул, определений).</p></li>
-<li><p>Существует два режима работы: <code class="docutils literal notranslate"><span class="pre">edit</span></code> – редактирование конкретной ячейки и <code class="docutils literal notranslate"><span class="pre">control</span></code> – работа со всей структурой тетрадки/ноутбука.</p></li>
-<li><p>Режимы работы можно различить по цвету рамки вокруг активной ячейки, а тип ячейки – по прозрачности фона и наличию надпиcи <code class="docutils literal notranslate"><span class="pre">In[</span> <span class="pre">]</span></code> слева.</p></li>
-<li><p>Между режимами можно переключаться с помощью <code class="docutils literal notranslate"><span class="pre">Esc</span></code> и <code class="docutils literal notranslate"><span class="pre">Enter</span></code>.</p></li>
-<li><p>Чтобы запустить ячейку (с кодом или текстом), нужно нажать на кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code> сверху, либо воспользоваться сочетаниями клавиш: <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code>.</p></li>
-<li><p>Нужно не забывать сохранять ноутбук (<code class="docutils literal notranslate"><span class="pre">CTRL+S</span></code>), а быстро добавить ячейку кода можно с помощью плюсика слева сверху (или клавиши <code class="docutils literal notranslate"><span class="pre">B</span></code>).</p></li>
-<li><p>Клавиши <code class="docutils literal notranslate"><span class="pre">C</span></code> / <code class="docutils literal notranslate"><span class="pre">V</span></code> позволяют копировать и вставлять ячейки в <code class="docutils literal notranslate"><span class="pre">control</span></code>-режиме.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">In[3]</span></code> указывает на порядок выполнения ячеек с кодом, <code class="docutils literal notranslate"><span class="pre">In[*]</span></code> – на процесс выполнения.</p></li>
-<li><p>Если вы долго ждете выполнения Code-блока, можно <code class="docutils literal notranslate"><span class="pre">Stop</span></code>нуть ядро, если не помогает – <code class="docutils literal notranslate"><span class="pre">Restart</span></code>нуть.</p></li>
-<li><p>Ядро – это процесс, выполняющий код, и после перезагрузки оно не сохраняет переменные.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">TAB</span></code> – ваш друг, позволяющий избегать опечаток, а также реже пользоваться документацией.</p></li>
+<li><p>Существует два основных типа ячеек, один предназначен для программирования (написания кода), другой - для описания (формул, определений..)</p></li>
+<li><p>Существует два режима работы: <code class="docutils literal notranslate"><span class="pre">edit</span></code> - редактирование конкретной ячейки и <code class="docutils literal notranslate"><span class="pre">control</span></code> - работа со всей структурой тетрадки/ноутбука</p></li>
+<li><p>Режимы работы можно различить по цвету рамки вокруг активной ячейки, а тип ячейки - по прозрачности фона и наличию надпиcи <code class="docutils literal notranslate"><span class="pre">In[</span> <span class="pre">]</span></code> слева</p></li>
+<li><p>Между режимами можно переключаться с помощью <code class="docutils literal notranslate"><span class="pre">Esc</span></code> и <code class="docutils literal notranslate"><span class="pre">Enter</span></code></p></li>
+<li><p>Чтобы запустить ячейку (с кодом или текстом), нужно нажать на кнопку <code class="docutils literal notranslate"><span class="pre">Run</span></code> сверху, либо воспользоваться сочетаниями клавиш: <code class="docutils literal notranslate"><span class="pre">Shift+Enter</span></code>, <code class="docutils literal notranslate"><span class="pre">CTRL+Enter</span></code></p></li>
+<li><p>Нужно не забывать сохранять ноутбук (<code class="docutils literal notranslate"><span class="pre">CTRL+S</span></code>), а быстро добавить ячейку кода можно с помощью плюсика слева сверху (или клавиши <code class="docutils literal notranslate"><span class="pre">B</span></code>)</p></li>
+<li><p>Клавиши <code class="docutils literal notranslate"><span class="pre">C</span></code> / <code class="docutils literal notranslate"><span class="pre">V</span></code> позволяют копировать и вставлять ячейки в <code class="docutils literal notranslate"><span class="pre">control</span></code>-режиме</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">In[3]</span></code> указывает на порядок выполнения ячеек с кодом, <code class="docutils literal notranslate"><span class="pre">In[*]</span></code> - на процесс выполнения</p></li>
+<li><p>Если вы долго ждёте выполнения Code-блока - можно <code class="docutils literal notranslate"><span class="pre">Stop</span></code>нуть ядро, если не помогает - <code class="docutils literal notranslate"><span class="pre">Restart</span></code>нуть</p></li>
+<li><p>Ядро - это процесс, выполняющий код, и после перезагрузки оно не сохраняет переменные</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TAB</span></code> - ваш друг, позволяющий избегать опечаток, а также реже пользоваться документацией</p></li>
 </ul>
 </div>
 <div class="section" id="id8">
 <h2>Бонус-материал<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <p>Полная официальная документация по Jupyter находится по <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/notebook.html">ссылке тут</a>.</p>
-<p>Если вам захочется узнать больше о трюках в ноутбуках, о недостатках и преимуществах по сравнению с альтернативами, предлагаем посмотреть выступление Joel Grus:</p>
+<p>Если вам захочется узнать больше о трюках в ноутбуках, о недостатках и преимуществах по сравнению с альтернативами - предлагаем посмотреть выступление Joel Grus:</p>
 <p align="center"><iframe width="560" height="315" style='' src="https://www.youtube.com/embed/7jiPeIFXb6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p></div>
 </div>
 

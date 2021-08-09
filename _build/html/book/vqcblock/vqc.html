@@ -52,6 +52,7 @@
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/vqcblock/vqc.html" />
+    <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="О блоке" href="../gradsblock/gradsintro.html" />
@@ -133,6 +134,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../pythonblock/python_l5.html">
    ⬜ Условия и сравнения
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Основы машинного обучения
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_intro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../mlblock/ml_l1.html">
+   ⬜ Машинное обучение как пазл
   </a>
  </li>
 </ul>
@@ -474,7 +492,7 @@
 <p>В течение всего курса мы будем говорить преимущественно о комбинированном квантово-классическом машинном обучении, построенном на базе вариационных квантовых схем. Именно он является наиболее перспективным в эпоху <span class="xref std std-term">NISQ</span>. Давайте забежим немного вперед и посмотрим, как выглядит типичный цикл такого обучения.</p>
 <div class="figure align-default" id="vqcdiag">
 <a class="reference internal image-reference" href="../../_images/diagram.png"><img alt="../../_images/diagram.png" src="../../_images/diagram.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Пример цикла смешанного обучения</span><a class="headerlink" href="#vqcdiag" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Пример цикла смешанного обучения</span><a class="headerlink" href="#vqcdiag" title="Permalink to this image">¶</a></p>
 </div>
 <p>Красным цветом на диаграмме помечены блоки, выполняемые на квантовом устройстве, зеленым – те, что считает обычный компьютер. Квантовая часть, которая включает в себя операторы <span class="math notranslate nohighlight">\(\hat{U(X)}\)</span> и <span class="math notranslate nohighlight">\(\hat{U(\theta})\)</span>, а также измерение наблюдаемой <span class="math notranslate nohighlight">\(\hat{M}\)</span>, называется вариационной квантовой схемой. Именно ей посвящена данная лекция.</p>
 <p>Но сначала сделаем шаг назад и обсудим в общих чертах идеи, которые лежат в основе квантово-классического обучения.</p>
