@@ -35,8 +35,8 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
-    - file: book/qcblock/simon_algorithm
-      title: 🟩 Алгоритм Саймона
+    - file: book/qcblock/quantum_teleportation
+      title: 🟩 Квантовая телепортация
 
 - part: Фреймворки
   chapters:
