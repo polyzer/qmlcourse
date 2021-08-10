@@ -17,6 +17,8 @@
       title: ⬜ Переменные, типы и вывод
     - file: book/pythonblock/python_l5.md
       title: ⬜ Условия и сравнения
+    - file: book/pythonblock/python_l6.md
+      title: ⬜ Списки и циклы
 
 - part: Основы машинного обучения
   chapters:
@@ -35,8 +37,6 @@
       title: 🟩 Квантовые гейты
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
-    - file: book/qcblock/quantum_teleportation
-      title: 🟩 Квантовая телепортация
 
 - part: Фреймворки
   chapters:

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>О блоке &#8212; QMLCourse</title>
+    <title>Списки и циклы в Python &#8212; QMLCourse</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,12 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/qcblock/qcintro.html" />
+    <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/pythonblock/python_l6.html" />
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Квантовый бит" href="qubit.html" />
-    <link rel="prev" title="Машинное обучение как пазл" href="../mlblock/ml_l1.html" />
+    <link rel="next" title="О блоке" href="../mlblock/ml_intro.html" />
+    <link rel="prev" title="Условные конструкции, булева логика и сравнения" href="python_l5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -108,34 +108,34 @@
   Основы Python
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/pythonintro.html">
+  <a class="reference internal" href="pythonintro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l1.html">
+  <a class="reference internal" href="python_l1.html">
    ⬜ Вводная лекция про Python
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/jupyter_l3.html">
+  <a class="reference internal" href="jupyter_l3.html">
    ⬜ Ориентация в Jupyter
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l4.html">
+  <a class="reference internal" href="python_l4.html">
    ⬜ Переменные, типы и вывод
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l5.html">
+  <a class="reference internal" href="python_l5.html">
    ⬜ Условия и сравнения
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l6.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    ⬜ Списки и циклы
   </a>
  </li>
@@ -162,24 +162,24 @@
   Квантовые вычисления
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/qcintro.html">
    ⬜ О блоке
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="qubit.html">
+  <a class="reference internal" href="../qcblock/qubit.html">
    🟩 Квантовый бит
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="gates.html">
+  <a class="reference internal" href="../qcblock/gates.html">
    🟩 Квантовые гейты
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="deutschs_algorithm.html">
+  <a class="reference internal" href="../qcblock/deutschs_algorithm.html">
    🟩 Алгоритм Дойча
   </a>
  </li>
@@ -344,9 +344,12 @@
 
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
-        
+        <a class="dropdown-buttons"
+            href="../../_sources/book/pythonblock/python_l6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/book/qcblock/qcintro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/book/pythonblock/python_l6.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -366,7 +369,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/qcblock/qcintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/SemyonSinchenko/qmlcourse/issues/new?title=Issue%20on%20page%20%2Fbook/pythonblock/python_l6.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -382,11 +385,46 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/SemyonSinchenko/qmlcourse/master?urlpath=tree/qmlcourseRU/book/pythonblock/python_l6.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Описание лекции
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Введение в списки объектов
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -395,19 +433,23 @@
         
               <div>
                 
-  <div class="section" id="qcintro">
-<span id="id1"></span><h1>О блоке<a class="headerlink" href="#qcintro" title="Permalink to this headline">¶</a></h1>
-<p>Этот блок включает в себя:</p>
+  <div class="section" id="python">
+<span id="python-l6"></span><h1>Списки и циклы в Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>На этом занятии мы разберем следущие темы:</p>
 <ul class="simple">
-<li><p>общий рассказ о том, что такое квантовый бит;</p></li>
-<li><p>введение в основные квантовые гейты.</p></li>
+<li><p>списки (<code class="docutils literal notranslate"><span class="pre">list</span></code>) и их методы</p></li>
+<li><p>индексация списков</p></li>
+<li><p>что такое срезы и зачем они нужны</p></li>
+<li><p>цикл <code class="docutils literal notranslate"><span class="pre">for</span></code> и функция <code class="docutils literal notranslate"><span class="pre">range</span></code></p></li>
+<li><p>итерация по спискам, list comprehensions</p></li>
+<li><p>цикл <code class="docutils literal notranslate"><span class="pre">while</span></code> и когда им пользоваться</p></li>
 </ul>
-<p>Продвинутые темы блока дополнительно рассказывают:</p>
-<ul class="simple">
-<li><p>о квантовой физике, на которой базируется концепция кубита;</p></li>
-<li><p>о смешанных состояниях, операторе плотности и энтропии фон Неймана;</p></li>
-<li><p>об алгоритмах Шора и Гровера.</p></li>
-</ul>
+</div>
+<div class="section" id="id2">
+<h2>Введение в списки объектов<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -423,7 +465,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./book/qcblock"
+            path: "./book/pythonblock"
         },
         predefinedOutput: true
     }
@@ -435,8 +477,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../mlblock/ml_l1.html" title="previous page">Машинное обучение как пазл</a>
-    <a class='right-next' id="next-link" href="qubit.html" title="next page">Квантовый бит</a>
+    <a class='left-prev' id="prev-link" href="python_l5.html" title="previous page">Условные конструкции, булева логика и сравнения</a>
+    <a class='right-next' id="next-link" href="../mlblock/ml_intro.html" title="next page">О блоке</a>
 
         </div>
         
