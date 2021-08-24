@@ -29,7 +29,7 @@ print(first_list, fourth_lust)
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mTypeError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2038/2953670739.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_2113/2953670739.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m [0mfirst_list[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0msecond_list[0m [0;34m=[0m [0mlist[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 4[0;31m [0mthird_list[0m [0;34m=[0m [0mlist[0m[0;34m([0m[0;36m1[0m[0;34m,[0m[0;36m2[0m[0;34m,[0m [0;34m'stroka'[0m[0;34m,[0m [0;36m3.14[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
