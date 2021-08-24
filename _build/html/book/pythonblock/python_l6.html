@@ -482,14 +482,20 @@
 <p>Часто в программах - даже в (квантовом) машинном обучении - приходится работать с большим количество <strong>однотипных</strong> переменных. Специально при этого придуманы <strong>массивы</strong> (по-английски array). В Python их еще называют <strong>списками</strong> (list). В некоторых языках программирования эти понятия отличаются, но не в Python. Список может хранить переменные <strong>разного</strong> типа. Для создания простого списка необходимо указать квадратные скобки или вызвать конструктор типа (<code class="docutils literal notranslate"><span class="pre">list</span></code> - это отдельный тип, фактически такой же, как int или str), а затем перечислить <strong>объекты через запятую</strong>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># разные способы объявления списков</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># разные способы объявления списков</span>
 <span class="n">first_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">second_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-<span class="n">third_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;stroka&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">)</span>
+<span class="n">third_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;stroka&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">])</span>
 <span class="n">fourth_lust</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;another_list&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">]]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">second_list</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">fourth_lust</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">,</span> <span class="n">fourth_lust</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;list&#39;&gt; &lt;class &#39;list&#39;&gt;
+[] [15, 2.2, [&#39;another_list&#39;, False]]
 </pre></div>
 </div>
 </div>
@@ -501,7 +507,7 @@
 <p>Теперь можно один раз создать список и работать с ним как с единым целым. Да, по прежнему для заведения оценок студентов придется разово их зафиксировать, но потом куда проще исправлять и добавлять! Рассмотрим пример нахождения средней оценки группы, в которой всего 3 учащихся, но к ним присоединили еще 2, а затем - целых 5:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># базовый журнал с тремя оценками</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># базовый журнал с тремя оценками</span>
 <span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
 <span class="c1"># добавим новопришедших студентов</span>
@@ -516,6 +522,12 @@
 <span class="c1"># найдем среднюю оценку как сумму всех оценок, деленную на их количество</span>
 <span class="n">avg_grade</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">math_journal</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">math_journal</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">avg_grade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 3, 5, 4, 5, 2, 3, 4, 5, 5]
+3.9
 </pre></div>
 </div>
 </div>
@@ -542,11 +554,16 @@
 <p>Теперь, когда стало понятно, с чем предстоит иметь дело, попробуем усложнить пример. Как узнать, какая оценка у третьего студента? Все просто - нужно воспользоваться <strong>индексацией</strong> списка:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># базовый журнал с пятью оценками</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># базовый журнал с пятью оценками</span>
 <span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
 <span class="n">third_student_grade</span> <span class="o">=</span> <span class="n">math_journal</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">third_student_grade</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
 </pre></div>
 </div>
 </div>
@@ -565,7 +582,7 @@
 <p>Также в <code class="docutils literal notranslate"><span class="pre">Python</span></code> существуют отрицательные индексы (-1, -2 …). Они отсчитывают объекты списка, начиная с конца. Так как нуль уже занят (под первый объект), то он не используется.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># базовый журнал с пятью оценками</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># базовый журнал с пятью оценками</span>
 <span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
 <span class="c1"># возьмем последнюю оценку</span>
@@ -587,6 +604,13 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+4
+Последний студент сдал очень хорошо, на его фоне предпоследний просто двоечник!
+</pre></div>
+</div>
+</div>
 </div>
 <p>Все это важно не только для грамотного оперирования конкретными объектами, но и следующей темы -</p>
 </div>
@@ -595,7 +619,7 @@
 <p>Срезы, или slices - это механизм обращения сразу к нескольким объектам списка. Для создания среза нужно в квадратных скобках указать двоеточие, слева от него - индекс начала среза (по умолчанию 0, можно не выставлять) <strong>включительно</strong>, справа - границу среза <strong>не включительно</strong> (пустота означает “до конца списка”). Может показаться нелогичной такая разнородность указания границ, но на самом деле она безумно удобна - особенно вместе с тем, что индексация начинается с нуля. Быстрее объяснить на примере:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># базовый журнал с пятью оценками</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># базовый журнал с пятью оценками</span>
 <span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 
 <span class="c1"># как взять первые 3 оценки?</span>
@@ -617,6 +641,15 @@
 <span class="c1"># а вот так можно проверить, попадает ли объект в список</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">some_slice</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">yet_another_slice</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+[4, 5]
+[2, 3, 4, 5]
+False
+True
 </pre></div>
 </div>
 </div>
@@ -651,21 +684,26 @@
 <p><strong>Итерацией</strong> называется каждый <strong>отдельный проход</strong> по телу цикла. Цикл всегда повторяет команды из тела цикла несколько раз. Два примера кода ниже аналогичны:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">for</span> <span class="n">cur_grade</span> <span class="ow">in</span> <span class="n">math_journal</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">cur_grade</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
         <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Всего хорошистов и отличников по математике </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1"> человек&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Всего хорошистов и отличников по математике </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1"> человека&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Всего хорошистов и отличников по математике 2 человека
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="n">cur_grade</span> <span class="o">=</span> <span class="n">math_journal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -682,7 +720,12 @@
 <span class="k">if</span> <span class="n">cur_grade</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
     <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Всего хорошистов и отличников по математике </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1"> человек&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Всего хорошистов и отличников по математике </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1"> человека&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Всего хорошистов и отличников по математике 2 человека
 </pre></div>
 </div>
 </div>
@@ -691,7 +734,7 @@
 <p>Движемся дальше. Так как каждый элемент списка закреплен за конкретным индексом, то в практике часто возникают задачи, логика которых завязана на индексах. Это привело к тому, что появилась альтернатива для итерации по списку. Функция <code class="docutils literal notranslate"><span class="pre">range</span></code> принимает аргументы, аналогичные срезу в списке, и возвращает итерируемый объект, в котором содержатся целые числа (индексы). Так как аргументы являются аргументами функции, а не среза, то они соединяются запятой (как <code class="docutils literal notranslate"><span class="pre">print(a,</span> <span class="pre">b)</span></code> нескольких объектов). Если подан всего один аргумент, то нижняя граница приравнивается к нулю. Посмотрим на практике, как сохранить номера (индексы) всех хорошо учащихся студентов:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math_journal</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">good_student_indexes</span> <span class="o">=</span> <span class="p">[]</span>
 
 <span class="k">for</span> <span class="n">student_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">math_journal</span><span class="p">)):</span>
@@ -700,6 +743,11 @@
         <span class="n">good_student_indexes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student_index</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Преуспевающие по математике студенты находятся на позициях: &#39;</span><span class="p">,</span> <span class="n">good_student_indexes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Преуспевающие по математике студенты находятся на позициях:  [0, 2, 3, 4, 7]
 </pre></div>
 </div>
 </div>
@@ -712,7 +760,7 @@
 <p>Некоторые циклы настолько просты, что занимают 2 или 3 строчки. Как пример - привести список чисел к списку строк:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># грубый вариант</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># грубый вариант</span>
 <span class="n">inp_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
 <span class="n">out_list</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -722,6 +770,11 @@
 <span class="c1"># list comprehension</span>
 <span class="n">out_list</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">inp_list</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">out_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39;, &#39;4&#39;, &#39;6&#39;, &#39;8&#39;]
 </pre></div>
 </div>
 </div>
