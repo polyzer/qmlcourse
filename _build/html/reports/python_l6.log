@@ -17,18 +17,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import psi4
+# разные способы объявления списков
+first_list = []
+second_list = list()
+third_list = list(1,2, 'stroka', 3.14)
+fourth_lust = [15, 2.2, ['another_list', False]]
 
-h_atom = psi4.geometry("H")
+print(type(second_list), type(fourth_lust))
+print(first_list, fourth_lust)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_2016/693153482.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mpsi4[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0;34m[0m[0m
-[1;32m      3[0m [0mh_atom[0m [0;34m=[0m [0mpsi4[0m[0;34m.[0m[0mgeometry[0m[0;34m([0m[0;34m"H"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_2034/2953670739.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0mfirst_list[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0msecond_list[0m [0;34m=[0m [0mlist[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m [0mthird_list[0m [0;34m=[0m [0mlist[0m[0;34m([0m[0;36m1[0m[0;34m,[0m[0;36m2[0m[0;34m,[0m [0;34m'stroka'[0m[0;34m,[0m [0;36m3.14[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0mfourth_lust[0m [0;34m=[0m [0;34m[[0m[0;36m15[0m[0;34m,[0m [0;36m2.2[0m[0;34m,[0m [0;34m[[0m[0;34m'another_list'[0m[0;34m,[0m [0;32mFalse[0m[0;34m][0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'psi4'
-ModuleNotFoundError: No module named 'psi4'
+[0;31mTypeError[0m: list expected at most 1 argument, got 4
+TypeError: list expected at most 1 argument, got 4
 
