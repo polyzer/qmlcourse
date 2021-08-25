@@ -468,16 +468,16 @@
 <h2>Описание лекции<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Из этой лекции вы узнаете о:</p>
 <ul class="simple">
-<li><p>базовых типах данных и переменных;</p></li>
-<li><p>простейших операциях с числами и строками;</p></li>
-<li><p>функции print;</p></li>
-<li><p>выводе информации с подстановкой значений.</p></li>
+<li><p>базовых типах данных и переменных</p></li>
+<li><p>простейших операциях с числами и строками</p></li>
+<li><p>функции print</p></li>
+<li><p>выводе информации с подстановкой значений</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
 <h2>Суть переменных в <code class="docutils literal notranslate"><span class="pre">Python</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Настало время приступить к изучению непосредственно <code class="docutils literal notranslate"><span class="pre">Python</span></code>, ведь прошло три лекции, а мы об языке программирования и не говорили вовсе! И поскольку наш курс посвящен физике, то начнем со <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D0%B2%D0%B8%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BC%D0%B0%D1%81%D1%81%D1%8B_%D0%B8_%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D0%B8">знакомой всем по школьным карандашам формулы</a> <span class="math notranslate nohighlight">\(E=mc^2\)</span>. По ней можно вычислить полную энергию физического объекта <span class="math notranslate nohighlight">\(E\)</span> с помощью известной массы объекта <span class="math notranslate nohighlight">\(m\)</span> и константы <span class="math notranslate nohighlight">\(c\)</span>. Эта постоянная, указывающая на скорость света в вакууме, используется настолько часто, что для нее выделили <strong>отдельное обозначение в виде буквы латинского алфавита</strong>, как и для многих других аналогичных величин. Если в формуле встречается <span class="math notranslate nohighlight">\(c\)</span> (в известном контексте), то вы всегда уверены, что именно нужно подставить при расчетах.</p>
-<p>Этот пример полностью описывает концепцию <strong>переменных</strong> в языках программирования, и <code class="docutils literal notranslate"><span class="pre">Python</span></code> не исключение. Запись <span class="math notranslate nohighlight">\(x = 3\)</span> означает, что везде по тексту далее под иксом подразумевается именно тройка, и ничего другого (пока не будет введено новое определение). Этой же логике подчиняется <code class="docutils literal notranslate"><span class="pre">Python</span></code>. Сначала указывается <strong>имя переменной</strong>, а затем – ассоциируемое с ней значение.</p>
+<p>Настало время приступить к изучению непосредственно Питона - ведь прошло три лекции, а мы об языке программирования и не говорили вовсе! И поскольку наш курс посвящен физике, то начнём со <a class="reference external" href="https://ru.wikipedia.org/wiki/%D0%AD%D0%BA%D0%B2%D0%B8%D0%B2%D0%B0%D0%BB%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D1%81%D1%82%D1%8C_%D0%BC%D0%B0%D1%81%D1%81%D1%8B_%D0%B8_%D1%8D%D0%BD%D0%B5%D1%80%D0%B3%D0%B8%D0%B8">знакомой всем по школьным карандашам формулы</a> <span class="math notranslate nohighlight">\(E=mc^2\)</span>. По ней можно вычислить полную энергию физического объекта <span class="math notranslate nohighlight">\(E\)</span> с помощью известной массы объекта <span class="math notranslate nohighlight">\(m\)</span> и константы <span class="math notranslate nohighlight">\(c\)</span>. Эта постоянная, указывающая на скорость света в вакууме, используется настолько часто, что для неё выделили <strong>отдельное обозначение в виде буквы латинского алфавита</strong> - как и для многих других аналогичных величин. Если в формуле встречается <span class="math notranslate nohighlight">\(c\)</span> (в известном контексте) - то вы всегда уверены, что именно нужно подставить при расчётах.</p>
+<p>Этот пример полностью описывает концепцию <strong>переменных</strong> в языках программирования, и <code class="docutils literal notranslate"><span class="pre">Python</span></code> - не исключение. Запись <span class="math notranslate nohighlight">\(x = 3\)</span> означает, что везде по тексту далее под иксом подразумевается именно тройка, и ничего другого (пока не будет введено новое определение). Этой же логике подчиняется питон. Сначала указывается <strong>имя переменной</strong>, а затем - ассоциируемое с ней значение.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="mi">299_792_458</span> <span class="c1"># запишем константу, м/с</span>
@@ -492,28 +492,28 @@
 </div>
 <p>Пример кода выше иллюстрирует сразу несколько базовых концепций, которые нужно запомнить:</p>
 <ol class="simple">
-<li><p>В объявлении переменной нет ничего сложного. Синтаксис и правила интуитивно понятны: это можно делать как в физике/математике, как в учебниках и статьях.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> означает комментарий, то есть произвольный текст, который не воспринимается <code class="docutils literal notranslate"><span class="pre">Python</span></code> (все <strong>до конца строки</strong> кода полностью игнорируется). Служит исключительно для создания подсказок в коде, объяснения происходящего, то есть для удобства.</p></li>
-<li><p>Числа могут быть <strong>целыми и вещественными</strong>. Разряды в целых числах для удобства визуального восприятия можно разделять нижней чертой.</p></li>
-<li><p><strong>Значение переменной может быть вычислимым</strong>, то есть являться производной от других переменных (как <span class="math notranslate nohighlight">\(E\)</span>, ведь это результат перемножения). На самом деле значение вычисляется в момент объявления переменной (при сложной формуле расчета процесс может занимать некоторое время).</p></li>
-<li><p>Операция возведения в квадрат реализуется с помощью <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p></li>
-<li><p>В качестве названия переменных можно использовать <strong>буквы и цифры</strong>, а также некоторые символы. Однако <strong>имя переменной не может начинаться с цифры</strong>.</p></li>
-<li><p>Переменные можно переопределять (и даже менять тип). Однако <strong>старое значение в этом случае будет безвозвратно утрачено</strong>. В данном примере после выполнения последней строчки нельзя установить, чему было равно <span class="math notranslate nohighlight">\(m\)</span> до того, как переменной было присвоено значение дюжины.</p></li>
+<li><p>В объявлении переменной нет ничего сложного - синтаксис и правила интуитивно понятны: это можно делать как в физике/математике, как в учебниках и статьях</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">#</span></code> означает комментарий, то есть произвольный текст, который не воспринимается питоном (всё <strong>до конца строки</strong> кода полностью игнорируется). Служит исключительно для создания подсказок в коде, объяснения происходящего, то есть для удобства</p></li>
+<li><p>Числа могут быть <strong>целыми и вещественными</strong>. Разряды в целых числах для удобства визуального восприятия можно разделять нижней чертой</p></li>
+<li><p><strong>Значение переменной может быть вычислимым</strong>, то есть являться производной от других переменных (как <span class="math notranslate nohighlight">\(E\)</span>, ведь это результат перемножения). На самом деле значение вычисляется в момент объявления переменной (при сложной формуле расчёта процесс может занимать некоторое время)</p></li>
+<li><p>Операция возведения в квадрат реализуется с помощью <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
+<li><p>В качестве названия переменных можно использовать <strong>буквы и цифры</strong>, а также некоторые символы. Однако <strong>имя переменной не может начинаться с цифры</strong></p></li>
+<li><p>Переменные можно переопределять (и даже менять тип). Однако <strong>старое значение в этом случае будет безвозвратно утрачено</strong>. В данном примере после выполнения последней строчки нельзя установить, чему было равно <span class="math notranslate nohighlight">\(m\)</span> до того, как переменной было присвоено значение дюжины</p></li>
 </ol>
-<p>Если говорить менее строго и более абстрактно, то <strong>переменная – это контейнер</strong> (или коробка), в котором что-то лежит, и на самой коробке на приклеенном листочке бумаги указано содержимое. Чем понятнее надпись, тем легче найти и использовать объект (поэтому переменные с названием из одной буквы воспринимаются плохо, особенно если таких переменных очень много).</p>
+<p>Если говорить менее строго и более абстрактно, то <strong>переменная - это контейнер</strong> (или коробка), в котором что-то лежит, и на самой коробке на приклеенном листочке бумаги указано содержимое. Чем понятнее надпись - тем легче найти и использовать объект (поэтому переменные с названием из одной буквы воспринимаются плохо, особенно если таких переменных очень много).</p>
 <div class="figure align-default" id="box-with-a-name">
 <a class="reference internal image-reference" href="../../_images/box_with_a_name.png"><img alt="../../_images/box_with_a_name.png" src="../../_images/box_with_a_name.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text"><a class="reference external" href="https://stevenpcurtis.medium.com/what-is-a-variable-3447ac1331b9">Объявить переменную – значит положить объект в коробку с подписью</a>.</span><a class="headerlink" href="#box-with-a-name" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text"><a class="reference external" href="https://stevenpcurtis.medium.com/what-is-a-variable-3447ac1331b9">Объявить переменную - значит положить объект в коробку с подписью</a></span><a class="headerlink" href="#box-with-a-name" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="id3">
 <h2>Типы переменных<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>В листинге кода выше важно заметить, что существует разница между двумя типами численных переменных: <strong>целые и вещественные</strong>. При сугубо математических расчетах и арифметических операциях тип переменной не имеет значения. Однако для некоторого функционала в <code class="docutils literal notranslate"><span class="pre">Python</span></code> нужно быть аккуратным. Мы поговорим подробно об этом в следующих лекциях, а пока стоит запомнить, что вещи, которые необходимо посчитать – в том числе и <strong>длину</strong> чего-то <em>счетного</em> – должны быть целочисленными (как и в жизни: первый, второй, третий…).</p>
+<p>В листинге кода выше важно заметить, что существует разница между двумя типами численных переменных: <strong>целые и вещественные</strong>. При сугубо математических расчётах и арифметических операциях не имеет значения, какого типа переменная. Однако для некоторого функционала в <code class="docutils literal notranslate"><span class="pre">Python</span></code> нужно быть аккуратным. Мы поговорим подробно об этом в следующих лекциях, а пока стоит запомнить, что вещи, которые необходимо посчитать - в том числе и <strong>длину</strong> чего-то <em>счётного</em> - должны быть целочисленными (как и в жизни: первый, второй, третий…).</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>Целочисленный тип называется <strong>int</strong> (от <code class="docutils literal notranslate"><span class="pre">Integer</span></code>), вещественный – <strong>float</strong>. Эти типы можно переводить из одного в другой. При переводе вещественного числа в целое теряется часть информации.</p>
+<p>Целочисленный тип называется <strong>int</strong> (от <code class="docutils literal notranslate"><span class="pre">Integer</span></code>), вещественный - <strong>float</strong>. Эти типы можно переводить из одного в другой. При переводе вещественного числа в целое теряется часть информации.</p>
 </div>
-<p><strong>Тип переменной</strong> – и это относится не только к числам, но и к <strong>любому</strong> объекту – можно узнать с помощью функции <code class="docutils literal notranslate"><span class="pre">type</span></code>. Для вывода информации в <code class="docutils literal notranslate"><span class="pre">Python</span></code> используется функция <code class="docutils literal notranslate"><span class="pre">print</span></code>. Что именно представляет собой функция мы рассмотрим в более поздних лекциях, пока стоит думать об этом как о некотором объекте, который зависит (рассчитывается) от других объектов и выдает некоторый результат. Для передачи аргументов используются круглые скобки (аналогично математике: <span class="math notranslate nohighlight">\(y = F(x)\)</span>). Давайте скомбинируем эти знания и рассмотрим пример:</p>
+<p><strong>Тип переменной</strong> - и это относится не только к числам, но и к <strong>любому</strong> объекту - можно узнать с помощью функции <code class="docutils literal notranslate"><span class="pre">type</span></code>. Для вывода информации в <code class="docutils literal notranslate"><span class="pre">Python</span></code> используется функция <code class="docutils literal notranslate"><span class="pre">print</span></code>. Что именно представляет собой функция мы рассмотрим в более поздних лекциях, пока стоит думать об этом как о некотором объекте, который зависит (рассчитывается) от других объектов и выдаёт некоторый результат. Для передачи аргументов используются круглые скобки (аналогично математике: <span class="math notranslate nohighlight">\(y = F(x)\)</span>). Давайте скомбинируем эти знания и рассмотрим пример:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_variable</span> <span class="o">=</span> <span class="mi">10</span>
@@ -545,11 +545,11 @@
 </div>
 </div>
 </div>
-<p>Внимательно проанализируйте код выше – в нем продемонстрирован базовый синтаксис <strong>преобразования типов</strong> и <strong>вывода информации</strong>. Легко увидеть подтверждение высказанных ранее тезисов: <code class="docutils literal notranslate"><span class="pre">second_variable</span></code> действительно потеряла часть информации (дробную часть числа), которую нельзя вернуть, если преобразовать переменную обратно во <code class="docutils literal notranslate"><span class="pre">float</span></code>. Преобразование типов в языках программирования называется <strong>приведением</strong> (типов, то есть привести одно к другому, а не из-за страшилок про духов).</p>
+<p>Внимательно проанализируйте код выше - в нём продемонстрирован базовый синтаксис <strong>преобразования типов</strong> и <strong>вывода информации</strong>. Легко увидеть подтверждение высказанных ранее тезисов - <code class="docutils literal notranslate"><span class="pre">second_variable</span></code> действительно потеряла часть информации (дробную часть числа), которую нельзя вернуть, если преобразовать переменную обратно во <code class="docutils literal notranslate"><span class="pre">float</span></code>. Преобразование типов в языках программирования называется <strong>приведением</strong> (типов, то есть привести одно к другому, а не из-за страшилок про духов).</p>
 </div>
 <div class="section" id="id4">
 <h2>Арифметические операции с числами<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
-<p>Математика <code class="docutils literal notranslate"><span class="pre">Python</span></code> максимально близка к естественной: <code class="docutils literal notranslate"><span class="pre">+-*</span></code> и <code class="docutils literal notranslate"><span class="pre">**</span></code> (рассмотренное ранее возведение в степень) работают в точности как ожидается. С делением <code class="docutils literal notranslate"><span class="pre">/</span></code> есть нюанс: <strong>возвращаемое значение всегда вещественное</strong>.</p>
+<p>Математика питона максимально близка к естественной: <code class="docutils literal notranslate"><span class="pre">+-*</span></code> и <code class="docutils literal notranslate"><span class="pre">**</span></code> (рассмотренное ранее возведение в степень) работают в точности, как ожидается. С делением <code class="docutils literal notranslate"><span class="pre">/</span></code> есть нюанс: <strong>возвращаемое значение всегда вещественное</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
@@ -587,7 +587,7 @@
 <p class="admonition-title">Note</p>
 <p>Обратите внимание, что операции не изменяют переменную саму по себе (то есть операция <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> не меняет ни <code class="docutils literal notranslate"><span class="pre">a</span></code>, ни <code class="docutils literal notranslate"><span class="pre">b</span></code>). Чтобы сохранить получаемое значение, нужно присвоить его некоторой переменной (в примере выше это <code class="docutils literal notranslate"><span class="pre">c</span></code>). Если вы хотите изменить непосредственно саму переменную, то можно переприсвоить ей значение на основе расчёта: <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> или <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">12</span></code>.</p>
 </div>
-<p>Даже несмотря на то, что кейс с делением числа на само себя очевиден (всегда получается единица, кроме деления на нуль), будет выведено вещественное значение.
+<p>Даже несмотря на то, что кейс с делением числа на само себя очевиден (всегда получается единица, кроме деления на нуль) - будет выведено вещественное значение.
 Сами же вещественные значения можно складывать, вычитать, умножать и возводить в степень как с целыми, так и с вещественными числами (и наоборот). Если в таком выражении используется хотя бы одна <code class="docutils literal notranslate"><span class="pre">float</span></code>-переменная, то и результат будет не целочисленным. Однако:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -608,10 +608,10 @@
 </div>
 </div>
 </div>
-<p>Это <em>практически</em> все тонкости, которые необходимо знать, чтобы не совершать базовые ошибки.</p>
+<p>Это <em>практически</em> все тонкости, которые необходимо знать, чтобы не совершать базовых ошибок.</p>
 <div class="section" id="id5">
 <h3>Примечание<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<p>Возможно, у вас родился вопрос относительно расстановки пробелов в коде выше. Обязательно ли соблюдать такой синтаксис? Нужно ли ставить пробелы до и после знаков операций? На самом деле нет: это делается исключительно для удобства чтения кода и <strong>настоятельно рекомендуется не удаляться от стандартов языка</strong>. Код ниже выполнится без ошибок, однако ухудшается читаемость:</p>
+<p>Возможно, у вас родился вопрос относительно расстановки пробелов в коде выше. Обязательно ли соблюдать такой синтаксис? Нужно ли ставить пробелы до и после знаков операций? На самом деле нет - это делается исключительно для удобства чтения кода, и <strong>настоятельно рекомендуется не удаляться от стандартов языка</strong>. Код ниже выполнится без ошибок, однако ухудшается читаемость:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span>            <span class="mi">3</span>
@@ -635,7 +635,7 @@
 </div>
 <div class="section" id="id6">
 <h2>Строковые переменные<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
-<p>Мы разобрались в том, как описывать и хранить числа, как производить арифметические расчеты. Базовый математический язык освоен, но мы же люди, и хочется общаться словами! Конечно, <code class="docutils literal notranslate"><span class="pre">Python</span></code> позволяет это делать. Благодаря <strong>строковым переменным</strong> можно хранить и соединять текстовую информацию:</p>
+<p>Мы разобрались в том, как описывать и хранить числа, как производить арифметические расчёты. Базовый математический язык освоен, но мы же люди, и хочется общаться словами! Конечно, <code class="docutils literal notranslate"><span class="pre">Python</span></code> позволяет это делать. Благодаря <strong>строковым переменным</strong> можно хранить и соединять текстовую информацию:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text_variable</span> <span class="o">=</span> <span class="s1">&#39;тут что-то написано&#39;</span>
@@ -659,7 +659,7 @@
 </div>
 </div>
 </div>
-<p>В примере выше рассмотрено три способа создания текстовых переменных. Первые два не отличаются между собой с точки зрения <code class="docutils literal notranslate"><span class="pre">Python</span></code>, то есть неважно, используете ли вы одинарные кавычки <code class="docutils literal notranslate"><span class="pre">'</span></code> или двойные <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>. Однако стоит понимать, что если ваша строка содержит в себе такой символ, то кавычка должна быть изменена:</p>
+<p>В примере выше рассмотрено три способа создания текстовых переменных. Первые два не отличаются между собой с точки зрения <code class="docutils literal notranslate"><span class="pre">Python</span></code>, то есть не важно, используете ли вы одинарные кавычки <code class="docutils literal notranslate"><span class="pre">'</span></code> или двойные <code class="docutils literal notranslate"><span class="pre">&quot;</span></code>. Однако стоит понимать, что если ваша строка содержит в себе такой символ, то кавычка должна быть изменена:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>error_string = &#39;Chillin&#39; kid&#39;
 another_error_string = &quot;И тут он мне говорит: &quot;у тебя нет ног!&quot;&quot;
 
@@ -667,7 +667,7 @@ print(error_string)
 print(another_error_string)
 </pre></div>
 </div>
-<p>Механизм ошибки таков, что <code class="docutils literal notranslate"><span class="pre">Python</span></code> неясно: это вы закончили строчку и дальше идет какая-то команда, или же строчка продолжается. В обоих случаях <strong>нужно сменить способ создания строки</strong> – и тогда все будет хорошо:</p>
+<p>Механизм ошибки таков, что <code class="docutils literal notranslate"><span class="pre">Python</span></code> не ясно - это вы закончили строчку, и дальше идёт какая-то команда, или же строчка продолжается? В обоих случаях <strong>нужно сменить способ создания строки</strong> - и тогда всё будет хорошо:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">error_string</span> <span class="o">=</span> <span class="s2">&quot;Chillin&#39; kid&quot;</span>
@@ -685,7 +685,7 @@ print(another_error_string)
 </div>
 </div>
 </div>
-<p>Если необходимо сохранить какой-либо объемный текст или сообщение, можно воспользоваться мультистрочным объявлением переменной, как в первом примере блока.</p>
+<p>Если необходимо сохранить какой-либо объемный текст, сообщение и так далее - можно воспользоваться мультистрочным объявлением переменной, как в первом примере блока.</p>
 <p>Строки можно объединять для удобства вывода информации:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -715,15 +715,15 @@ print(another_error_string)
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Будьте аккуратны со сложением строк. Объединение строк <code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span></code> и <code class="docutils literal notranslate"><span class="pre">&quot;5&quot;</span></code> даст результат <code class="docutils literal notranslate"><span class="pre">&quot;35&quot;</span></code>, а не <code class="docutils literal notranslate"><span class="pre">8</span></code> – и тип результирующего значения <strong>будет строковый</strong>. <strong>Сложить строку и число нельзя</strong>: вы получите ошибку и никакого приведения типов не произойдет. Здесь возникнет двусмысленность – нужно привести число к строке и затем сконкатенировать или же строку к числу (а вдруг это невозможно?), после чего сложить.</p>
+<p>Будьте аккуратны со сложением строк. Объединение строк <code class="docutils literal notranslate"><span class="pre">&quot;3&quot;</span></code> и <code class="docutils literal notranslate"><span class="pre">&quot;5&quot;</span></code> даст результат <code class="docutils literal notranslate"><span class="pre">&quot;35&quot;</span></code>, а не <code class="docutils literal notranslate"><span class="pre">8</span></code> - и тип результирующего значения <strong>будет строковый</strong>. <strong>Сложить строку и число нельзя</strong> - вы получите ошибку, и никакого приведения типов не произойдет (так как есть двусмысленность - нужно привести число к строке и затем сконкатенировать или же строку к числу (а вдруг это невозможно?), после чего сложить?).</p>
 </div>
 <p>Склеивание строк называется <strong>конкатенацией</strong>. Попробуйте в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-ноутбуке объединить строковые, целочисленные и вещественные переменные в разных комбинациях. Разберитесь, что означает ошибка, которая будет выведена в случае, если не делать приведение типов (то есть без <code class="docutils literal notranslate"><span class="pre">str</span></code> в <code class="docutils literal notranslate"><span class="pre">str(result)</span></code>).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Обратите внимание на пробел между числом и точкой в первом случае. Они добавлены автоматически функцией <code class="docutils literal notranslate"><span class="pre">print</span></code> – это сделано для того, чтобы разные объекты при последовательном выводе не “склеивались” друг с другом.
-Во втором случае этого не происходит, так как мы напрямую склеиваем строки и только затем передаем результат конкатенации на печать в <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
+<p>Обратите внимание на пробел между числом и точкой в первом случае. Они добавлены автоматически фунцией <code class="docutils literal notranslate"><span class="pre">print</span></code> - это сделано для того, чтобы разные объекты при последовательном выводе не “склеивались” друг с другом.
+Во втором случае так не происходит, так как мы напрямую склеиваем строки и только затем передаём результат конкатенации на печать в <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
 </div>
-<p>Но на практике это не совсем удобно, поэтому в <code class="docutils literal notranslate"><span class="pre">Python</span></code> придумали <code class="docutils literal notranslate"><span class="pre">F</span></code>-строки. Их суть в том, что переменная из кода напрямую подставляется (с автоматическим приведением типа к строке) в саму строку! Вот:</p>
+<p>Но на практике это не совсем удобно - поэтому в <code class="docutils literal notranslate"><span class="pre">Python</span></code> придумали <code class="docutils literal notranslate"><span class="pre">F</span></code>-строки. Их суть в том, что переменная из кода напрямую подставляется (с автоматическим приведением типа к строке) в саму строку! Вот:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12</span>
@@ -747,8 +747,8 @@ print(another_error_string)
 </div>
 </div>
 </div>
-<p>Для объявления <code class="docutils literal notranslate"><span class="pre">F</span></code>-строки нужно, во-первых, использовать одинаковые кавычки на концах текста. Во-вторых, нужно указать литеру <code class="docutils literal notranslate"><span class="pre">f</span></code> перед самой строкой. И последнее – нужно обрамить название конкретной переменной (<code class="docutils literal notranslate"><span class="pre">result</span></code> в данном случае) в фигурные скобки.</p>
-<p>Когда переменная одна, а также нет текста после ее использования, то выгода <code class="docutils literal notranslate"><span class="pre">F</span></code>-строк не так очевидна (относительно простого <code class="docutils literal notranslate"><span class="pre">print(some_string,</span> <span class="pre">some_variable)</span></code>). Однако представьте, что вам нужно вывести координаты точки в трехмерном пространстве, значение времени, параметры системы и значение некоторой функции от всех переменных выше!</p>
+<p>Для объявления <code class="docutils literal notranslate"><span class="pre">F</span></code>-строки нужно, во-первых, использовать одинаковые кавычки на концах текста, во-вторых, указать литеру <code class="docutils literal notranslate"><span class="pre">f</span></code> перед самой строкой. И последнее - обрамить название конкретной переменной (<code class="docutils literal notranslate"><span class="pre">result</span></code> в данном случае) в фигурные скобки.
+Когда переменная одна, а также нет текста после её использования, то выгода <code class="docutils literal notranslate"><span class="pre">F</span></code>-строк не так очевидна (относительно простого <code class="docutils literal notranslate"><span class="pre">print(some_string,</span> <span class="pre">some_variable)</span></code>), однако представьте, что вам нужно вывести координаты точки в трёхмерном пространстве, значение времени, параметры системы и значение некоторой функции от всех переменных выше!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># так тоже можно!</span>
@@ -777,13 +777,13 @@ print(another_error_string)
 <div class="section" id="id7">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><strong>Переменные – это “контейнеры”</strong>, в которые можно что-то положить и дать название.</p></li>
-<li><p>Математика в <code class="docutils literal notranslate"><span class="pre">Python</span></code> не имеет сложных правил, процесс вычислений максимально интуитивен.</p></li>
-<li><p>Арифметические операции могут <strong>менять тип</strong> результирующей переменной.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">type()</span></code>, <code class="docutils literal notranslate"><span class="pre">print()</span></code> – базовые функции, с помощью которых можно делать <strong>самопроверки</strong> по ходу написания кода.</p></li>
-<li><p><strong>Сменить тип</strong> переменной можно вызовом функций <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">str()</span></code>.</p></li>
-<li><p>Строки могут обрамляться как <code class="docutils literal notranslate"><span class="pre">'</span></code>, так и <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> (но этих символов <strong>не должно быть внутри</strong> текста).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>-строки облегчают комплексный вывод, содержащий как текст, так и переменные <code class="docutils literal notranslate"><span class="pre">Python</span></code> (и автоматически приводит типы).</p></li>
+<li><p><strong>Переменные - это “контейнеры”</strong>, в которые можно что-то положить и дать название</p></li>
+<li><p>Математика в <code class="docutils literal notranslate"><span class="pre">Python</span></code> не имеет сложных правил, процесс вычислений максимально интуитивен</p></li>
+<li><p>Арифметические операции могут <strong>менять тип</strong> результирующей переменной</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type()</span></code>, <code class="docutils literal notranslate"><span class="pre">print()</span></code> - базовые функции, с помощью которых можно делать <strong>самопроверки</strong> по ходу написания кода</p></li>
+<li><p><strong>Сменить тип</strong> переменной можно вызовом функций <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code>, <code class="docutils literal notranslate"><span class="pre">str()</span></code></p></li>
+<li><p>Строки могут обрамляться как <code class="docutils literal notranslate"><span class="pre">'</span></code>, так и <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> (но этих символов <strong>не должно быть внутри</strong> текста)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code>-строки облегчают комплексный вывод, содержащий как текст, так и переменные <code class="docutils literal notranslate"><span class="pre">Python</span></code> (и автоматически приводит типы)</p></li>
 </ul>
 </div>
 </div>

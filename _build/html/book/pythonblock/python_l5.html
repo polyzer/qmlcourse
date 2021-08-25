@@ -457,18 +457,18 @@
 <span id="id1"></span><h1>Условные конструкции, булева логика и сравнения<a class="headerlink" href="#python-l5" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>Описание лекции<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>В этой лекции будут описаны такие вещи как:</p>
+<p>В этой лекции мы расскажем про:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code>-конструкции и условия</p></li>
-<li><p>тип <code class="docutils literal notranslate"><span class="pre">bool</span></code></p></li>
-<li><p>операторы сравнения</p></li>
-<li><p>блоки кода и отступы</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">else</span></code>-конструкции и условия;</p></li>
+<li><p>тип <code class="docutils literal notranslate"><span class="pre">bool</span></code>;</p></li>
+<li><p>операторы сравнения;</p></li>
+<li><p>блоки кода и отступы.</p></li>
 </ul>
 </div>
 <div class="section" id="id3">
 <h2>Ветвление логики<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>В прошлых лекциях были рассмотрены программы с линейной структурой – сначала выполнялась первая конструкция (например, объявление переменной), затем вторая (преобразование переменной или расчет по формуле), после – третья (<code class="docutils literal notranslate"><span class="pre">print</span></code> для вывода результатов). Можно сказать, что происходило последовательное исполнение команд, причем каждая инструкция выполнялась <strong>обязательно</strong>. Но что делать, если хочется опираться на обстоятельства и принимать решения, выполнять одну часть кода или другую?</p>
-<p>Допустим, что необходимо по данному числу <code class="docutils literal notranslate"><span class="pre">x</span></code> определить его абсолютную величину (модуль). Программа должна напечатать значение переменной <code class="docutils literal notranslate"><span class="pre">x</span></code>, если <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> или же величину <code class="docutils literal notranslate"><span class="pre">-x</span></code> в противном случае (<code class="docutils literal notranslate"><span class="pre">-(-5)</span> <span class="pre">=</span> <span class="pre">5</span></code>). Эту логику можно записать следующим образом:</p>
+<p>В прошлых лекциях мы рассмотрели программы с линейной структурой: сначала выполнялась первая конструкция (например, объявление переменной), затем вторая (преобразование переменной или расчет по формуле), после – третья (<code class="docutils literal notranslate"><span class="pre">print</span></code> для вывода результатов). Можно сказать, что происходило последовательное исполнение команд, причем каждая инструкция выполнялась <strong>обязательно</strong>. Но что делать, если хочется опираться на обстоятельства и принимать решения о том, выполнять одну часть кода или другую?</p>
+<p>Допустим, по числу <code class="docutils literal notranslate"><span class="pre">x</span></code> нужно определить его абсолютную величину, то есть модуль. Программа должна напечатать значение переменной <code class="docutils literal notranslate"><span class="pre">x</span></code>, если <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code> или же величину <code class="docutils literal notranslate"><span class="pre">-x</span></code> в противном случае (<code class="docutils literal notranslate"><span class="pre">-(-5)</span> <span class="pre">=</span> <span class="pre">5</span></code>). Эту логику можно записать следующим образом:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span>  <span class="c1"># попробуйте поменять значение переменной</span>
@@ -496,7 +496,7 @@
     <span class="o">&lt;</span><span class="n">Блок</span> <span class="n">инструкций</span> <span class="mi">2</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">else</span></code> - тоже ключевое слово (в переводе - <em>“иначе”</em>). Таким образом, можно в голове придерживаться такой интерпретации: “<strong>если</strong> условие верно (истинно), <strong>то</strong> выполни первый блок команд, <strong>иначе</strong> выполни второй блок”.</p>
+<p><code class="docutils literal notranslate"><span class="pre">else</span></code> – тоже ключевое слово (в переводе – <em>“иначе”</em>). Таким образом, можно в голове придерживаться такой интерпретации: “<strong>если</strong> условие верно (истинно), <strong>то</strong> выполни первый блок команд, <strong>иначе</strong> выполни второй блок”.</p>
 <p>Условная инструкция содержит как минимум ключевое слово <code class="docutils literal notranslate"><span class="pre">if</span></code> (единожды), затем может идти любое количество (включая ноль) блоков с условием <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span> <span class="pre">&lt;условие&gt;</span></code> (<em>иначе если</em>, то есть будет выполнена проверка нового условия в случае, если первая проверка в <code class="docutils literal notranslate"><span class="pre">if</span></code> не прошла), затем – опционально – конструкция <code class="docutils literal notranslate"><span class="pre">else</span></code>. Логика чтения и выполнения кода сохраняет порядок <strong>сверху вниз</strong>. Как только одно из условий будет выполнено, выполнится соответствующая инструкция (или набор инструкций), а все последующие блоки будут проигнорированы. Это проиллюстрировано в коде:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -520,6 +520,7 @@
 </div>
 </div>
 <p>Понятно, что <code class="docutils literal notranslate"><span class="pre">x</span></code> не может одновременно быть и больше нуля, и меньше (или равен ему). Среди всех трех <code class="docutils literal notranslate"><span class="pre">print</span></code>-блоков будет выполнен <strong>только один</strong>. Если <code class="docutils literal notranslate"><span class="pre">x</span></code> действительно больше нуля, то второе условие (<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">0</span></code>) даже не будет проверяться – <code class="docutils literal notranslate"><span class="pre">Python</span></code> сразу же перейдет к последней строке и выведет надпись “Такие дела!”.</p>
+<p>Чтобы лучше разобраться в том, как работает код, можно использовать <strong>визуализаторы</strong> – например, <a class="reference external" href="https://pythontutor.com/visualize.html#mode=edit">такой</a>. Прогоняйте через него весь код (даже в несколько строк) и сверяйте со своими ожиданиями от его работы.</p>
 </div>
 <div class="section" id="id4">
 <h2>А что вообще такое эти ваши условия?<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
@@ -547,11 +548,11 @@ True &lt;class &#39;bool&#39;&gt;
 <blockquote>
 <div><p>Boolean (Булев, Логический тип данных) – примитивный тип данных в информатике, которые могут принимать <strong>два возможных значения</strong>, иногда называемых истиной (True) и ложью (False).</p>
 </div></blockquote>
-<p>Оказывается, что в коде выше мы получили <strong>ВСЕ</strong> возможные варианты булевой переменной – это истинна (<code class="docutils literal notranslate"><span class="pre">True</span></code>, пишется только с заглавной буквы) и ложь (<code class="docutils literal notranslate"><span class="pre">False</span></code>, аналогично). Никаких других значений быть для условия не может. Вот такой это простой тип данных.</p>
+<p>Оказывается, что в коде выше мы получили <strong>ВСЕ</strong> возможные варианты булевой переменной – это истина (<code class="docutils literal notranslate"><span class="pre">True</span></code>, пишется только с заглавной буквы) и ложь (<code class="docutils literal notranslate"><span class="pre">False</span></code>, аналогично). Никаких других значений быть для условия не может. Вот такой это простой тип данных.</p>
 </div>
 <div class="section" id="bool">
 <h2>Способы получения <code class="docutils literal notranslate"><span class="pre">bool</span></code><a class="headerlink" href="#bool" title="Permalink to this headline">¶</a></h2>
-<p>Какими вообще могут быть условия? Как с ними можно обращаться? Согласно <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html">официальной документации</a>, доступны следующие операции сравнения в <code class="docutils literal notranslate"><span class="pre">Python</span></code>:</p>
+<p>Какими вообще могут быть условия? Как с ними можно обращаться? Согласно <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html">официальной документации</a>, в <code class="docutils literal notranslate"><span class="pre">Python</span></code> есть такие операторы сравнения:</p>
 <div class="figure align-default" id="operators-table">
 <a class="reference internal image-reference" href="../../_images/operators_table.png"><img alt="../../_images/operators_table.png" src="../../_images/operators_table.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Все операции сравнения работают нативно (так же, как и в математике)</span><a class="headerlink" href="#operators-table" title="Permalink to this image">¶</a></p>
@@ -570,8 +571,8 @@ True
 </div>
 </div>
 </div>
-<p>Здесь практически нечего рассматривать, операторы сравнения они и в питоне операторы. Куда интереснее принцип <strong>объединения различных условий в одно</strong> – для создания комплексной логики.</p>
-<p>Пусть стоит задача определения четверти точки по её координатам на двумерной плоскости. Решение такой задачи может быть записано следующим образом:</p>
+<p>Здесь практически нечего рассматривать, операторы сравнения они и в <code class="docutils literal notranslate"><span class="pre">Python</span></code> операторы. Куда интереснее принцип <strong>объединения различных условий в одно</strong> – для создания комплексной логики.</p>
+<p>Пусть стоит задача определения четверти точки по ее координатам на двумерной плоскости. Решение такой задачи может быть записано следующим образом:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mf">3.6</span>
@@ -682,23 +683,23 @@ True
 </div>
 <div class="section" id="id5">
 <h2>Блоки кода и отступы<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
-<p>В примерах выше вы наверняка заметили упоминание термина “блок кода”, а также откуда-то взявшиеся отступы после условий, и это не случайно. Во-первых, давайте признаем, что так условные конструкции (особенно вложенные!) читать куда легче, и глаза не разбегаются. Во-вторых, это особенность языка <code class="docutils literal notranslate"><span class="pre">Python</span></code> – здесь не используются скобки <code class="docutils literal notranslate"><span class="pre">{}</span></code> для указания блоков, всё форматирование осуществляется с помощью отступов. Отступы <strong>всегда</strong> добавляются в строки кода <strong>после двоеточия</strong>.</p>
-<p>Для выделения блока инструкций (строк кода, выполняющихся подряд при любых условиях), относящихся к инструкциям <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> или другим, изучаемым далее, в языке <code class="docutils literal notranslate"><span class="pre">Python</span></code> используются <strong>отступы</strong>. Все инструкции, которые относятся к одному блоку, должны иметь <strong>равную величину отступа</strong>, то есть одинаковое число <strong>пробелов в начале строки</strong>. Рекомендуется использовать <strong>отступ в 4 пробела</strong> и не рекомендуется использовать в качестве отступа символ табуляции. Если необходимо сделать еще одно вложение блока инструкций – достаточно добавить еще 4 пробела (см. пример выше с поиском четверти на плоскости).</p>
+<p>В примерах выше вы наверняка заметили упоминание термина “блок кода”, а также откуда-то взявшиеся отступы после условий, и это не случайно. Во-первых, давайте признаем, что так условные конструкции (особенно вложенные!) читать куда легче, и глаза не разбегаются. Во-вторых, это особенность языка <code class="docutils literal notranslate"><span class="pre">Python</span></code> – здесь не используются скобки <code class="docutils literal notranslate"><span class="pre">{}</span></code> для указания блоков, все форматирование происходит с помощью отступов. Отступы <strong>всегда</strong> добавляются в строки кода <strong>после двоеточия</strong>.</p>
+<p>Для выделения блока инструкций (строк кода, выполняющихся подряд при любых условиях), относящихся к инструкциям <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">else</span></code> или другим, изучаемым далее, в языке <code class="docutils literal notranslate"><span class="pre">Python</span></code> используются <strong>отступы</strong>. Все инструкции, которые относятся к одному блоку, должны иметь <strong>равную величину отступа</strong>, то есть одинаковое число <strong>пробелов в начале строки</strong>. В качестве отступа <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/#tabs-or-spaces">PEP 8</a> рекомендует использовать <strong>отступ в четыре пробела</strong> и не рекомендует использовать символ табуляции. Если нужно сделать еще одно вложение блока инструкций, достаточно добавить еще четыре пробела (см. пример выше с поиском четверти на плоскости).</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Хоть и не рекомендуется использовать символ табуляции для создания отступов, кнопка <code class="docutils literal notranslate"><span class="pre">Tab</span></code> на вашей клавиатуре в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-ноутбуке (при курсоре, указывающим на начало строки кода) создаст отступ в 4 пробела. Пользуйтесь этим, чтобы не перегружать клавишу пробела лишними постукиваниями :)</p>
+<p>Хоть и не рекомендуется использовать символ табуляции для создания отступов, кнопка <code class="docutils literal notranslate"><span class="pre">Tab</span></code> на вашей клавиатуре в <code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>-ноутбуке (при курсоре, указывающим на начало строки кода) создаст отступ в четыре пробела. Пользуйтесь этим, чтобы не перегружать клавишу пробела лишними постукиваниями :).</p>
 </div>
 </div>
 <div class="section" id="id6">
 <h2>Что мы узнали из лекции<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>для задания логики выполнения кода и создания нелинейности используются <strong>условные инструкции</strong> (потому что они следуют некоторым условиям)</p></li>
-<li><p>условная инструкция задается ключевым словом <code class="docutils literal notranslate"><span class="pre">if</span></code>, после которого может следовать несколько (от нуля) блоков <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">elif</span></code>, и – опционально – в конце добавляется <code class="docutils literal notranslate"><span class="pre">else</span></code>, если ни один из блоков выше не сработал</p></li>
-<li><p>условия должны быть <strong>булевого типа</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) и могут принимать <strong>всего два значения</strong> – <code class="docutils literal notranslate"><span class="pre">True</span></code> и <code class="docutils literal notranslate"><span class="pre">False</span></code>. Выполнится тот блок кода, который задан истинным (<code class="docutils literal notranslate"><span class="pre">True</span></code>) условием (и только первый!)</p></li>
-<li><p>условные конструкции можно вкладывать друг в друга, а также объединять с помощью <strong>логических операторов</strong> <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> и <code class="docutils literal notranslate"><span class="pre">not</span></code></p></li>
-<li><p><strong>блок кода</strong> – это несколько подряд идущих команд, которые будут выполнены последовательно</p></li>
-<li><p>для выделения блока кода после условия необходимо использовать <strong>отступы</strong> (4 пробела)</p></li>
-<li><p>для создания отступа в <code class="docutils literal notranslate"><span class="pre">Jupter</span></code> нужно нажать <code class="docutils literal notranslate"><span class="pre">Tab</span></code> в начале строки кода</p></li>
+<li><p>Для задания логики выполнения кода и создания нелинейности используются <strong>условные инструкции</strong>, поскольку они следуют некоторым условиям.</p></li>
+<li><p>Условная инструкция задается ключевым словом <code class="docutils literal notranslate"><span class="pre">if</span></code>, после которого может следовать несколько (от нуля) блоков <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>/<code class="docutils literal notranslate"><span class="pre">elif</span></code>, и – опционально – в конце добавляется <code class="docutils literal notranslate"><span class="pre">else</span></code>, если ни один из блоков выше не сработал.</p></li>
+<li><p>Условия должны быть <strong>булевого типа</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) и могут принимать <strong>всего два значения</strong> – <code class="docutils literal notranslate"><span class="pre">True</span></code> и <code class="docutils literal notranslate"><span class="pre">False</span></code>. Выполнится тот блок кода, который задан истинным (<code class="docutils literal notranslate"><span class="pre">True</span></code>) условием (и только первый!).</p></li>
+<li><p>Условные конструкции можно вкладывать друг в друга, а также объединять с помощью <strong>логических операторов</strong> <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code> и <code class="docutils literal notranslate"><span class="pre">not</span></code>.</p></li>
+<li><p><strong>Блок кода</strong> – это несколько подряд идущих команд, которые будут выполнены последовательно.</p></li>
+<li><p>Чтобы выделить блок кода после условия, используйте <strong>отступы</strong> – четыре пробела.</p></li>
+<li><p>Чтобы создать отступ в <code class="docutils literal notranslate"><span class="pre">Jupter</span></code>, нужно нажать <code class="docutils literal notranslate"><span class="pre">Tab</span></code> в начале строки кода.</p></li>
 </ul>
 </div>
 </div>
