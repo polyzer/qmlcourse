@@ -485,8 +485,8 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># разные способы объявления списков</span>
 <span class="n">first_list</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">second_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-<span class="n">third_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;stroka&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">])</span>
-<span class="n">fourth_lust</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;another_list&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">]]</span>
+<span class="n">third_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;stroka&quot;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">])</span>
+<span class="n">fourth_lust</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;another_list&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">]]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">second_list</span><span class="p">),</span> <span class="nb">type</span><span class="p">(</span><span class="n">fourth_lust</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">first_list</span><span class="p">,</span> <span class="n">fourth_lust</span><span class="p">)</span>
@@ -588,11 +588,11 @@ avg_grade = 3.9
 
 <span class="c1"># возьмем последнюю оценку</span>
 <span class="n">last_grade</span> <span class="o">=</span> <span class="n">math_journal</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Последняя оценка: &#39;</span><span class="p">,</span> <span class="n">last_grade</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Последняя оценка: </span><span class="si">{</span><span class="n">last_grade</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># а теперь - предпоследнюю</span>
 <span class="n">prev</span> <span class="o">=</span> <span class="n">math_journal</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Предпоследняя оценка: &#39;</span><span class="p">,</span> <span class="n">prev</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Предпоследняя оценка: </span><span class="si">{</span><span class="n">prev</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># конечно, взятие по индексам можно использовать в ранее разобранном синтаксисе</span>
 
@@ -606,8 +606,8 @@ avg_grade = 3.9
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Последняя оценка:  5
-Предпоследняя оценка:  4
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Последняя оценка: 5
+Предпоследняя оценка: 4
 Последний студент сдал очень хорошо, на его фоне предпоследний просто двоечник!
 </pre></div>
 </div>
@@ -625,23 +625,23 @@ avg_grade = 3.9
 
 <span class="c1"># как взять первые 3 оценки?</span>
 <span class="n">first_3_grades</span> <span class="o">=</span> <span class="n">math_journal</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">first_3_grades</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">first_3_grades</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># как взять последние две оценки?</span>
 <span class="n">last_2_grades</span> <span class="o">=</span> <span class="n">math_journal</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">last_2_grades</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">last_2_grades</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># сделаем срез на 4 оценки, начиная со второй (с индексом 1)</span>
 <span class="n">start_index</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">some_slice</span> <span class="o">=</span> <span class="n">math_journal</span><span class="p">[</span><span class="n">start_index</span> <span class="p">:</span> <span class="n">start_index</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">some_slice</span> <span class="si">= }</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">some_slice</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># возьмем столько объектов из начала, сколько объектов в some_slice</span>
 <span class="n">yet_another_slice</span> <span class="o">=</span> <span class="n">math_journal</span><span class="p">[:</span><span class="nb">len</span><span class="p">(</span><span class="n">some_slice</span><span class="p">)]</span>
 
 <span class="c1"># а вот так можно проверить, попадает ли объект в список</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Верно ли, что единица входит в some_slice? &#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">some_slice</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Верно ли, что единица входит в yet_another_slice? &#39;</span><span class="p">,</span> <span class="mi">1</span> <span class="ow">in</span> <span class="n">yet_another_slice</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Верно ли, что единица входит в some_slice? {1 in some_slice}&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Верно ли, что единица входит в yet_another_slice? {1 in yet_another_slice}&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -649,8 +649,8 @@ avg_grade = 3.9
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>first_3_grades = [1, 2, 3]
 last_2_grades = [4, 5]
 some_slice = [2, 3, 4, 5]
-Верно ли, что единица входит в some_slice?  False
-Верно ли, что единица входит в yet_another_slice?  True
+Верно ли, что единица входит в some_slice? {1 in some_slice}
+Верно ли, что единица входит в yet_another_slice? {1 in yet_another_slice}
 </pre></div>
 </div>
 </div>
@@ -658,7 +658,7 @@ some_slice = [2, 3, 4, 5]
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Можно сделать пустой срез, и тогда Python вернет пустой список без объектов. Можете проверить сами:
-<code class="docutils literal notranslate"><span class="pre">['1',</span> <span class="pre">'2',</span> <span class="pre">'3'][10:20]</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">[&quot;1&quot;,</span> <span class="pre">&quot;2&quot;,</span> <span class="pre">&quot;3&quot;][10:20]</span></code></p>
 </div>
 <p>Давайте проговорим основные моменты, которые <strong>крайне важно понять</strong>:</p>
 <ol class="simple">
@@ -692,7 +692,7 @@ some_slice = [2, 3, 4, 5]
     <span class="k">if</span> <span class="n">cur_grade</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
         <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Всего хорошистов и отличников по математике </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1"> человека&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Всего хорошистов и отличников по математике </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2"> человека&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -721,7 +721,7 @@ some_slice = [2, 3, 4, 5]
 <span class="k">if</span> <span class="n">cur_grade</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
     <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Всего хорошистов и отличников по математике </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s1"> человека&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Всего хорошистов и отличников по математике </span><span class="si">{</span><span class="n">counter</span><span class="si">}</span><span class="s2"> человека&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -743,12 +743,12 @@ some_slice = [2, 3, 4, 5]
     <span class="k">if</span> <span class="n">curent_student_grade</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
         <span class="n">good_student_indexes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">student_index</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Преуспевающие по математике студенты находятся на позициях: &#39;</span><span class="p">,</span> <span class="n">good_student_indexes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Преуспевающие по математике студенты находятся на позициях: </span><span class="si">{</span><span class="n">good_student_indexes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Преуспевающие по математике студенты находятся на позициях:  [0, 2, 3, 4, 7]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Преуспевающие по математике студенты находятся на позициях: [0, 2, 3, 4, 7]
 </pre></div>
 </div>
 </div>
