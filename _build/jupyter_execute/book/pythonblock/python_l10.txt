@@ -5,7 +5,7 @@ print(f"Метод append имеет тип {example_list.append}")
 example_list.append("чем-то")
 
 # а вот так можно обратиться к атрибуту конкретного объекта
-attr_value = x.__doc__
+attr_value = example_list.__doc__
 print(f"Значение атрибута: {attr_value}")
 
 # создадим два объекта класса int

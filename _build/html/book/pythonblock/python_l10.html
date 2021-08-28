@@ -471,7 +471,7 @@
 <li><p>Методы.</p></li>
 </ol>
 <div class="figure align-default" id="class-and-obj1">
-<a class="reference internal image-reference" href="../../_images/class_and_obj1.png"><img alt="../../_images/class_and_obj1.png" src="../../_images/class_and_obj1.png" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="../../_images/class_and_obj1.png"><img alt="../../_images/class_and_obj1.png" src="../../_images/class_and_obj1.png" style="width: 250px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Так можно проиллюстрировать соотношение “класс - объекты”. Сверху указаны общие прототипы (прямоугольник, звезда, треугольник), снизу - уникальные экземпляры, со своим цветом и деталями.</span><a class="headerlink" href="#class-and-obj1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Как определить тип мы уже знаем. И с объектами на самом деле мы знакомы с самого начала - ведь даже целочисленная переменная <code class="docutils literal notranslate"><span class="pre">5</span></code>, имеющая <code class="docutils literal notranslate"><span class="pre">type(5)</span> <span class="pre">=</span> <span class="pre">int</span></code>, представляет собой объект. Напомним, что говорилось в курсе ранее: <strong>методы - это те же функции, только существующие не сами по себе, а являющиеся частью класса</strong>.</p>
@@ -484,7 +484,7 @@
 <span class="n">example_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;чем-то&quot;</span><span class="p">)</span>
 
 <span class="c1"># а вот так можно обратиться к атрибуту конкретного объекта</span>
-<span class="n">attr_value</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="vm">__doc__</span>
+<span class="n">attr_value</span> <span class="o">=</span> <span class="n">example_list</span><span class="o">.</span><span class="vm">__doc__</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Значение атрибута: </span><span class="si">{</span><span class="n">attr_value</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
