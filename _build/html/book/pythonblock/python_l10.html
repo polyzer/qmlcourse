@@ -490,7 +490,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Метод append имеет тип &lt;built-in method append of list object at 0x7f38bca8ff00&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Метод append имеет тип &lt;built-in method append of list object at 0x7fabe0d92880&gt;
 Значение атрибута: Built-in mutable sequence.
 
 If no argument is given, the constructor creates a new empty list.
@@ -661,7 +661,7 @@ type(example_list) = &lt;class &#39;__main__.List&#39;&gt;
 <span class="k">def</span> <span class="nf">one_system_cycle</span><span class="p">(</span><span class="n">system</span><span class="p">:</span> <span class="n">System</span><span class="p">,</span> <span class="n">objects</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">objects</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">system</span><span class="o">.</span><span class="n">second_action</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
-        <span class="c1"># убираем один посдений объект</span>
+        <span class="c1"># убираем один последний объект</span>
         <span class="n">objects</span> <span class="o">=</span> <span class="n">objects</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">objects</span> <span class="o">=</span> <span class="p">[</span><span class="n">Object</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
