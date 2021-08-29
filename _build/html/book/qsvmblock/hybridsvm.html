@@ -180,6 +180,11 @@
    🟩 Алгоритм Дойча
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/grovers_algorithm.html">
+   🟩 Алгоритм Гровера
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -533,7 +538,7 @@
 <p>Давайте кратко вспомним, как устроен этот алгоритм.</p>
 <div class="figure align-default" id="classicalsvm">
 <a class="reference internal image-reference" href="../../_images/Support_vector_machine.jpg"><img alt="../../_images/Support_vector_machine.jpg" src="../../_images/Support_vector_machine.jpg" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Классический SVM</span><a class="headerlink" href="#classicalsvm" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">Классический SVM</span><a class="headerlink" href="#classicalsvm" title="Permalink to this image">¶</a></p>
 </div>
 <p>В данном случае алгоритм пытается найти такую разделяющую прямую (в многомерном случае это будет гиперплоскость), чтобы расстояния от этой прямой до точек разных классов были максимальными.</p>
 <p>Поскольку обычно нам интересны многомерные пространства, то точки там превращаются в вектора. Также оказывается, что построение такой разделяющей плоскости зависит не от всех точек (векторов), а только от какого-то их подмножества – опорных векторов. Именно поэтому метод и носит название <em>Support Vector Machine</em>.</p>
@@ -562,7 +567,7 @@
 </ul>
 <div class="figure align-default" id="kerneltrick">
 <a class="reference internal image-reference" href="../../_images/Kernel_trick_idea.svg.png"><img alt="../../_images/Kernel_trick_idea.svg.png" src="../../_images/Kernel_trick_idea.svg.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 50 </span><span class="caption-text">Пример разделимости в новом пространстве</span><a class="headerlink" href="#kerneltrick" title="Permalink to this image">¶</a></p>
 </div>
 <p>Давайте посмотрим на то, как выглядят популярные ядра.</p>
 <div class="section" id="id4">
@@ -762,6 +767,10 @@ K(x, y) = e^{-\frac{||x - y||^2}{\sigma}}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/qmlcourse/qmlcourse/.venv/lib/python3.8/site-packages/pennylane/utils.py:351: UserWarning: Use of qml.inv() is deprecated and should be replaced with qml.adjoint().
+  warnings.warn(
+</pre></div>
+</div>
 </div>
 </div>
 <p>И сразу посмотрим на то, как выглядит наша схема:</p>
@@ -772,8 +781,8 @@ K(x, y) = e^{-\frac{||x - y||^2}{\sigma}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──Rϕ(-0.739)──H──╭C────────────╭C──╭C───────────────╭C────H⁻¹──Rϕ(0.949)⁻¹───H⁻¹──╭┤ Probs 
- 1: ──H──Rϕ(0.724)───H──╰X──Rϕ(1.74)──╰X──╰X⁻¹──Rϕ(1.8)⁻¹──╰X⁻¹──H⁻¹──Rϕ(-0.177)⁻¹──H⁻¹──╰┤ Probs 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──Rϕ(0.506)───H──╭C────────────╭C──╭C─────────────╭C──H──Rϕ(0.862)───H──╭┤ Probs 
+ 1: ──H──Rϕ(-0.955)──H──╰X──Rϕ(1.59)──╰X──╰X──Rϕ(-1.81)──╰X──H──Rϕ(-0.478)──H──╰┤ Probs 
 </pre></div>
 </div>
 </div>

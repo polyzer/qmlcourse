@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -42,15 +42,15 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="canonical" href="https://semyonsinchenko.github.io/qmlcourse/_build/html/book/index.html/book/qcblock/grovers_algorithm.html" />
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -84,7 +84,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -412,7 +412,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id2">
@@ -440,11 +440,15 @@
 <p>Одно из самых востребованных действий в работе с данными - поиск по базе данных. При использовании классического компьютера такой поиск в худшем случае требует <span class="math notranslate nohighlight">\(N\)</span> операций, где <span class="math notranslate nohighlight">\(N\)</span> - количество строк в таблице. В среднем найти нужный элемент можно за <span class="math notranslate nohighlight">\(N/2\)</span> операций.</p>
 <p>Фактически, это означает, что если мы не знаем, где расположен нужный элемент в таблице, то придется перебирать все элементы, пока не найдем то, что нужно. Для классических вычислений это нормально, но что, если у нас есть квантовый компьютер?</p>
 <p>Если наша база данных работает на основе квантовых вычислений, то мы можем применить алгоритм Гровера, и тогда такой поиск потребует всего порядка <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> действий. Конечно же, такое ускорение не будет экспоненциальным, как при использовании некоторых других квантовых алгоритмов, но оно будет квадратичным, что также довольно неплохо.</p>
+<div class="figure align-default" id="grover-photo">
+<img alt="../../_images/Grover_photo.jpg" src="../../_images/Grover_photo.jpg" />
+<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Лов Гровер</span><a class="headerlink" href="#grover-photo" title="Permalink to this image">¶</a></p>
+</div>
 <div class="admonition- admonition">
 <p class="admonition-title">Лов Гровер</p>
 <p>Индо-американский ученый в сфере Computer Science Лов Кумар Гровер предложил квантовый алгоритм поиска по базе данных в 1996 году. Этот алгоритм считается вторым по значимости для квантовых вычислений после алгоритма Шора. Впервые он был реализован на простейшем квантовом компьютере в 1998 году, а в 2017 году алгоритм Гровера был впервые запущен для трехкубитной базы данных.</p>
 </div>
-<p>Итак, наша задача состоит в том, что мы должны найти идентификационный номер (<span class="math notranslate nohighlight">\(Id\)</span>) записи, которая удовлетворяет определенным условиям. Функция-оракул находит такую запись (для простоты будем сначала считать, что такая запись одна) и помечает соответствующий ей <span class="math notranslate nohighlight">\(Id\)</span>. Отметка делается достаточно оригинальным способом: <span class="math notranslate nohighlight">\(Id\)</span> умножается на <span class="math notranslate nohighlight">\(-1\)</span>.</p>
+<p>Итак, наша задача состоит в том, что мы должны найти идентификационный номер (<span class="math notranslate nohighlight">\(Id\)</span>) записи, которая удовлетворяет определенным условиям. Функция-оракул находит такую запись (для простоты будем сначала считать, что такая запись одна) и помечает соответствующий ей <span class="math notranslate nohighlight">\(Id\)</span>. Отметка делается достаточно оригинальным способом: <span class="math notranslate nohighlight">\(Id\)</span> домножается на <span class="math notranslate nohighlight">\(-1\)</span>.</p>
 <p>Для полной ясности соотнесем количество <span class="math notranslate nohighlight">\(Id\)</span> с числом кубитов в квантовой схеме. Здесь все очень просто: имея <span class="math notranslate nohighlight">\(n\)</span> кубитов, можно закодировать <span class="math notranslate nohighlight">\(N = 2^n\)</span> идентификаторов. К примеру, если в таблице базы данных <span class="math notranslate nohighlight">\(1024\)</span> записей, то закодировать все <span class="math notranslate nohighlight">\(Id\)</span> можно с помощью десяти кубитов.</p>
 <p>Для того, чтобы не запутаться в квантовых операциях, рассмотрим пример поменьше: с помощью двух кубитов закодируем четыре идентификационных номера, один из которых будет помечен функцией-оракулом как искомый - он будет домножен на <span class="math notranslate nohighlight">\(-1\)</span>. Все эти четыре числа могут существовать в квантовой схеме одновременно, если кубиты приведены в состояние суперпозиции.</p>
 <p>Пусть искомый <span class="math notranslate nohighlight">\(Id\)</span> равен <span class="math notranslate nohighlight">\(11\)</span> (будем пользоваться двоичной системой и вести счет с нуля), тогда после работы функции-оракула мы будем иметь <span class="math notranslate nohighlight">\(4\)</span> состояния: <span class="math notranslate nohighlight">\(|00\rangle\)</span>, <span class="math notranslate nohighlight">\(|01\rangle\)</span>, <span class="math notranslate nohighlight">\(|10\rangle\)</span>, <span class="math notranslate nohighlight">\(-|11\rangle\)</span>. Проблема в том, что если измерить эту схему, то с равной вероятностью будет обнаружено одно из этих четырех значений, но узнать, какое из них функция-оракул пометила минусом, будет невозможно.</p>
@@ -454,7 +458,7 @@
 <p>Квантовая схема выглядит так:</p>
 <div class="figure align-default" id="grover-2-qubits">
 <a class="reference internal image-reference" href="../../_images/grover_2_qubits.png"><img alt="../../_images/grover_2_qubits.png" src="../../_images/grover_2_qubits.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 41 </span><span class="caption-text">Алгоритм Гровера для n=2 (искомый индекс 11).</span><a class="headerlink" href="#grover-2-qubits" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Алгоритм Гровера для n=2 (искомый индекс 11).</span><a class="headerlink" href="#grover-2-qubits" title="Permalink to this image">¶</a></p>
 </div>
 <p>В самом начале, еще до всех итераций, все кубиты (включая вспомогательный) должны быть приведены в состояние суперпозиции с помощью оператора Адамара. Причем начальное состояние всех кубитов должно быть равно <span class="math notranslate nohighlight">\(0\)</span>, кроме вспомогательного кубита - до действия оператора Адамара он должен быть приведен в состояние <span class="math notranslate nohighlight">\(1\)</span>.</p>
 <p>Таким образом, вспомогательный кубит после применения оператора Адамара будет находиться в состоянии <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)\)</span>, тогда как остальные кубиты примут состояние <span class="math notranslate nohighlight">\(\frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)\)</span>.</p>
@@ -472,33 +476,31 @@
 <p>Вектор <span class="math notranslate nohighlight">\(c\)</span> - состояние системы перед первой итерацией - является линейной комбинацией векторов, соответствующим горизонтальной и вертикальной осям.</p>
 <div class="figure align-default" id="grover-1">
 <a class="reference internal image-reference" href="../../_images/grover_1.png"><img alt="../../_images/grover_1.png" src="../../_images/grover_1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 42 </span><span class="caption-text">Состояние системы перед первой итерацией.</span><a class="headerlink" href="#grover-1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Состояние системы перед первой итерацией.</span><a class="headerlink" href="#grover-1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Можно выразить вектор <span class="math notranslate nohighlight">\(c\)</span> для нашего случая (системы из двух кубитов с искомым индексом <span class="math notranslate nohighlight">\(11\)</span>), обозначив его координаты за <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle) = x \frac{1}{\sqrt{3}}(|00\rangle + |01\rangle + |10\rangle) + y |11\rangle\)</span></p>
-<p>Из данного уравнения находим:</p>
-<p><span class="math notranslate nohighlight">\(x = \frac{\sqrt{3}}{2}\)</span></p>
-<p><span class="math notranslate nohighlight">\(y = \frac{1}{2}\)</span></p>
-<p>По данным координатам можно понять, что угол между вектором <span class="math notranslate nohighlight">\(с\)</span> и горизонтальной осью (обозначим его как <span class="math notranslate nohighlight">\(\theta\)</span>) равен <span class="math notranslate nohighlight">\(\frac{\pi}{6}\)</span>. Если забежать немного вперед, то можно сказать, что наша цель - добиться, чтобы текущее состояние дошло до <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> (или хотя бы приблизительно), то есть почти или полностью равнялось искомому состоянию, так что после измерения можно было его и получить с высокой вероятностью.</p>
+<p>Из данного уравнения находим <span class="math notranslate nohighlight">\(x = \frac{\sqrt{3}}{2}\)</span> и <span class="math notranslate nohighlight">\(y = \frac{1}{2}\)</span>.</p>
+<p>По этим координатам можно понять, что угол между вектором <span class="math notranslate nohighlight">\(с\)</span> и горизонтальной осью (обозначим его как <span class="math notranslate nohighlight">\(\theta\)</span>) равен <span class="math notranslate nohighlight">\(\frac{\pi}{6}\)</span>. Если забежать немного вперед, то можно сказать, что наша цель - добиться, чтобы текущее состояние дошло до <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> (или хотя бы приблизительно), то есть почти или полностью равнялось искомому состоянию, так что после измерения можно было его и получить с высокой вероятностью.</p>
 <p>Координаты текущего вектора состояния можно записать через угол <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
-<p><span class="math notranslate nohighlight">\(x = cos \theta\)</span></p>
-<p><span class="math notranslate nohighlight">\(y = sin \theta\)</span></p>
+<p><span class="math notranslate nohighlight">\(x = \cos \theta\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = \sin \theta\)</span></p>
 <p>На всякий случай нужно уточнить, что вспомогательный кубит не отражается на рисунке с окружностью, так как он не предназначен для обозначения индекса, а только хранит в себе его метку.</p>
 <p>После применения функции-оракула текущий вектор отразится относительно горизонтальной оси. Объясняется это очень легко - его вертикальная компонента (вектор <span class="math notranslate nohighlight">\(|11\rangle\)</span>) становится отрицательной.</p>
 <p>Вектор <span class="math notranslate nohighlight">\(c_{1a}\)</span> - это отражение вектора <span class="math notranslate nohighlight">\(c\)</span> относительно горизонтальной оси. Договоримся, что буквы <span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span>, которые будут употребляться в нижнем индексе угла <span class="math notranslate nohighlight">\(c\)</span> и операторов <span class="math notranslate nohighlight">\(U\)</span>, обозначают соответственно первую и вторую часть итерации (не путать с векторами <span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span>). Итак, вектор состояния отражается на угол <span class="math notranslate nohighlight">\(\theta\)</span> вниз от горизонтальной оси:</p>
 <div class="figure align-default" id="grover-1a">
 <a class="reference internal image-reference" href="../../_images/grover_1a.png"><img alt="../../_images/grover_1a.png" src="../../_images/grover_1a.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Состояние системы после первой части первой итерации.</span><a class="headerlink" href="#grover-1a" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Состояние системы после первой части первой итерации.</span><a class="headerlink" href="#grover-1a" title="Permalink to this image">¶</a></p>
 </div>
 <p>Такое отражение в нашем примере производится с помощью операции <span class="math notranslate nohighlight">\(CCNOT\)</span>, но в общем случае операция выглядит так:</p>
 <p><span class="math notranslate nohighlight">\(U_{1a} = I - 2|b\rangle \langle b|\)</span></p>
 <p>Функцию-оракул мы здесь обозначили как <span class="math notranslate nohighlight">\(U_{1a}\)</span>. Она меняет знак только для вертикальной составляющей вектора состояния, поэтому и происходит отражение.</p>
 <p>Проверим формулу в действии, применив ее для нашего примера:</p>
 <p><span class="math notranslate nohighlight">\(U_{1a} |c\rangle = (I - 2|11\rangle \langle 11|) \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle) = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle + |11\rangle - 2|11\rangle) = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle - |11\rangle)\)</span></p>
-<p>И наконец приступаем к разбору второй части первой итерации. В ней будет происходить еще одно отражение вектора, но уже не относительно горизонтальной оси, а относительно вектора <span class="math notranslate nohighlight">\(c\)</span>. Нетрудно заметить, что при этом текущий вектор состояния станет равен <span class="math notranslate nohighlight">\(cos(3 \theta)|a\rangle + sin(3 \theta)|b\rangle\)</span>.</p>
+<p>И наконец приступаем к разбору второй части первой итерации. В ней будет происходить еще одно отражение вектора, но уже не относительно горизонтальной оси, а относительно вектора <span class="math notranslate nohighlight">\(c\)</span>. Нетрудно заметить, что при этом текущий вектор состояния станет равен <span class="math notranslate nohighlight">\(\cos(3 \theta)|a\rangle + \sin(3 \theta)|b\rangle\)</span>.</p>
 <div class="figure align-default" id="grover-1b">
 <a class="reference internal image-reference" href="../../_images/grover_1b.png"><img alt="../../_images/grover_1b.png" src="../../_images/grover_1b.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Состояние системы после второй части первой итерации.</span><a class="headerlink" href="#grover-1b" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Состояние системы после второй части первой итерации.</span><a class="headerlink" href="#grover-1b" title="Permalink to this image">¶</a></p>
 </div>
 <p>Операция для получения вектора <span class="math notranslate nohighlight">\(c_{1b}\)</span> будет выглядеть так:</p>
 <p><span class="math notranslate nohighlight">\(U_{1b} = 2|c\rangle \langle c| - I\)</span></p>
@@ -518,12 +520,6 @@
 <span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
 <span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;default.qubit&#39;</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-08-26 14:36:01.095551: W tensorflow/stream_executor/platform/default/dso_loader.cc:60] Could not load dynamic library &#39;libcudart.so.11.0&#39;; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.8.11/x64/lib
-2021-08-26 14:36:01.095585: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
 </pre></div>
 </div>
 </div>
@@ -578,7 +574,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@qml</span><span class="o">.</span><span class="n">qnode</span><span class="p">(</span><span class="n">dev</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">circuit</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">circuit</span><span class="p">(</span><span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
     <span class="n">U_start</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
         <span class="n">U_iteration</span><span class="p">()</span>
@@ -636,12 +632,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="deutschs_algorithm.html" title="previous page">Алгоритм Дойча</a>
-    <a class='right-next' id="next-link" href="../progblock/progintro.html" title="next page">О блоке</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="deutschs_algorithm.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Алгоритм Дойча</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../progblock/progintro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">О блоке</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
