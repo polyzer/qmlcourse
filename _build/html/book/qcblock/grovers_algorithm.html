@@ -474,42 +474,42 @@
 <p>Итак, первая часть первой итерации завершена. Искомый индекс помечен, но если измерить кубиты прямо сейчас, то это ничего не даст - минус не проявит себя при измерении. Да и сам индекс <span class="math notranslate nohighlight">\(11\)</span> будет получен только с вероятностью <span class="math notranslate nohighlight">\(0.25\)</span> - такой же, как и у других индексов.</p>
 <p>Для того, чтобы лучше понять дальнейшие действия, представим первую половину работы алгоритма в виде рисунка, показывающего вектор текущего состояния. В качестве единичного вектора горизонтальной оси мы будем использовать все состояния из суперпозиции кроме того, который соответствует искомому индексу, а вертикальным единичным вектором будет искомый вектор.</p>
 <p>Вектор <span class="math notranslate nohighlight">\(c\)</span> - состояние системы перед первой итерацией - является линейной комбинацией векторов, соответствующим горизонтальной и вертикальной осям.</p>
-<div class="figure align-default" id="grover-1">
-<a class="reference internal image-reference" href="../../_images/grover_1.png"><img alt="../../_images/grover_1.png" src="../../_images/grover_1.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Состояние системы перед первой итерацией.</span><a class="headerlink" href="#grover-1" title="Permalink to this image">¶</a></p>
+<div class="figure align-default" id="grover-1a">
+<a class="reference internal image-reference" href="../../_images/grover_1a.png"><img alt="../../_images/grover_1a.png" src="../../_images/grover_1a.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 43 </span><span class="caption-text">Состояние системы перед первой итерацией.</span><a class="headerlink" href="#grover-1a" title="Permalink to this image">¶</a></p>
 </div>
 <p>Можно выразить вектор <span class="math notranslate nohighlight">\(c\)</span> для нашего случая (системы из двух кубитов с искомым индексом <span class="math notranslate nohighlight">\(11\)</span>), обозначив его координаты за <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle) = x \frac{1}{\sqrt{3}}(|00\rangle + |01\rangle + |10\rangle) + y |11\rangle\)</span></p>
 <p>Из данного уравнения находим <span class="math notranslate nohighlight">\(x = \frac{\sqrt{3}}{2}\)</span> и <span class="math notranslate nohighlight">\(y = \frac{1}{2}\)</span>.</p>
 <p>По этим координатам можно понять, что угол между вектором <span class="math notranslate nohighlight">\(с\)</span> и горизонтальной осью (обозначим его как <span class="math notranslate nohighlight">\(\theta\)</span>) равен <span class="math notranslate nohighlight">\(\frac{\pi}{6}\)</span>. Если забежать немного вперед, то можно сказать, что наша цель - добиться, чтобы текущее состояние дошло до <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span> (или хотя бы приблизительно), то есть почти или полностью равнялось искомому состоянию, так что после измерения можно было его и получить с высокой вероятностью.</p>
 <p>Координаты текущего вектора состояния можно записать через угол <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
-<p><span class="math notranslate nohighlight">\(x = \cos \theta\)</span></p>
-<p><span class="math notranslate nohighlight">\(y = \sin \theta\)</span></p>
+<p><span class="math notranslate nohighlight">\(x = \cos{\theta}\)</span></p>
+<p><span class="math notranslate nohighlight">\(y = \sin{\theta}\)</span></p>
 <p>На всякий случай нужно уточнить, что вспомогательный кубит не отражается на рисунке с окружностью, так как он не предназначен для обозначения индекса, а только хранит в себе его метку.</p>
 <p>После применения функции-оракула текущий вектор отразится относительно горизонтальной оси. Объясняется это очень легко - его вертикальная компонента (вектор <span class="math notranslate nohighlight">\(|11\rangle\)</span>) становится отрицательной.</p>
-<p>Вектор <span class="math notranslate nohighlight">\(c_{1a}\)</span> - это отражение вектора <span class="math notranslate nohighlight">\(c\)</span> относительно горизонтальной оси. Договоримся, что буквы <span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span>, которые будут употребляться в нижнем индексе угла <span class="math notranslate nohighlight">\(c\)</span> и операторов <span class="math notranslate nohighlight">\(U\)</span>, обозначают соответственно первую и вторую часть итерации (не путать с векторами <span class="math notranslate nohighlight">\(a\)</span> и <span class="math notranslate nohighlight">\(b\)</span>). Итак, вектор состояния отражается на угол <span class="math notranslate nohighlight">\(\theta\)</span> вниз от горизонтальной оси:</p>
-<div class="figure align-default" id="grover-1a">
-<a class="reference internal image-reference" href="../../_images/grover_1a.png"><img alt="../../_images/grover_1a.png" src="../../_images/grover_1a.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Состояние системы после первой части первой итерации.</span><a class="headerlink" href="#grover-1a" title="Permalink to this image">¶</a></p>
-</div>
-<p>Такое отражение в нашем примере производится с помощью операции <span class="math notranslate nohighlight">\(CCNOT\)</span>, но в общем случае операция выглядит так:</p>
-<p><span class="math notranslate nohighlight">\(U_{1a} = I - 2|b\rangle \langle b|\)</span></p>
-<p>Функцию-оракул мы здесь обозначили как <span class="math notranslate nohighlight">\(U_{1a}\)</span>. Она меняет знак только для вертикальной составляющей вектора состояния, поэтому и происходит отражение.</p>
-<p>Проверим формулу в действии, применив ее для нашего примера:</p>
-<p><span class="math notranslate nohighlight">\(U_{1a} |c\rangle = (I - 2|11\rangle \langle 11|) \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle) = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle + |11\rangle - 2|11\rangle) = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle - |11\rangle)\)</span></p>
-<p>И наконец приступаем к разбору второй части первой итерации. В ней будет происходить еще одно отражение вектора, но уже не относительно горизонтальной оси, а относительно вектора <span class="math notranslate nohighlight">\(c\)</span>. Нетрудно заметить, что при этом текущий вектор состояния станет равен <span class="math notranslate nohighlight">\(\cos(3 \theta)|a\rangle + \sin(3 \theta)|b\rangle\)</span>.</p>
+<p>Вектор <span class="math notranslate nohighlight">\(c_{1b}\)</span> - это отражение вектора <span class="math notranslate nohighlight">\(c\)</span> на угол <span class="math notranslate nohighlight">\(\theta\)</span> вниз относительно горизонтальной оси:</p>
 <div class="figure align-default" id="grover-1b">
 <a class="reference internal image-reference" href="../../_images/grover_1b.png"><img alt="../../_images/grover_1b.png" src="../../_images/grover_1b.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Состояние системы после второй части первой итерации.</span><a class="headerlink" href="#grover-1b" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Состояние системы после первой части первой итерации.</span><a class="headerlink" href="#grover-1b" title="Permalink to this image">¶</a></p>
 </div>
-<p>Операция для получения вектора <span class="math notranslate nohighlight">\(c_{1b}\)</span> будет выглядеть так:</p>
-<p><span class="math notranslate nohighlight">\(U_{1b} = 2|c\rangle \langle c| - I\)</span></p>
-<p>Посчитаем, чему равен вектор <span class="math notranslate nohighlight">\(c_{1b}\)</span> для нашего примера:</p>
-<p><span class="math notranslate nohighlight">\(U_{1b} |c_{1a}\rangle = (2|c\rangle \langle c| - I) \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle - |11\rangle) = |11\rangle\)</span></p>
-<p>По рисунку видно, что в общем случае каждая последующая итерация будет приближать текущий вектор к вертикальному. Но в нашем случае угол между вектором состояния и горизонтальной осью после окончания первой итерации равен <span class="math notranslate nohighlight">\(3 \theta\)</span>, то есть это уже и есть желаемый угол <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span>.</p>
+<p>Такое отражение в нашем примере производится с помощью операции <span class="math notranslate nohighlight">\(CCNOT\)</span>, но в общем случае операция выглядит так:</p>
+<p><span class="math notranslate nohighlight">\(U_{1b} = I - 2|b\rangle \langle b|\)</span></p>
+<p>Функцию-оракул мы здесь обозначили как <span class="math notranslate nohighlight">\(U_{1b}\)</span>. Она меняет знак только для вертикальной составляющей вектора состояния, поэтому и происходит отражение.</p>
+<p>Проверим формулу в действии, применив ее для нашего примера:</p>
+<p><span class="math notranslate nohighlight">\(U_{1b} |c\rangle = (I - 2|11\rangle \langle 11|) \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle) = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle + |11\rangle - 2|11\rangle) = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle - |11\rangle)\)</span></p>
+<p>И наконец приступаем к разбору второй части первой итерации. В ней будет происходить еще одно отражение вектора, но уже не относительно горизонтальной оси, а относительно вектора <span class="math notranslate nohighlight">\(c\)</span>. Нетрудно заметить, что при этом текущий вектор состояния станет равен <span class="math notranslate nohighlight">\(\cos{3 \theta}|a\rangle + \sin{3 \theta}|b\rangle\)</span>.</p>
+<div class="figure align-default" id="grover-1c">
+<a class="reference internal image-reference" href="../../_images/grover_1c.png"><img alt="../../_images/grover_1c.png" src="../../_images/grover_1c.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Состояние системы после второй части первой итерации.</span><a class="headerlink" href="#grover-1c" title="Permalink to this image">¶</a></p>
+</div>
+<p>Операция для получения вектора <span class="math notranslate nohighlight">\(c_{1c}\)</span> будет выглядеть так:</p>
+<p><span class="math notranslate nohighlight">\(U_{1c} = 2|c\rangle \langle c| - I\)</span></p>
+<p>Посчитаем, чему равен вектор <span class="math notranslate nohighlight">\(c_{1c}\)</span> для нашего примера:</p>
+<p><span class="math notranslate nohighlight">\(U_{1c} |c_{1b}\rangle = (2|c\rangle \langle c| - I) \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle - |11\rangle) = |11\rangle\)</span></p>
+<p>По рисунку, изображающему состояние системы после второй части первой итерации, видно, что в общем случае каждая последующая итерация будет приближать текущий вектор к вертикальному. Но в нашем случае угол между вектором состояния и горизонтальной осью после окончания первой итерации равен <span class="math notranslate nohighlight">\(3 \theta\)</span>, то есть это уже и есть желаемый угол <span class="math notranslate nohighlight">\(\frac{\pi}{2}\)</span>.</p>
 <p>В общем случае этот угол равен <span class="math notranslate nohighlight">\((2t + 1) \theta\)</span>, где <span class="math notranslate nohighlight">\(t\)</span> - номер произведенной итерации. Отсюда можно вывести число итераций, необходимое для работы алгоритма: это приблизительно <span class="math notranslate nohighlight">\(\frac{\pi \sqrt{N}}{4}\)</span> при стремлении <span class="math notranslate nohighlight">\(\theta\)</span> к <span class="math notranslate nohighlight">\(0\)</span>.</p>
 <p>Таким образом, каждая итерация будет состоять из двух частей. Первая часть - отражение вниз относительно горизонтальной оси. Вторая часть - отражение вверх относительно изначального состояния, то есть вектора <span class="math notranslate nohighlight">\(c\)</span>. Вектор состояния всегда будет отражаться вверх на больший угол, чем в первой части итерации. Этим и будет обеспечиваться его постепенное приближение в вертикальной оси.</p>
-<p>Мы разобрали случай, когда требуется найти один объект в таблице. Если же потребуется найти несколько объектов, то тогда, обозначив их количество за <span class="math notranslate nohighlight">\(K\)</span>, мы должны будем проделать около <span class="math notranslate nohighlight">\(\frac {\pi}{4} \sqrt {\frac{N}{K}}\)</span> итераций.</p>
+<p>Мы разобрали случай, когда требуется найти один объект в таблице. Если же потребуется найти несколько объектов, то тогда, обозначив их количество за <span class="math notranslate nohighlight">\(K\)</span>, мы должны будем проделать около <span class="math notranslate nohighlight">\(\frac {\pi}{4} \sqrt {\frac{N}{K}}\)</span> итераций. Таким образом, для успешной работы алгоритма Гровера необходимо знать число <span class="math notranslate nohighlight">\(K\)</span>, чтобы можно было найти через него угол <span class="math notranslate nohighlight">\(\theta\)</span>, а затем число итераций.</p>
 <div class="section" id="id2">
 <h2>Реализация алгоритма Гровера<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Итак, мы разобрали общие принципы алгоритма Гровера, а также рассмотрели конкретный пример. Настало время написать для этого примера программу.</p>
@@ -538,7 +538,7 @@
 <p>Создадим функцию, действующую аналогично оракулу (первая часть итерации). Эта функция помечает значение индекса <span class="math notranslate nohighlight">\(11\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">U_ta</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">U_b</span><span class="p">():</span>
     <span class="n">qml</span><span class="o">.</span><span class="n">Toffoli</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -547,7 +547,7 @@
 <p>Вторая часть итерации:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">U_tb</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span> <span class="k">def</span> <span class="nf">U_c</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
         <span class="n">qml</span><span class="o">.</span><span class="n">Hadamard</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
         <span class="n">qml</span><span class="o">.</span><span class="n">PauliX</span><span class="p">(</span><span class="n">wires</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
@@ -564,8 +564,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">U_iteration</span><span class="p">():</span>
-    <span class="n">U_ta</span><span class="p">()</span>
-    <span class="n">U_tb</span><span class="p">()</span>
+    <span class="n">U_b</span><span class="p">()</span>
+    <span class="n">U_c</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -597,13 +597,13 @@
 </div>
 </div>
 </div>
-<p>Так как в качестве искомого индекса выступало значение <span class="math notranslate nohighlight">\(11\)</span>, то в результате запуска функции мы должны получить два собственных значения матрицы паули <span class="math notranslate nohighlight">\(Z\)</span>. Оба этих значения должны быть равны <span class="math notranslate nohighlight">\(-1\)</span>, то есть они соответствуют состоянию <span class="math notranslate nohighlight">\(11\)</span>. Таким образом, мы нашли с помощью алгоритма Гровера искомый индекс.</p>
+<p>Так как в качестве искомого индекса выступало значение <span class="math notranslate nohighlight">\(11\)</span>, то в результате запуска функции мы должны получить два собственных значения матрицы Паули <span class="math notranslate nohighlight">\(Z\)</span>. Оба этих значения должны быть равны <span class="math notranslate nohighlight">\(-1\)</span>, то есть они соответствуют состоянию <span class="math notranslate nohighlight">\(11\)</span>. Таким образом, мы нашли с помощью алгоритма Гровера искомый индекс.</p>
 <p>Алгоритм Гровера может применяться не только для задач простого поиска в базе данных, но и как дополнительное средство ускорения для поиска экстремума целочисленной функции, а также для поиска совпадающих строк в базе данных, так что этот алгоритм, как и его модификации, сможет быть полезным в разнообразных задачах Data Science.</p>
 </div>
 <div class="section" id="id3">
 <h2>Задание<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ol class="simple">
-<li><p>Распишите операторы <span class="math notranslate nohighlight">\(U_{1a}\)</span> и <span class="math notranslate nohighlight">\(U_{1b}\)</span> из примера в виде матриц <span class="math notranslate nohighlight">\(4\)</span>x<span class="math notranslate nohighlight">\(4\)</span> и проведите расчеты для получения <span class="math notranslate nohighlight">\(c_{1a}\)</span> и <span class="math notranslate nohighlight">\(c_{1b}\)</span> в виде векторов-столбцов.</p></li>
+<li><p>Распишите операторы <span class="math notranslate nohighlight">\(U_{1b}\)</span> и <span class="math notranslate nohighlight">\(U_{1c}\)</span> из примера в виде матриц <span class="math notranslate nohighlight">\(4\)</span>x<span class="math notranslate nohighlight">\(4\)</span> и проведите расчеты для получения <span class="math notranslate nohighlight">\(c_{1b}\)</span> и <span class="math notranslate nohighlight">\(c_{1c}\)</span> в виде векторов-столбцов.</p></li>
 <li><p>Модифицируйте приведенный выше код алгоритма Гровера для двухкубитной базы данных так, чтобы искомый индекс соответствовал состоянию <span class="math notranslate nohighlight">\(|00\rangle\)</span>.</p></li>
 </ol>
 </div>
