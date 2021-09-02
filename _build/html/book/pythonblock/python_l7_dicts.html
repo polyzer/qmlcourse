@@ -519,7 +519,7 @@
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id18">
+      <a class="reference internal nav-link" href="#id19">
        Изменяемые типы
       </a>
      </li>
@@ -528,7 +528,7 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id19">
+  <a class="reference internal nav-link" href="#id21">
    Что мы узнали из лекции
   </a>
  </li>
@@ -654,7 +654,7 @@
 </div>
 <div class="section" id="id7">
 <h3>Что такое “длина словаря”?<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
-<p>Функция len() для словаря будет возвращать количество пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, котороое в нем содержится:</p>
+<p>Функция len() для словаря будет возвращать количество пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>, которое в нем содержится:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>  
@@ -880,7 +880,7 @@ Harry Potter 1st year
 </div>
 </div>
 </div>
-<p>Не забудьте, когда в функции передается просто название переменнной со словарем, работа идет только над множеством ключей.</p>
+<p>Не забудьте, когда в функции передается просто название переменной со словарем, работа идет только над множеством ключей.</p>
 <p>Можно ли отсортировать словарь по значениям? Да, можно попробовать самостоятельно разобраться с аргументами функции <a class="reference external" href="https://docs.python.org/3/howto/sorting.html"><code class="docutils literal notranslate"><span class="pre">sorted()</span></code></a> 😉</p>
 </div>
 <div class="section" id="id15">
@@ -922,7 +922,10 @@ Harry Potter 1st year
 </div>
 </div>
 </div>
-<p><img alt="counter указывает на 100" src="https://www.pythontutorial.net/wp-content/uploads/2020/10/Python-Immutable-Example-1.png" /></p>
+<div class="figure align-default" id="mutable-example1">
+<a class="reference internal image-reference" href="../../_images/Python-Immutable-Example-1.png"><img alt="../../_images/Python-Immutable-Example-1.png" src="../../_images/Python-Immutable-Example-1.png" style="width: 411px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на 100</span><a class="headerlink" href="#mutable-example1" title="Permalink to this image">¶</a></p>
+</div>
 <p>А теперь поменяем значение <code class="docutils literal notranslate"><span class="pre">counter</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -938,8 +941,12 @@ Harry Potter 1st year
 </div>
 </div>
 <p>Кажется, что раз значение переменной <code class="docutils literal notranslate"><span class="pre">counter</span></code> поменялось, то и содержимое по предыдущему адресу изменилось? Нет, на самом деле <code class="docutils literal notranslate"><span class="pre">counter</span></code> теперь указывает в другое место:</p>
-<p><img alt="counter указывает на 200" src="https://www.pythontutorial.net/wp-content/uploads/2020/10/Python-Immutable-Example-2.png" /></p>
-<p>Из интересного: Python <a class="reference external" href="https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong">заранее создает объекты</a> для чисел от -5 до 256, поэтому для переменных со значением из этого диапазона бедутся заранее готовые ссылки</p>
+<div class="figure align-default" id="id18">
+<a class="reference internal image-reference" href="../../_images/Python-Immutable-Example-2.png"><img alt="../../_images/Python-Immutable-Example-2.png" src="../../_images/Python-Immutable-Example-2.png" style="width: 411px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text"><code class="docutils literal notranslate"><span class="pre">counter</span></code> указывает на новое значение 200 с другим адресом</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
+</div>
+<p><img alt="counter указывает на 200" src="https://www.pythontutorial.net/wp-content/uploads/2020/10/" /></p>
+<p>Из интересного: Python <a class="reference external" href="https://docs.python.org/3/c-api/long.html#c.PyLong_FromLong">заранее создает объекты</a> для чисел от -5 до 256, поэтому для переменных со значением из этого диапазона берутся заранее готовые ссылки.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># создадим две переменные с одинаковыми значениями в диапазоне от -5 до 256</span>
@@ -959,8 +966,8 @@ Harry Potter 1st year
 </div>
 </div>
 </div>
-<div class="section" id="id18">
-<h4>Изменяемые типы<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id19">
+<h4>Изменяемые типы<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
 <p>Стандартные изменяемые типы это:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">list</span></code></p></li>
@@ -985,15 +992,20 @@ Harry Potter 1st year
 </div>
 </div>
 </div>
-<p>Начальное состояние списка содержало три элемента:</p>
-<p><img alt="list по адресу" src="https://www.pythontutorial.net/wp-content/uploads/2020/10/Python-Mutable-Example.png" /></p>
-<p>После добавления еще одного, адрес <code class="docutils literal notranslate"><span class="pre">ratings</span></code> не изменился, поменялось лишь внутреннее состояние:</p>
-<p><img alt="list по адресу, но с 4" src="https://www.pythontutorial.net/wp-content/uploads/2020/10/Python-Mutable-Example-2.png" /></p>
+<div class="figure align-default" id="id20">
+<a class="reference internal image-reference" href="../../_images/Python-Mutable-Example.png"><img alt="../../_images/Python-Mutable-Example.png" src="../../_images/Python-Mutable-Example.png" style="width: 402px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Начальное состояние списка содержало три элемента</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+</div>
+<p>После добавления еще одного, адрес <code class="docutils literal notranslate"><span class="pre">ratings</span></code> не изменился.</p>
+<div class="figure align-default" id="mutable-example2">
+<a class="reference internal image-reference" href="../../_images/Python-Mutable-Example-2.png"><img alt="../../_images/Python-Mutable-Example-2.png" src="../../_images/Python-Mutable-Example-2.png" style="width: 402px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">После добавления элемента поменялось лишь внутреннее состояние</span><a class="headerlink" href="#mutable-example2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
-<div class="section" id="id19">
-<h2>Что мы узнали из лекции<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id21">
+<h2>Что мы узнали из лекции<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Новый тип данных – <strong>словарь</strong>! Позволяет хранить соответствие <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>;</p></li>
 <li><p>Несколько способов создания <code class="docutils literal notranslate"><span class="pre">dict</span></code>, методы для изменения состояния или получения доступа к элементам;</p></li>
