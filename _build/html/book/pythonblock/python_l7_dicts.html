@@ -558,7 +558,7 @@
 <div class="section" id="dict">
 <h2>Что такое <code class="docutils literal notranslate"><span class="pre">dict</span></code><a class="headerlink" href="#dict" title="Permalink to this headline">¶</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">dict</span></code> (от английского <em>“dictionary”</em>, словарь) – еще один тип данных в Python. Словари хранят пары <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code>. То есть в списках можно достать элемент, если указать его позицию в виде целого числа, а в словарях – тот самый <code class="docutils literal notranslate"><span class="pre">ключ</span></code>. Обратите внимание, <code class="docutils literal notranslate"><span class="pre">dict</span></code> – <strong>неупорядоченный</strong> тип данных, поэтому достать элемент по номеру не получится, но отображение содержимого будет <strong>в порядке добавления</strong> элементов. <strong>Уникальность</strong> ключей должна поддерживаться, чтобы всегда можно было быстро найти одно единственно верное <code class="docutils literal notranslate"><span class="pre">значение</span></code>.</p>
-<p>В некоторых языках программирования можно встретить ассоциативные массивы – полную аналогию <code class="docutils literal notranslate"><span class="pre">dict</span></code>. Также вспомним  базы данных: в таблице можно установить первичный ключ, который уникально идентифицирует запись, как и <code class="docutils literal notranslate"><span class="pre">ключ</span></code> соответствует <code class="docutils literal notranslate"><span class="pre">значению</span></code> в словаре.</p>
+<p>В некоторых языках программирования можно встретить ассоциативные массивы – полную аналогию <code class="docutils literal notranslate"><span class="pre">dict</span></code>. Также вспомним  базы данных, широко использующиеся во всем мире для хранения информации: в таблице можно установить первичный ключ, который уникально идентифицирует запись, как и <code class="docutils literal notranslate"><span class="pre">ключ</span></code> соответствует <code class="docutils literal notranslate"><span class="pre">значению</span></code> в словаре. Самый простой пример ключа - порядковый номер объекта!</p>
 <div class="section" id="id3">
 <h3>Создание словаря<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Использовать словарь стоит, когда нужно сохранять объекты с какими-то ключами и обращаться к объектам по известным ключам. Один из способов определения словаря: указание пар <code class="docutils literal notranslate"><span class="pre">ключ</span></code>: <code class="docutils literal notranslate"><span class="pre">значение</span></code> через <strong>запятую</strong> внутри фигурных скобок <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Напоминает <code class="docutils literal notranslate"><span class="pre">set</span></code>, правда? <code class="docutils literal notranslate"><span class="pre">{}</span></code> позволяет создать <strong>пустой</strong> словарь, но не пустое множество.</p>
@@ -567,6 +567,12 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># локально попробуйте поменять значение переменной dates</span>
 <span class="n">dates</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Кунг Фьюри&quot;</span><span class="p">:</span> <span class="s2">&quot;1968-09-09&quot;</span><span class="p">,</span> <span class="s2">&quot;Наташа Романова&quot;</span><span class="p">:</span> <span class="s2">&quot;1985-03-15&quot;</span><span class="p">}</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;Кунг Фьюри&#39;: &#39;1968-09-09&#39;, &#39;Наташа Романова&#39;: &#39;1985-03-15&#39;}
 </pre></div>
 </div>
 </div>
@@ -1005,7 +1011,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7ff1ce983d80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f27958a4d80
 </pre></div>
 </div>
 </div>
@@ -1023,7 +1029,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 0x7ff1ce984a00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 0x7f27958a5a00
 </pre></div>
 </div>
 </div>
@@ -1074,8 +1080,8 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7ff1ca09d680
-Стало: 0x7ff1ca09d680 - ничего не поменялось!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f27910037c0
+Стало: 0x7f27910037c0 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
@@ -1175,7 +1181,7 @@ None
 </div>
 <ul class="simple">
 <li><p>Требование к ключу: возможность хэширования, свойство ключа внутри словаря: уникальность;</p></li>
-<li><p>Разобрали изменяемые и неизменяемые типы данных.</p></li>
+<li><p>Разобрали, что есть изменяемые (<code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">set</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>) и неизменяемые (<code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>) стандартные типы данных.</p></li>
 </ul>
 </div>
 </div>
