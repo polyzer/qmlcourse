@@ -589,9 +589,22 @@
 </div>
 </div>
 <p>Если указать неверный ключ в <code class="docutils literal notranslate"><span class="pre">[]</span></code>, Python будет ругаться, выбросит исключение <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> и перестанет выполнять код. Чуть ниже посмотрим, как можно избежать таких ситуаций.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># пока этого ключа нет в словаре, будет ошибка при обращении</span>
-<span class="n">dates</span><span class="p">[</span><span class="s1">&#39;Капитан Ямайка&#39;</span><span class="p">]</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># пока этого ключа нет в словаре, будет ошибка при обращении</span>
+<span class="c1"># поэтому используем перехват ошибок</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="s1">&#39;Капитан Ямайка&#39;</span><span class="p">])</span>
+<span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ключа действительно нет: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ключа действительно нет: &#39;Капитан Ямайка&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="id5">
@@ -660,7 +673,12 @@ True
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>  
 
 <span class="c1"># None</span>
-<span class="n">empty_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ключ&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">empty_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ключ&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
 </pre></div>
 </div>
 </div>
@@ -669,12 +687,12 @@ True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># теперь будет возвращено значение -1</span>
-<span class="n">empty_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ключ&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">empty_dict</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ключ&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
 </pre></div>
 </div>
 </div>
@@ -714,9 +732,19 @@ True
 </pre></div>
 </div>
 <p>Предположим, коллега из самого первого примера уволился и больше нет смысла хранить его день рождения:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># из словаря dates удаляется ключ &#39;Наташа Романова&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># из словаря dates удаляется ключ &#39;Наташа Романова&#39;</span>
 <span class="k">del</span> <span class="n">dates</span><span class="p">[</span><span class="s1">&#39;Наташа Романова&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dates</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Наташа Романова&#39;</span><span class="p">))</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
 </div>
 <ol class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">pop()</span></code> – метод, который достает значение, хранящееся по переданному ключу, и <strong>сразу</strong> удаляет ключ из словаря:</p></li>
@@ -799,6 +827,13 @@ True
 <span class="c1"># метод update() также работает in place, поэтому после выполнения данной</span>
 <span class="c1"># строки кода, в словаре quidditch_team станет три ключа</span>
 <span class="n">quidditch_team</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">quidditch_team</span><span class="p">[</span><span class="s1">&#39;Harry Potter&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1st year
 </pre></div>
 </div>
 </div>
@@ -811,6 +846,13 @@ True
 
 <span class="c1"># значение, соответствующее &#39;Harry Potter&#39;, будет переписано</span>
 <span class="n">quidditch_team</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">new_members</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">quidditch_team</span><span class="p">[</span><span class="s1">&#39;Harry Potter&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1st year
 </pre></div>
 </div>
 </div>
@@ -853,7 +895,8 @@ Harry Potter 1st year
 <p>При помощи метода <code class="docutils literal notranslate"><span class="pre">values()</span></code> можно получить все значения, хранящиеся по всем ключам словаря:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">school_years</span> <span class="o">=</span> <span class="n">quidditch_team</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># можно создать переменную со всеми значениями словаря</span>
+<span class="n">school_years</span> <span class="o">=</span> <span class="n">quidditch_team</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -861,7 +904,7 @@ Harry Potter 1st year
 <p>Приведем пример с циклом:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># словарь в качестве значений хранит имена годы обучения</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># словарь в качестве значений хранит годы обучения</span>
 <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">quidditch_team</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
 
     <span class="c1"># на каждой итерации будет год обучения игрока</span>
@@ -914,9 +957,17 @@ Player Harry Potter is in 1st year
 
 <span class="c1"># в sorted_week окажутся ключи, отсортированные в порядке возрастания</span>
 <span class="n">sorted_week</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">week</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Порядок возрастания: </span><span class="si">{</span><span class="n">sorted_week</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
 <span class="c1"># а тут -- наоборот</span>
 <span class="n">reverse_sorted_week</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">week</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Наоборот: </span><span class="si">{</span><span class="n">reverse_sorted_week</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Порядок возрастания: [1, 6, 7]
+Наоборот: &lt;dict_reversekeyiterator object at 0x7efc26dc1630&gt;
 </pre></div>
 </div>
 </div>
@@ -953,12 +1004,12 @@ Player Harry Potter is in 1st year
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">counter</span> <span class="o">=</span> <span class="mi">100</span>
 
 <span class="c1"># полученное вами значение адреса может отличаться</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">counter</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">,</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">counter</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0x7f34102dcd80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7efc2b76ad80
 </pre></div>
 </div>
 </div>
@@ -976,7 +1027,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 0x7f34102dda00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 0x7efc2b76ba00
 </pre></div>
 </div>
 </div>
@@ -1020,15 +1071,16 @@ Player Harry Potter is in 1st year
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># создадим список и напечатаем его адрес</span>
 <span class="n">ratings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ratings</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Было: </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ratings</span><span class="p">))</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
 <span class="n">ratings</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ratings</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Стало: </span><span class="si">{</span><span class="nb">hex</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">ratings</span><span class="p">))</span><span class="si">}</span><span class="s1"> - ничего не поменялось!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0x7f340ba3b740
-0x7f340ba3b740
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7efc26fb39c0
+Стало: 0x7efc26fb39c0 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
