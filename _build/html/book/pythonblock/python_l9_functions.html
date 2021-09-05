@@ -527,6 +527,38 @@
 <p>Очевидно, стандартные функции дают лишь базовый инструментарий. Реализовать более сложную работу можно самостоятельно.</p>
 <p><strong>Пример</strong>:</p>
 <p>Представим, что пользователи сайта должны вводить дату своего рождения в поле. Задача - проверить, корректна ли эта дата. Некая абстрактная функция должна получать текст, который ввел пользователь, осуществлять проверку и выдавать результат - это легко можно реализовать на Python!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># представим, что на сайте дата должна выглядеть как &quot;ГГГГ-ММ-ДД&quot;</span>
+<span class="k">def</span> <span class="nf">check_date</span><span class="p">(</span><span class="n">date</span><span class="p">):</span>
+    <span class="c1"># проверим, успешно ли разобъется строка по разделителю &#39;-&#39;, их должно быть 2</span>
+    <span class="k">if</span> <span class="n">date</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># используем строковый метод split: разделим строку на три части. по задумке, порядок соответствующий</span>
+    <span class="c1"># обратите внимание, split вернет list из трех элементов (до этого мы проверили, что именно столько получим)</span>
+    <span class="c1"># какого типа будут эти элементы? str, не числа</span>
+    <span class="n">year</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="n">day</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+
+    <span class="c1"># проверим, что строка year может быть успешно превращена в целое число при помощи метода str.isdigit()</span>
+    <span class="c1"># пусть допустимыми значениями для года будут 1901 - 2021</span>
+    <span class="c1"># если одно из условий не выполнено, то проверка провалена</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">year</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="mi">1900</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2021</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># два других числа аналогично</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">month</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">month</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">13</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">day</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="nb">int</span><span class="p">(</span><span class="n">day</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">31</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+    <span class="c1"># если до этого проверки все пройдены, то итог - успех!</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="id3">
 <h2>Именованные функции<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
