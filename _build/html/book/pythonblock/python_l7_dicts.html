@@ -950,7 +950,7 @@ Player Harry Potter is in 1st year
 </div>
 <div class="section" id="id14">
 <h2>Сортировка<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
-<p>Функции <code class="docutils literal notranslate"><span class="pre">reversed()</span></code> (с Python <strong>3.8</strong>) и <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> доступны и для словарей. По умолчанию ключи словаря поддерживают порядок, в котором были добавлены, но можно отсортировать их в нужном направлении (<em>в зависимости от типа</em>):</p>
+<p>Функция <code class="docutils literal notranslate"><span class="pre">sorted()</span></code> доступна и для словарей. По умолчанию ключи словаря поддерживают порядок, в котором были добавлены, но можно отсортировать их в нужном направлении (<em>в зависимости от типа</em>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># вспомним про рабочие дни</span>
@@ -959,16 +959,11 @@ Player Harry Potter is in 1st year
 <span class="c1"># в sorted_week окажутся ключи, отсортированные в порядке возрастания</span>
 <span class="n">sorted_week</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">week</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Порядок возрастания: </span><span class="si">{</span><span class="n">sorted_week</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># а тут -- наоборот</span>
-<span class="n">reverse_sorted_week</span> <span class="o">=</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">week</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Наоборот: </span><span class="si">{</span><span class="n">reverse_sorted_week</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Порядок возрастания: [1, 6, 7]
-Наоборот: &lt;dict_reversekeyiterator object at 0x7f7643f8b4a0&gt;
 </pre></div>
 </div>
 </div>
@@ -1010,7 +1005,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f7648934d80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7ff1ce983d80
 </pre></div>
 </div>
 </div>
@@ -1028,7 +1023,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 0x7f7648935a00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 0x7ff1ce984a00
 </pre></div>
 </div>
 </div>
@@ -1079,8 +1074,8 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f764417dd00
-Стало: 0x7f764417dd00 - ничего не поменялось!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7ff1ca09d680
+Стало: 0x7ff1ca09d680 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
