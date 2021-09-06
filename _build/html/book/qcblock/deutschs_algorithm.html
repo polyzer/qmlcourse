@@ -172,7 +172,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="grovers_algorithm.html">
-   🟧 Алгоритм Гровера
+   🟩 Алгоритм Гровера
   </a>
  </li>
 </ul>
@@ -251,6 +251,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../qsvmblock/hybridsvm.html">
    🟩 Гибридный SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnn.html">
+   🟧 Квантовые нейронные сети
   </a>
  </li>
 </ul>
@@ -574,6 +591,7 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 <span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;default.qubit&#39;</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -651,7 +669,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
 </pre></div>
 </div>
 </div>
@@ -664,7 +682,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f3
 </pre></div>
 </div>
 </div>
@@ -677,8 +695,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──H──┤ Sample[Z] 
- 1: ──X──H──┤           
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H─────╭C──H──┤ Sample[Z] 
+ 1: ──X──H──╰X─────┤           
 </pre></div>
 </div>
 </div>

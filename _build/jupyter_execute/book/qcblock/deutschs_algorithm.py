@@ -191,6 +191,7 @@
 
 import pennylane as qml
 from pennylane import numpy as np
+import numpy as np
 
 dev = qml.device('default.qubit', shots=1, wires=2)
 
