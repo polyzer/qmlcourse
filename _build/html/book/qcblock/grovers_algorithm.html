@@ -463,7 +463,7 @@
 <p>Фактически, это означает, что если мы не знаем, где расположен нужный элемент в таблице, то придется перебирать все элементы, пока не найдем то, что нужно. Для классических вычислений это нормально, но что, если у нас есть квантовый компьютер?</p>
 <p>Если наша база данных работает на основе квантовых вычислений, то мы можем применить алгоритм Гровера, и тогда такой поиск потребует всего порядка <span class="math notranslate nohighlight">\(\sqrt{N}\)</span> действий. Конечно же, такое ускорение не будет экспоненциальным, как при использовании некоторых других квантовых алгоритмов, но оно будет квадратичным, что также довольно неплохо.</p>
 <div class="figure align-default" id="grover-photo">
-<img alt="_static/qcblock/grovers_algorithm/Grover_photo.jpg" src="_static/qcblock/grovers_algorithm/Grover_photo.jpg" />
+<img alt="../../_images/Grover_photo.jpg" src="../../_images/Grover_photo.jpg" />
 <p class="caption"><span class="caption-number">Fig. 44 </span><span class="caption-text">Лов Гровер</span><a class="headerlink" href="#grover-photo" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition- admonition">
@@ -479,7 +479,7 @@
 <p>Разберем операции, которые включает в себя каждая итерация, но перед этим добавим в схему еще один кубит, который мы будем называть вспомогательным. Он нужен для хранения метки искомого индекса. Звучит не совсем понятно, но ничего сложного в этом нет, все станет ясным после разбора работы функции-оракула. Итак, наша база данных двухкубитная, но сама схема состоит из трех кубитов.</p>
 <p>Квантовая схема выглядит так:</p>
 <div class="figure align-default" id="grover-2-qubits">
-<a class="reference internal image-reference" href="_static/qcblock/grovers_algorithm/grover_2_qubits.png"><img alt="_static/qcblock/grovers_algorithm/grover_2_qubits.png" src="_static/qcblock/grovers_algorithm/grover_2_qubits.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/grover_2_qubits.png"><img alt="../../_images/grover_2_qubits.png" src="../../_images/grover_2_qubits.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 45 </span><span class="caption-text">Алгоритм Гровера для n=2 (искомый индекс 11).</span><a class="headerlink" href="#grover-2-qubits" title="Permalink to this image">¶</a></p>
 </div>
 <p>В самом начале, еще до всех итераций, все кубиты (включая вспомогательный) должны быть приведены в состояние суперпозиции с помощью оператора Адамара. Причем начальное состояние всех кубитов должно быть равно <span class="math notranslate nohighlight">\(0\)</span>, кроме вспомогательного кубита – до действия оператора Адамара он должен быть приведен в состояние <span class="math notranslate nohighlight">\(1\)</span>.</p>
@@ -501,7 +501,7 @@
 <p>Для того, чтобы лучше понять дальнейшие действия, представим первую половину работы алгоритма в виде рисунка, показывающего вектор текущего состояния. В качестве единичного вектора горизонтальной оси мы будем использовать все состояния из суперпозиции кроме того, который соответствует искомому индексу, а вертикальным единичным вектором будет искомый вектор.</p>
 <p>Вектор <span class="math notranslate nohighlight">\(c\)</span> – состояние системы перед первой итерацией – является линейной комбинацией векторов, соответствующим горизонтальной и вертикальной осям.</p>
 <div class="figure align-default" id="grover-1a">
-<a class="reference internal image-reference" href="_static/qcblock/grovers_algorithm/grover_1a.png"><img alt="_static/qcblock/grovers_algorithm/grover_1a.png" src="_static/qcblock/grovers_algorithm/grover_1a.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/grover_1a.png"><img alt="../../_images/grover_1a.png" src="../../_images/grover_1a.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 47 </span><span class="caption-text">Состояние системы перед первой итерацией.</span><a class="headerlink" href="#grover-1a" title="Permalink to this image">¶</a></p>
 </div>
 <p>Можно выразить вектор <span class="math notranslate nohighlight">\(c\)</span> для нашего случая (системы из двух кубитов с искомым индексом <span class="math notranslate nohighlight">\(11\)</span>), обозначив его координаты за <span class="math notranslate nohighlight">\(x\)</span> и <span class="math notranslate nohighlight">\(y\)</span>:</p>
@@ -515,7 +515,7 @@
 <p>После применения функции-оракула текущий вектор отразится относительно горизонтальной оси. Объясняется это очень легко – его вертикальная компонента (вектор <span class="math notranslate nohighlight">\(|11\rangle\)</span>) становится отрицательной.</p>
 <p>Вектор <span class="math notranslate nohighlight">\(c_{1b}\)</span> – это отражение вектора <span class="math notranslate nohighlight">\(c\)</span> на угол <span class="math notranslate nohighlight">\(\theta\)</span> вниз относительно горизонтальной оси:</p>
 <div class="figure align-default" id="grover-1b">
-<a class="reference internal image-reference" href="_static/qcblock/grovers_algorithm/grover_1b.png"><img alt="_static/qcblock/grovers_algorithm/grover_1b.png" src="_static/qcblock/grovers_algorithm/grover_1b.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/grover_1b.png"><img alt="../../_images/grover_1b.png" src="../../_images/grover_1b.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 48 </span><span class="caption-text">Состояние системы после первой части первой итерации.</span><a class="headerlink" href="#grover-1b" title="Permalink to this image">¶</a></p>
 </div>
 <p>Такое отражение в нашем примере производится с помощью операции <span class="math notranslate nohighlight">\(CCNOT\)</span>, но в общем случае операция выглядит так:</p>
@@ -525,7 +525,7 @@
 <p><span class="math notranslate nohighlight">\(U_{1b} |c\rangle = (I - 2|11\rangle \langle 11|) \frac{1}{2}(|00\rangle + |01\rangle + |10\rangle + |11\rangle) = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle + |11\rangle - 2|11\rangle) = \frac{1}{2} (|00\rangle + |01\rangle + |10\rangle - |11\rangle)\)</span></p>
 <p>И наконец приступаем к разбору второй части первой итерации. В ней будет происходить еще одно отражение вектора, но уже не относительно горизонтальной оси, а относительно вектора <span class="math notranslate nohighlight">\(c\)</span>. Нетрудно заметить, что при этом текущий вектор состояния станет равен <span class="math notranslate nohighlight">\(\cos{3 \theta}|a\rangle + \sin{3 \theta}|b\rangle\)</span>.</p>
 <div class="figure align-default" id="grover-1c">
-<a class="reference internal image-reference" href="_static/qcblock/grovers_algorithm/grover_1c.png"><img alt="_static/qcblock/grovers_algorithm/grover_1c.png" src="_static/qcblock/grovers_algorithm/grover_1c.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../_images/grover_1c.png"><img alt="../../_images/grover_1c.png" src="../../_images/grover_1c.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 49 </span><span class="caption-text">Состояние системы после второй части первой итерации.</span><a class="headerlink" href="#grover-1c" title="Permalink to this image">¶</a></p>
 </div>
 <p>Операция для получения вектора <span class="math notranslate nohighlight">\(c_{1c}\)</span> будет выглядеть так:</p>
