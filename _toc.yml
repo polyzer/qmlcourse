@@ -38,7 +38,7 @@
     - file: book/qcblock/deutschs_algorithm
       title: 🟩 Алгоритм Дойча
     - file: book/qcblock/grovers_algorithm
-      title: 🟩 Алгоритм Гровера
+      title: 🟧 Алгоритм Гровера
 
 - part: Фреймворки
   chapters:
@@ -71,13 +71,6 @@
       title: ⬜ О блоке
     - file: book/qsvmblock/hybridsvm
       title: 🟩 Гибридный SVM
-
-- part: Квантовые нейронные сети
-  chapters:
-    - file: book/qnnblock/qnnintro
-      title: ⬜ О блоке
-    - file: book/qnnblock/qnn
-      title: 🟧 Квантовые нейронные сети
 
 - part: Проблемы квантового машинного обучения
   chapters:

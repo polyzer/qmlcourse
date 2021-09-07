@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="О блоке" href="../progblock/progintro.html" />
+    <link rel="next" title="Алгоритм Гровера" href="grovers_algorithm.html" />
     <link rel="prev" title="Квантовые гейты" href="gates.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -170,6 +170,11 @@
    🟩 Алгоритм Дойча
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -246,23 +251,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../qsvmblock/hybridsvm.html">
    🟩 Гибридный SVM
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Квантовые нейронные сети
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../qnnblock/qnnintro.html">
-   ⬜ О блоке
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qnnblock/qnn.html">
-   🟧 Квантовые нейронные сети
   </a>
  </li>
 </ul>
@@ -586,7 +574,6 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pennylane</span> <span class="k">as</span> <span class="nn">qml</span>
 <span class="kn">from</span> <span class="nn">pennylane</span> <span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">dev</span> <span class="o">=</span> <span class="n">qml</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;default.qubit&#39;</span><span class="p">,</span> <span class="n">shots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">wires</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
@@ -664,7 +651,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -677,7 +664,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f3
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>f1
 </pre></div>
 </div>
 </div>
@@ -690,8 +677,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H─────╭C──H──┤ Sample[Z] 
- 1: ──X──H──╰X─────┤           
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0: ──H──H──┤ Sample[Z] 
+ 1: ──X──H──┤           
 </pre></div>
 </div>
 </div>
@@ -740,10 +727,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../progblock/progintro.html" title="next page">
+        <a class="right-next" href="grovers_algorithm.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">О блоке</p>
+                <p class="prevnext-title">Алгоритм Гровера</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
