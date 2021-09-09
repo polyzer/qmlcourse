@@ -188,6 +188,11 @@
    🟩 Алгоритм Дойча
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcblock/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -1012,7 +1017,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f27958a4d80
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100 0x7f323b67ed80
 </pre></div>
 </div>
 </div>
@@ -1030,7 +1035,7 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 0x7f27958a5a00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 0x7f323b67fa00
 </pre></div>
 </div>
 </div>
@@ -1081,8 +1086,8 @@ Player Harry Potter is in 1st year
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f27910037c0
-Стало: 0x7f27910037c0 - ничего не поменялось!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Было: 0x7f3234c45d40
+Стало: 0x7f3234c45d40 - ничего не поменялось!
 </pre></div>
 </div>
 </div>
@@ -1110,17 +1115,17 @@ Player Harry Potter is in 1st year
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># при помощи &quot;литерала&quot; - фигурных скобок {}</span>
 <span class="n">flowers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;roses&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;violets&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">}</span>
 
-<span class="c1"># при помощи вызова dict()</span>
-<span class="c1">#   и последовательности с парами значений</span>
+<span class="c1"># при помощи вызова</span>
+<span class="c1">#   dict() и последовательности с парами значений</span>
 <span class="n">anime</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s2">&quot;Ведьмак&quot;</span><span class="p">,</span> <span class="s2">&quot;Кошмар волка&quot;</span><span class="p">),</span>
 <span class="p">(</span><span class="s2">&quot;Призрак в доспехах&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Призрак в доспехах&quot;</span><span class="p">,</span> <span class="s2">&quot;Синдром одиночки&quot;</span><span class="p">,</span> <span class="s2">&quot;Невинность&quot;</span><span class="p">])])</span>
 
-<span class="c1">#   и &quot;=&quot;</span>
+<span class="c1">#   dict() и &quot;ключ=значение&quot;</span>
 <span class="n">literature</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">poem_flowers</span><span class="o">=</span><span class="n">flowers</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;flowers = </span><span class="si">{</span><span class="n">flowers</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">anime = </span><span class="si">{</span><span class="n">anime</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">literature = </span><span class="si">{</span><span class="n">literature</span><span class="si">}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span><span class="si">{</span><span class="n">flowers</span> <span class="si">= }</span><span class="s2"></span>
+<span class="si">{</span><span class="n">anime</span> <span class="si">= }</span><span class="s2"></span>
+<span class="si">{</span><span class="n">literature</span> <span class="si">= }</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
