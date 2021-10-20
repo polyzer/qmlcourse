@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -55,7 +55,7 @@
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="О блоке" href="../pythonblock/pythonintro.html" />
+    <link rel="next" title="Пререквизиты для прохождения курса QML" href="../prerequisite.html" />
     <link rel="prev" title="Приветствие" href="../index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -74,6 +74,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.svg" class="logo" alt="logo">
       
@@ -104,6 +108,11 @@
    🟦 О квантовых компьютерах
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -122,6 +131,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../pythonblock/jupyter_l3.html">
    🟦 Ориентация в Jupyter
   </a>
@@ -137,13 +151,28 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l7_dicts.html">
+  <a class="reference internal" href="../pythonblock/python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l7.html">
    🟦 Словари
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../pythonblock/python_l10.html">
+  <a class="reference internal" href="../pythonblock/python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l9.html">
    🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../pythonblock/python_l10.html">
+   🟦 Финальная лекция
   </a>
  </li>
 </ul>
@@ -185,16 +214,6 @@
    🟩 Квантовые гейты
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcblock/deutschs_algorithm.html">
-   🟩 Алгоритм Дойча
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcblock/grovers_algorithm.html">
-   🟧 Алгоритм Гровера
-  </a>
- </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -215,6 +234,77 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../progblock/tfq.html">
    🟧 Cirq &amp; TFQ
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
   </a>
  </li>
 </ul>
@@ -271,6 +361,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../qsvmblock/hybridsvm.html">
    🟩 Гибридный SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
   </a>
  </li>
 </ul>
@@ -705,6 +812,7 @@
 <div class="section" id="id20">
 <h2>Заключение<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
 <p>Это вводная лекция, она не даст вам каких-то особых знаний. Скорее, ее цель заинтересовать читателя. Самое интересное будет в основной части курса, где мы будем разбирать квантовые алгоритмы, пытаться симулировать квантовую механику и обучать самые настоящие квантовые нейросети! Ждем вас на курсе!</p>
+<p style="page-break-after:always;"></p>
 </div>
 </div>
 
@@ -747,10 +855,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../pythonblock/pythonintro.html" title="next page">
+        <a class="right-next" href="../prerequisite.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">О блоке</p>
+                <p class="prevnext-title">Пререквизиты для прохождения курса QML</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -760,7 +868,7 @@
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         

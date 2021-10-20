@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -53,7 +53,7 @@
     <link rel="shortcut icon" href="../../_static/qmlcourse_favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Знакомство с инструментарием: Jupyter" href="jupyter_l3.html" />
+    <link rel="next" title="Установка необходимых инструментов и настройка среды" href="python_l2.html" />
     <link rel="prev" title="О блоке" href="pythonintro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -72,6 +72,10 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
       
       <img src="../../_static/logo.svg" class="logo" alt="logo">
       
@@ -102,6 +106,11 @@
    🟦 О квантовых компьютерах
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../prerequisite.html">
+   ⬜ Пререквизиты курса
+  </a>
+ </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -120,6 +129,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="python_l2.html">
+   🟦 Установка инструментов
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="jupyter_l3.html">
    🟦 Ориентация в Jupyter
   </a>
@@ -135,13 +149,28 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_l7_dicts.html">
+  <a class="reference internal" href="python_l6.html">
+   🟦 Списки и циклы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l7.html">
    🟦 Словари
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="python_l10.html">
+  <a class="reference internal" href="python_l8.html">
+   🟦 Функции
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l9.html">
    🟦 Объекты и классы
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="python_l10.html">
+   🟦 Финальная лекция
   </a>
  </li>
 </ul>
@@ -183,16 +212,6 @@
    🟩 Квантовые гейты
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcblock/deutschs_algorithm.html">
-   🟩 Алгоритм Дойча
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../qcblock/grovers_algorithm.html">
-   🟧 Алгоритм Гровера
-  </a>
- </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -213,6 +232,77 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../progblock/tfq.html">
    🟧 Cirq &amp; TFQ
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Базовые квантовые алгоритмы
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/qcalgointro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_algorithms_overview.html">
+   🟩 Обзор квантовых алгоритмов
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/deutschs_algorithm.html">
+   🟩 Алгоритм Дойча
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/quantum_teleportation.html">
+   🟩 Квантовая телепортация
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qcalgo/grovers_algorithm.html">
+   🟧 Алгоритм Гровера
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Железо квантовых компьютеров
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/hwreview.html">
+   🟩 Обзор
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../hwblock/scqubits.html">
+   🟥 Сверхпроводниковые кубиты
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовое машинное обучение
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/qmlkindsintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qmlkindsblock/hhl_algorithm.html">
+   🟥 Алгоритм HHL
   </a>
  </li>
 </ul>
@@ -269,6 +359,23 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../qsvmblock/hybridsvm.html">
    🟩 Гибридный SVM
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Квантовые нейронные сети
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qnnintro.html">
+   ⬜ О блоке
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../qnnblock/qconv.html">
+   🟩 Квантовые сверточные сети
   </a>
  </li>
 </ul>
@@ -477,7 +584,7 @@
   <div class="section" id="python">
 <span id="python-l1"></span><h1>Вводная лекция про Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
 <p>Добро пожаловать во вводный блок курса!
-Если у вас есть опыт программирования на <code class="docutils literal notranslate"><span class="pre">Python</span></code>, рекомендуем пройти <a class="reference external" href="http://foo">тест по ссылке</a> – так вы сможете понять, какие разделы стоит изучить или освежить в памяти перед прохождением курса. Тест можно игнорировать, если вы только начинаете свое знакомство с <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
+Если у вас есть опыт программирования на <code class="docutils literal notranslate"><span class="pre">Python</span></code>, рекомендуем ознакомиться <span class="xref myst">с пререквизитами курса</span> – так вы сможете понять, какие разделы стоит изучить или освежить в памяти перед прохождением курса. Тест можно игнорировать, если вы только начинаете свое знакомство с <code class="docutils literal notranslate"><span class="pre">Python</span></code>.</p>
 <p>Итак, <code class="docutils literal notranslate"><span class="pre">Python</span></code> – это такой язык программирования, который позволяет сообщить компьютеру о том, что нужно сделать, чтобы достичь некоего результата. За последнее десятилетие он получил быстрое распространение и сейчас является одним из самых популярных языков программирования в мире. Входной порог для его использования достаточно низок: вы можете использовать <code class="docutils literal notranslate"><span class="pre">Python</span></code> для решения своих задач даже если никогда не имели дела с программированием.</p>
 <div class="section" id="id1">
 <h2>Что такое <code class="docutils literal notranslate"><span class="pre">Python</span></code>?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -579,10 +686,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="jupyter_l3.html" title="next page">
+        <a class="right-next" href="python_l2.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Знакомство с инструментарием: Jupyter</p>
+                <p class="prevnext-title">Установка необходимых инструментов и настройка среды</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
@@ -592,7 +699,7 @@
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
